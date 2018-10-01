@@ -1,19 +1,35 @@
 
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
+  height: 450px;
+  line-height: 10px;
+  background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) );
+
   overflow: hidden;
 }
 
-.ant-carousel .slick-slide h3 {
+.ant-carousel .slick-slide h4 {
   color: #fff;
 }
 
 .ant-carousel {
-  width: 80%;
-  margin-left: 10%;
+  margin-top: 30px;
+  margin-right: auto;
+	margin-left: auto;
+  width: 60%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+img {
+	margin-right: auto;
+	margin-left: auto;
+	width: 575px;
+	height: auto;
+	padding: 30px;
+
+}
+
+
 
 
