@@ -1,45 +1,43 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
+import '../style/banner.css';
 import '../style/navbar.css';
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+
+
+const { Header } = Layout;
 
 class Navbar extends Component {
-	  state = {
-    current: 'home',
-  }
-	handleClick = (e) => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  }
-
-  render() {
-    return (
-    	<div className="nav-bar">
-	      <Menu
-	        onClick={this.handleClick}
-	        selectedKeys={[this.state.current]}
-	        mode="horizontal"
-	      >
-	        <Menu.Item key="home">
-	          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Home</a>
-	        </Menu.Item>
-	        <Menu.Item key="about">
-	          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Music</a>
-	        </Menu.Item>
-	        <Menu.Item key="blog">
-	          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Blog</a>
-	        </Menu.Item>
-	        <Menu.Item key="merch">
-	          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Merch</a>
-	        </Menu.Item>
-	      </Menu>
+	render() {
+		return(
+			<div>
+				<Layout className="layout">
+			    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+			      <div className="logo" />
+			      <Menu
+			        theme="dark"
+			        mode="horizontal"
+			        defaultSelectedKeys={['1']}
+			        style={{ lineHeight: '64px' }}
+			      >
+			        <Menu.Item key="1">Home</Menu.Item>
+			        <Menu.Item key="2">Blog</Menu.Item>
+			        <Menu.Item key="3">Music</Menu.Item>
+			        <Menu.Item key="4">Merch</Menu.Item>
+			        <Menu.Item key="5">Contact</Menu.Item>
+			      </Menu>
+			    </Header>
+			  </Layout>
+	    	<div id="banner-container">
+					<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
+				</div>
 	    </div>
-    );
-  }
+		)
+	}
+
+	  
 }
 
 export default Navbar;
+	      	
+	      

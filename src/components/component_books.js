@@ -9,12 +9,35 @@ class Books extends Component {
 		return(
 			<div>
 				<Card
-	    hoverable
-	    style={{ width: 240 }}
-	    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-	  		>
+				id="book-container"
+		    hoverable
+		    
+		    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+		  		>
 			    <Meta
-			      title="Europe Street beat"
+			      title="Book 1"
+			      description="www.instagram.com"
+			    />
+			  </Card>
+			  <Card
+				id="book-container"
+		    hoverable
+		    
+		    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+		  		>
+			    <Meta
+			      title="Book 2"
+			      description="www.instagram.com"
+			    />
+			  </Card>
+			  <Card
+				id="book-container"
+		    hoverable
+		    
+		    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+		  		>
+			    <Meta
+			      title="Book 2"
 			      description="www.instagram.com"
 			    />
 			  </Card>

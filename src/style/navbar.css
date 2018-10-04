@@ -1,9 +1,28 @@
-.nav-bar {
+/*.nav-bar {
 	text-align: center;
+}*/
+
+/*.ant-menu {
+	text-align: center;
+	display: flex;
+  justify-content: space-around;
+
+}*/
+
+
+/*.ant-menu-light
+ .ant-menu-root 
+ .ant-menu-horizontal*/
+
+.ant-layout-header {
+	background-color: black;
+}
+
+.ant-menu {
+	background-color: black;
+} 
+.ant-menu.ant-menu-dark :hover {
+	background-color: #00ccff;
 	
-}
 
-#font {
-	color: red !important;
 }
-
