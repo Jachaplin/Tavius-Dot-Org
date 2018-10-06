@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
+import { Icon } from 'antd';
 import '../style/banner.css';
 import '../style/navbar.css';
 
 
-
 const { Header } = Layout;
+
+const IconFont = Icon.createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+});
 
 class Navbar extends Component {
 	render() {
@@ -25,6 +29,13 @@ class Navbar extends Component {
 			        <Menu.Item key="3">Music</Menu.Item>
 			        <Menu.Item key="4">Merch</Menu.Item>
 			        <Menu.Item key="5">Contact</Menu.Item>
+			        <a target="blank" href="https://www.facebook.com/tavius"><Icon type="facebook" theme="outlined" /></a>
+			        <a><Icon type="instagram" theme="outlined" /></a>
+			        <a><Icon type="twitter" theme="outlined" /></a>
+			        <a><Icon type="youtube" theme="outlined" /></a>
+			        
+			        <a><Icon type="amazon" theme="outlined" /></a>
+
 			      </Menu>
 			    </Header>
 			  </Layout>

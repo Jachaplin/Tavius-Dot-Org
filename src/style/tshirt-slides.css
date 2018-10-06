@@ -1,7 +1,7 @@
 
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 450px;
+  height: 670px;
   line-height: 10px;
   background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) );
 
@@ -21,16 +21,24 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-img {
+.merch-img {
 	margin-right: auto;
 	margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 	width: 575px;
 	height: auto;
-	padding: 30px;
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
+/*img {
+
+}*/
 
 
 
 
+
+  
+  
