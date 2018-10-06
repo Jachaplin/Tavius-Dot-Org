@@ -1,0 +1,30 @@
+#banner-container {
+	margin-top: 44px;
+	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/analogue-blur-classic-164828.jpg");
+ 	background-repeat:no-repeat;
+	background-size: cover;
+	background-position:center;
+	background-color: black;
+}
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+#banner-container {
+	min-height: 420px;
+}
+
+#banner {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	height: auto;
+
+	}

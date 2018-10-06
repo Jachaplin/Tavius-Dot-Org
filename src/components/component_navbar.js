@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group'
 import { Layout, Menu } from 'antd';
 import { Icon } from 'antd';
-import '../style/banner.css';
+// import '../style/banner.css';
 import '../style/navbar.css';
 
 
 const { Header } = Layout;
 
-const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
-});
+
 
 class Navbar extends Component {
 	render() {
@@ -29,18 +28,31 @@ class Navbar extends Component {
 			        <Menu.Item key="3">Music</Menu.Item>
 			        <Menu.Item key="4">Merch</Menu.Item>
 			        <Menu.Item key="5">Contact</Menu.Item>
-			        <a target="blank" href="https://www.facebook.com/tavius"><Icon type="facebook" theme="outlined" /></a>
-			        <a><Icon type="instagram" theme="outlined" /></a>
-			        <a><Icon type="twitter" theme="outlined" /></a>
-			        <a><Icon type="youtube" theme="outlined" /></a>
+			        <Menu.Item ><Icon type="facebook" theme="outlined" /></Menu.Item>
+			        <Menu.Item ><Icon type="instagram" theme="outlined" /></Menu.Item>
+			        <Menu.Item ><Icon type="twitter" theme="outlined" /></Menu.Item>
+			        <Menu.Item ><Icon type="youtube" theme="outlined" /></Menu.Item>
+			        <Menu.Item ><Icon type="linkedin" theme="outlined" /></Menu.Item>
+			        <Menu.Item ><Icon type="amazon" theme="outlined" /></Menu.Item>
 			        
-			        <a><Icon type="amazon" theme="outlined" /></a>
+			        
+			        
+			        
+			        
+			        
 
 			      </Menu>
 			    </Header>
 			  </Layout>
 	    	<div id="banner-container">
+			  <CSSTransitionGroup
+		      transitionName="example"
+		      transitionAppear={true}
+		      transitionAppearTimeout={1000}
+		      transitionEnter={false}
+		      transitionLeave={false}>
 					<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
+				</CSSTransitionGroup>
 				</div>
 	    </div>
 		)
