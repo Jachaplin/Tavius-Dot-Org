@@ -1,7 +1,7 @@
 
 .ant-carousel .slick-slide {
   text-align: center;
-  height: 670px;
+  height: 690px;
   line-height: 10px;
   background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) );
 
@@ -30,6 +30,14 @@
 	height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
+}
+
+.img-wrapper :hover {
+  opacity: 0.8;
+  transition: opacity;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
 }
 
 /*img {

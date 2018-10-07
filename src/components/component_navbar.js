@@ -1,66 +1,82 @@
 import React, { Component } from 'react';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group'
-import { Layout, Menu } from 'antd';
 import { Icon } from 'antd';
-// import '../style/banner.css';
 import '../style/navbar.css';
 
+// custom tumblr Icon
+const IconFont = Icon.createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_862540_ekbd0ks4ksa.js',
+});
 
-const { Header } = Layout;
-
-
-
-class Navbar extends Component {
+class Navbar2 extends Component {
+	
 	render() {
 		return(
 			<div>
-				<Layout className="layout">
-			    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-			      <div className="logo" />
-			      <Menu
-			        theme="dark"
-			        mode="horizontal"
-			        defaultSelectedKeys={['1']}
-			        style={{ lineHeight: '64px' }}
-			      >
-			        <Menu.Item key="1">Home</Menu.Item>
-			        <Menu.Item key="2">Blog</Menu.Item>
-			        <Menu.Item key="3">Music</Menu.Item>
-			        <Menu.Item key="4">Merch</Menu.Item>
-			        <Menu.Item key="5">Contact</Menu.Item>
-			        <Menu.Item ><Icon type="facebook" theme="outlined" /></Menu.Item>
-			        <Menu.Item ><Icon type="instagram" theme="outlined" /></Menu.Item>
-			        <Menu.Item ><Icon type="twitter" theme="outlined" /></Menu.Item>
-			        <Menu.Item ><Icon type="youtube" theme="outlined" /></Menu.Item>
-			        <Menu.Item ><Icon type="linkedin" theme="outlined" /></Menu.Item>
-			        <Menu.Item ><Icon type="amazon" theme="outlined" /></Menu.Item>
-			        
-			        
-			        
-			        
-			        
-			        
-
-			      </Menu>
-			    </Header>
-			  </Layout>
-	    	<div id="banner-container">
-			  <CSSTransitionGroup
-		      transitionName="example"
-		      transitionAppear={true}
-		      transitionAppearTimeout={1000}
-		      transitionEnter={false}
-		      transitionLeave={false}>
-					<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
-				</CSSTransitionGroup>
-				</div>
+				<Navbar inverse collapseOnSelect fixedTop>
+				  <Navbar.Header>
+				    <Navbar.Brand>
+				      <a href="#brand"><img id="logo" src="images/nav-logo.png" alt="tavius.org banner"/></a>
+				    </Navbar.Brand>
+				    <Navbar.Toggle />
+				  </Navbar.Header>
+				  <Navbar.Collapse>
+				    <Nav>
+				      <NavItem className="button" eventKey={1} href="#">
+				        Home
+				      </NavItem>
+				      <NavItem className="button" eventKey={2} href="#">
+				        Music
+				      </NavItem>
+				      <NavItem className="button" eventKey={3} href="#">
+				        Blog
+				      </NavItem>
+				      <NavItem className="button" eventKey={4} href="#">
+				        Merch
+				      </NavItem>
+				      <NavItem className="button" eventKey={5} href="#">
+				        Contact
+				      </NavItem>
+				    </Nav>
+				    <Nav pullRight>
+				      <NavItem eventKey={1} target="blank" href="#">
+				        <Icon type="facebook" theme="outlined" />
+				      </NavItem>
+				      <NavItem eventKey={2} target="blank" href="#">
+				        <Icon type="instagram" theme="outlined" />
+				      </NavItem>
+				      <NavItem eventKey={3} target="blank" href="#">
+				        <Icon type="twitter" theme="outlined" />
+				      </NavItem>
+				      <NavItem eventKey={4} target="blank" href="#">
+				        <Icon type="youtube" theme="outlined" />
+				      </NavItem>
+				      <NavItem eventKey={5} target="blank" href="#">
+				        <IconFont type="icon-tumblr" theme="outlined" />
+				      </NavItem>
+				      <NavItem eventKey={6} target="blank" href="#">
+				        <Icon type="amazon" theme="outlined" />
+				      </NavItem>
+				    </Nav>
+				  </Navbar.Collapse>
+				</Navbar>
+				<Jumbotron>
+					<div id="banner-container">
+					  <CSSTransitionGroup
+				      transitionName="example"
+				      transitionAppear={true}
+				      transitionAppearTimeout={1000}
+				      transitionEnter={false}
+				      transitionLeave={false}>
+							<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
+						</CSSTransitionGroup>
+					</div>
+				  
+				</Jumbotron>
 	    </div>
 		)
 	}
-
-	  
 }
 
-export default Navbar;
-	      	
-	      
+export default Navbar2;

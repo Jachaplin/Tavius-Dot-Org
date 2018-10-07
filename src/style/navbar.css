@@ -1,25 +1,10 @@
-
-.ant-layout-header {
-	background-color: black;
-}
-
-.ant-menu {
-	background-color: black;
-} 
-
-.anticon {
-	width: 5em;
-	font-size: 16px;
-}
-
-.anticon :hover {
-	color: white;
-	transition: all 0.3s ease-in-out;
-}
-
-
-svg {
-	float: right;
+#banner-container {
+	margin-top: 44px;
+	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/analogue-blur-classic-164828.jpg");
+ 	background-repeat:no-repeat;
+	background-size: cover;
+	background-position:center;
+	/*background-color: black;*/
 }
 
 .example-appear {
@@ -35,22 +20,35 @@ svg {
 	min-height: 420px;
 }
 
+.jumbotron {
+	padding: 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar {
+	padding: 5px;
+}
+
+.button :hover {
+	background-color: grey !important;
+	transition: background-color 0.6s;
+	transition-property: background-color;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+#logo {
+	height: 33px;
+	width: auto;
+	margin-top: -4px;
+
+}
+
 #banner {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
 	width: 50%;
 	height: auto;
-	
 
-	
-}
-
-#banner-container {
-	margin-top: 64px;
-	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/analogue-blur-classic-164828.jpg");
- 	background-repeat:no-repeat;
-	background-size: cover;
-	background-position:center;
-	background-color: black;
-}
+	}
