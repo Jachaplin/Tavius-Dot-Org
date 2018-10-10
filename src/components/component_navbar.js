@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Jumbotron } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group'
 import { Icon } from 'antd';
 import '../style/navbar.css';
@@ -63,6 +63,8 @@ class Navbar2 extends Component {
 				</Navbar>
 				<Jumbotron>
 					<div id="banner-container">
+					<div id="padding">
+					</div>
 					  <CSSTransitionGroup
 				      transitionName="example"
 				      transitionAppear={true}
