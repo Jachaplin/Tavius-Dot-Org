@@ -8,24 +8,19 @@ class NavBoxes extends Component {
 		return(
 			<Grid>
 				<Row className="show-grid">
-			    <Col className="box grow" md={3}>
+			    <Col className="box grow" md={4}>
 			      
-			     
-			      
-			    </Col>
-			    <Col className="box grow" md={3}>
-			      
-			      
+			     	<img className="img-button" src="images/music-button.png" />
 			      
 			    </Col>
-			    <Col className="box grow" md={3}>
+			    <Col className="box grow" md={4}>
 			      
-			      
+			      <img className="img-button" src="images/store-button.png" />
 			      
 			    </Col>
-			    <Col className="box grow" md={3}>
+			    <Col className="box grow" md={4}>
 			      
-			      
+			      <img className="img-button" src="images/event-button.png" />
 			      
 			    </Col>
 			  </Row>

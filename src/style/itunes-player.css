@@ -20,8 +20,10 @@
 .img-header {
 	width: 450px;
 	height: auto;
-	margin-left: 20%;
-	margin-bottom: 30px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 40px;
 
 }
 

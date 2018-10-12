@@ -17,7 +17,7 @@ class App extends Component {
 		return(
 			<div>
 				<Navbar />
-				
+				<NavBoxes />
 				<CenterContent />
 				<FooterLinks />
 			</div>

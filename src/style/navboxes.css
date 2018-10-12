@@ -1,6 +1,6 @@
 .box {
-	background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
-	height: 250px;
+	background-image: linear-gradient(to bottom,#030303 0,#2e2e2e 100%);
+	height: 272px;
 	background-color: rgba(0, 0, 0, 0.65);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	/*transition: initial 0.2s ease-in-out;*/
@@ -9,29 +9,48 @@
 	/*margin-top: 1px;*/
 }
 
+.box:hover {
+	background-image: url("/images/banner.JPG");
+}
+
+.img-button {
+	width: 250px;
+	height: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+}
+
 .container {
 	margin-left: 0;
 	margin-right: 0;
   width: 100%;
 }
 
-.col-md-3 {
+.col-md-4 {
 	padding-left: 0px;
 	padding-right: 0px;
 	border: solid rgba(0, 0, 0, 0.65) 1px;
 
 }
 
-.col-md-3.box.grow {
+.col-md-4.box.grow {
 
 	transition:all 0.4s ease-in-out;
 }
 
 
-.col-md-3.box.grow:hover {
+.col-md-4.box.grow:hover {
 	transform: scale(1.05);
 	z-index:100;
 
+}
+
+@media screen and (max-width: 991px) {
+	.box {
+		height: 150px;
+	}
 }
 
 /*#grow {
