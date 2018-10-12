@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Carousel } from 'antd';
 import '../style/tshirt-slides.css';
 
 class TshirtSlides extends Component {
@@ -11,12 +11,12 @@ class TshirtSlides extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col xs={9} md={6}>
-              
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod.</p>
+            <Col md={12}>
+              <img className="img-header" src="/images/merch-header.png" />
             </Col>
-            <Col xs={9} md={6}>
-              
+          </Row>
+          <Row className="show-grid">
+            <Col md={6} mdPush={6}>
               <div id="slider-container">
                 <Carousel autoplay>
                   <div className="img-wrapper"><a href="#">
@@ -52,6 +52,11 @@ class TshirtSlides extends Component {
                 </Carousel>
                 
               </div>
+              
+            </Col>
+            <Col md={6} mdPull={6}>
+              
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod.</p>
             </Col>
           </Row>
         </Grid>

@@ -20,8 +20,9 @@
 }
 
 .jumbotron {
-	padding: 0;
+	padding: 0px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
 }
 
 .navbar {
@@ -60,4 +61,37 @@
 
 #padding {
 	height: 80px;
+}
+
+@media screen and (max-width: 895px) {
+	#banner {
+		width: 600px;
+	}
+
+	#padding {
+		height: 120px;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+	#banner-container {
+		min-height: 450px;
+	}
+
+	#padding {
+	height: 65px;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	#banner {
+		width: 400px;
+	}
+
+	#padding {
+	height: 110px;
+	}
+
 }

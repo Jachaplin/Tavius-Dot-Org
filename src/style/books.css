@@ -26,3 +26,13 @@ transition: initial 0.2s ease-in-out;
 }
 /*.ant-card-bordered 
 .ant-card-hoverable*/
+
+@media screen and (max-width: 991px) {
+	#book-container.ant-card.ant-card-bordered.ant-card-hoverable {
+		width: 200px;
+	}
+
+	.book-img {
+		width: 200px;
+	}
+}
