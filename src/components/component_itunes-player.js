@@ -12,7 +12,7 @@ class MusicPlayer extends Component {
 				<Grid>
 				<Row className="show-grid">	
 					<Col md={12}>
-					<img className="img-header" src="/images/music-header.png"/>
+					<img className="img-header" src="/images/music-header.png" alt="music" />
 					</Col>
 				</Row>
 				  <Row className="show-grid">

@@ -17,5 +17,6 @@ class SideContent extends Component {
 		)
 	}
 } 
+      	/*<img id="books-header" src="/images/books-header.png" /> */
 
 export default SideContent;

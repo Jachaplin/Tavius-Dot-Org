@@ -37,8 +37,8 @@
 }
 
 
-.button :hover {
-	background-color: grey !important;
+.button:hover {
+	background-color: grey;
 	transition: background-color 0.3s;
 	transition-property: background-color;
   transition-duration: 0.3s;
