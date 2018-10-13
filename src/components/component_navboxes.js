@@ -11,7 +11,7 @@ class NavBoxes extends Component {
 			    <Col className="box grow" id="music-box" md={4}>
 			    	<div id="music-box-1">
 				      <Row className="show-grid">
-				    		<Col md={12}>
+				    		<Col id="img-col" md={12}>
 				     			<img className="img-button" src="images/music-button.png" alt="music" />
 				     		</Col>
 				      </Row>
@@ -25,7 +25,7 @@ class NavBoxes extends Component {
 			    <Col className="box grow" id="store-box" md={4}>
 			    	<div id="store-box-1">
 				    	<Row className="show-grid">
-				    		<Col md={12}>
+				    		<Col id="img-col" md={12}>
 				      		<img className="img-button" src="images/store-button.png" alt="store" />
 				      	</Col>
 				      </Row>
@@ -39,7 +39,7 @@ class NavBoxes extends Component {
 			    <Col className="box grow" id="event-box" md={4}>
 			    	<div id="event-box-1">
 				      <Row className="show-grid">
-				    		<Col md={12}>
+				    		<Col id="img-col" md={12}>
 				      		<img className="img-button" src="images/event-button.png" alt="events" />
 				      	</Col>
 				      </Row>

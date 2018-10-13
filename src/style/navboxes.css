@@ -1,8 +1,13 @@
 .box {
 	background-image: linear-gradient(to bottom,#030303 0,#2e2e2e 100%);
-	height: 272px;
+	height: 282px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+
+.show-grid .row {
+	margin-right: 0px;
+	margin-right: 0px;
 }
 
 #music-box-2 {
@@ -11,6 +16,7 @@
 
 #music-box:hover {
 	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/black-white-vinyl.jpg");
+
 }
 
 #store-box:hover {
@@ -22,6 +28,7 @@
 #event-box:hover {
 	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/black-white-laughing-on-stage.jpg");
 	background-size: cover;
+
 }
 
 .img-button {
@@ -33,11 +40,16 @@
 	margin-top: 30px;
 }
 
+#img-col {
+	height: 130px;
+}
+
 #box-button {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 70px;
+
 	
 }
 
@@ -51,7 +63,7 @@
 
 .btn:hover {
 	background-image: none;
-	background-color: grey;
+	background-color: #ff8800;
 	
 }
 
@@ -82,6 +94,10 @@
 
 }
 
+#event-box:hover {
+	margin-right: -30px;
+}
+
 @media screen and (max-width: 991px) {
 	.box {
 		height: 150px;
@@ -90,7 +106,7 @@
 		display: none;
 	}
 	#music-box-2 {
-	display: block;
+		display: block;
 	}
 	#store-box-1 {
 		display: none;
@@ -110,7 +126,16 @@
 	#store-box:hover {
 		/*background-position: fixed;*/
 	}
+	.col-md-4.box.grow {
+		transition:none;
+	}
+	.col-md-4.box.grow:hover {
+		transform: none;
+		z-index:100;
+	}
 }
+
+
 
 /*#grow {
 transition: initial 0.2s ease-in-out;
@@ -127,3 +152,5 @@ z-index: 4;
 /*}*/
 
 	
+
+
