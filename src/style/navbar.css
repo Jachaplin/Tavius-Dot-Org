@@ -16,7 +16,7 @@
 }
 
 #banner-container {
-	min-height: 600px;
+	min-height: 900px;
 }
 
 .jumbotron {
@@ -63,6 +63,29 @@
 
 #padding {
 	height: 80px;
+}
+
+#banner-quote {
+	font-size: 70px;
+	text-align: left;
+	margin-left: 10%;
+	color: white;
+	font-weight: 750;
+}
+
+#subscribe-button {
+	font-size: 25px;
+	font-weight: 600;
+	font-family: "Helvetica Neue";
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	display: inline-block;
+
+	margin-right: 20%;
+	margin-top: 150px;
+
 }
 
 @media screen and (max-width: 991px) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Carousel } from 'antd';
+import ScrollAnimation from 'react-animate-on-scroll';
 import '../style/tshirt-slides.css';
 
 class TshirtSlides extends Component {
@@ -55,8 +56,10 @@ class TshirtSlides extends Component {
               
             </Col>
             <Col md={6} mdPull={6}>
-              
+              <ScrollAnimation animateIn="bounceInLeft">
+                    
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod.</p>
+              </ScrollAnimation>
             </Col>
           </Row>
         </Grid>

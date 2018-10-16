@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group'
+import ScrollAnimation from 'react-animate-on-scroll';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
 import { Icon } from 'antd';
 import '../style/navbar.css';
 
@@ -73,6 +75,26 @@ class Navbar2 extends Component {
 				      transitionLeave={false}>
 							<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
 						</CSSTransitionGroup>
+						<Grid>
+							<Row>
+								<Col md={9}>
+									<ScrollAnimation animateIn="slideInLeft">
+										<div id="banner-quote">"A quote for you,</div>
+									</ScrollAnimation>
+									<ScrollAnimation  animateIn="slideInRight">
+										<div id="banner-quote">from me."</div>
+									</ScrollAnimation>
+									<ScrollAnimation animateIn="slideInUp" delay-3s>
+										<div id="banner-quote">- Tavius</div>
+									</ScrollAnimation>
+								</Col>
+								<Col md={3}>
+									<ScrollAnimation className="delay-1s" animateIn="bounceInRight">
+										<Button id="subscribe-button" bsStyle="info">Subscribe</Button>
+									</ScrollAnimation>
+								</Col>
+							</Row>
+						</Grid>
 					</div>
 				  
 				</Jumbotron>
@@ -82,3 +104,4 @@ class Navbar2 extends Component {
 }
 
 export default Navbar2;
+							

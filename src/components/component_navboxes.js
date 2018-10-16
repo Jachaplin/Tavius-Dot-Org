@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
+import ScrollAnimation from 'react-animate-on-scroll';
 import '../style/navboxes.css';
 
 class NavBoxes extends Component {
 
 	render() {
 		return(
+			<ScrollAnimation animateIn="fadeIn">
 			<Grid>
 				<Row className="show-grid">
 			    <Col className="box grow" id="music-box" md={4}>
@@ -52,6 +54,7 @@ class NavBoxes extends Component {
 			    </Col>
 			  </Row>
 			</Grid>
+			</ScrollAnimation>
 		)
 	}
 }

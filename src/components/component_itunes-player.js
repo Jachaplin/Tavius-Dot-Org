@@ -17,7 +17,11 @@ class MusicPlayer extends Component {
 				</Row>
 				  <Row className="show-grid">
 				    <Col md={6} mdPush={6}>
-		      		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod. </p>
+				    <ScrollAnimation animateIn="bounceInRight">
+                    
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod.</p>
+              </ScrollAnimation>
+		      		
 				    </Col>
 				    <Col md={6} mdPull={6}>
 							<ScrollAnimation animateIn="fadeIn">

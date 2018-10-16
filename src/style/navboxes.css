@@ -98,28 +98,33 @@
 	margin-right: -30px;
 }
 
+@media (min-width: 767px) {
+
+.col-md-4 {
+    width: 33.33333333%;
+    float: left;
+    
+}
+	
+}
+
+@media screen and (max-width: 767px) {
+	.col-md-4 {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 991px) {
 	.box {
-		height: 150px;
+		height: 200px;
 	}
-	#music-box-1 {
-		display: none;
+
+	#box-button {
+		margin-top: 0px;
+		margin-left: -55px;
+		
 	}
-	#music-box-2 {
-		display: block;
-	}
-	#store-box-1 {
-		display: none;
-	}
-	#store-box-2 {
-	display: block;
-	}
-	#event-box-1 {
-		display: none;
-	}
-	#event-box-2 {
-	display: block;
-	}
+
 	.img-button {
 		margin-top: 5px;
 	}
