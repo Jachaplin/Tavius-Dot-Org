@@ -44,26 +44,21 @@
 	height: 130px;
 }
 
-#box-button {
+#box-button.ant-btn {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 70px;
-
-	
-}
-
-.btn {
 	background-image: linear-gradient(to bottom,#9d9d9d 0,#00cdff 100%);
 	color: #ffffff;
 	border-radius: 0px;
-	padding: 15px;
+	height: 50px;
 	border: 0px;
+	background-color: #ff8800;
 }
 
-.btn:hover {
+#box-button.ant-btn:hover {
 	background-image: none;
-	background-color: #ff8800;
 	
 }
 
@@ -75,14 +70,12 @@
   /*clear: both;*/
 }
 
-.col-md-4 {
+
+
+.col-md-4.box.grow {
 	padding-left: 0px;
 	padding-right: 0px;
 	border: solid rgba(0, 0, 0, 0.65) 1px;
-
-}
-
-.col-md-4.box.grow {
 
 	transition:all 0.4s ease-in-out;
 }
@@ -100,7 +93,7 @@
 
 @media (min-width: 767px) {
 
-.col-md-4 {
+.col-md-4.box.grow {
     width: 33.33333333%;
     float: left;
     
@@ -109,7 +102,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.col-md-4 {
+	.col-md-4.box.grow {
 		display: none;
 	}
 }
@@ -119,7 +112,7 @@
 		height: 200px;
 	}
 
-	#box-button {
+	#box-button.ant-btn {
 		margin-top: 0px;
 		margin-left: -55px;
 		

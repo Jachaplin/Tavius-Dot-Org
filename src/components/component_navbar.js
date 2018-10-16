@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group'
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
-import { Icon } from 'antd';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Icon, Modal, Button } from 'antd';
 import '../style/navbar.css';
 
 // custom tumblr Icon
@@ -12,8 +12,30 @@ const IconFont = Icon.createFromIconfontCN({
 });
 
 class Navbar2 extends Component {
+	  state = {
+    loading: false,
+    visible: false,
+  }
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+
+  handleOk = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({ loading: false, visible: false });
+    }, 3000);
+  }
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  }
 	
 	render() {
+		const { visible, loading } = this.state;
 		return(
 			<div>
 				<Navbar inverse collapseOnSelect fixedTop>
@@ -90,11 +112,29 @@ class Navbar2 extends Component {
 								</Col>
 								<Col md={3}>
 									<ScrollAnimation className="delay-1s" animateIn="bounceInRight">
-										<Button id="subscribe-button" bsStyle="info">Subscribe</Button>
+										<Button id="subscribe-button" onClick={this.showModal}>Subscribe</Button>
 									</ScrollAnimation>
 								</Col>
 							</Row>
 						</Grid>
+						<Modal
+		          visible={visible}
+		          title="Title"
+		          onOk={this.handleOk}
+		          onCancel={this.handleCancel}
+		          footer={[
+		            <Button key="back" onClick={this.handleCancel}>Return</Button>,
+		            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
+		              Submit
+		            </Button>,
+		          ]}
+		        >
+		          <p>Some contents...</p>
+		          <p>Some contents...</p>
+		          <p>Some contents...</p>
+		          <p>Some contents...</p>
+		          <p>Some contents...</p>
+		        </Modal>
 					</div>
 				  
 				</Jumbotron>

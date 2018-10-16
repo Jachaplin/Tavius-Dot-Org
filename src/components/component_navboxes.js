@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Button } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
 import '../style/navboxes.css';
 
@@ -19,7 +20,7 @@ class NavBoxes extends Component {
 				      </Row>
 				     	<Row className="show-grid">
 				     		<Col xs={6} xsOffset={6}>
-				      		<Button id="box-button" bsStyle="info">Listen Here</Button>
+				      		<Button id="box-button">Listen Here</Button>
 				      	</Col>
 				      </Row>
 			    	</div>
@@ -33,7 +34,7 @@ class NavBoxes extends Component {
 				      </Row>
 				     	<Row className="show-grid">
 				     		<Col xs={6} xsOffset={6}>
-				      		<Button id="box-button" bsStyle="info">Shop Here</Button>
+				      		<Button id="box-button">Shop Here</Button>
 				      	</Col>
 				      </Row>
 			    	</div>
@@ -47,7 +48,7 @@ class NavBoxes extends Component {
 				      </Row>
 				     	<Row className="show-grid">
 				     		<Col xs={6} xsOffset={6}>
-				      		<Button id="box-button" bsStyle="info">See What's Next</Button>
+				      		<Button id="box-button">See What's Next</Button>
 				      	</Col>
 				      </Row>
 			    	</div>
