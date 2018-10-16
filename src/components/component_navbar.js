@@ -3,7 +3,7 @@ import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group'
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { Icon, Modal, Button } from 'antd';
+import { Icon, Modal, Button, Input } from 'antd';
 import '../style/navbar.css';
 
 // custom tumblr Icon
@@ -129,11 +129,7 @@ class Navbar2 extends Component {
 		            </Button>,
 		          ]}
 		        >
-		          <p>Some contents...</p>
-		          <p>Some contents...</p>
-		          <p>Some contents...</p>
-		          <p>Some contents...</p>
-		          <p>Some contents...</p>
+		          <Input placeholder="email" />
 		        </Modal>
 					</div>
 				  
