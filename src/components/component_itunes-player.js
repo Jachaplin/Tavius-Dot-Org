@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import '../style/itunes-player.css';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Parallax } from 'react-parallax';
+import '../style/itunes-player.css';
 
+
+
+// const image = "/images/laughing-on-stage.jpg"
 
 
 class MusicPlayer extends Component {
@@ -16,17 +20,25 @@ class MusicPlayer extends Component {
 					</Col>
 				</Row>
 				  <Row className="show-grid">
+				    <figure className="mb-0 figure-bg pos-abs bg-gray-100 z-3 d-none d-lg-block" data-userway-font-size="16"></figure>
 				    <Col md={6} mdPush={6}>
-				    <ScrollAnimation animateIn="bounceInRight">
-                    
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean imperdiet metus dignissim volutpat euismod.</p>
-              </ScrollAnimation>
+               
+               <Parallax bgImage="/images/laughing-on-stage.jpg" bgHeight="400px" bgWidth="auto" strength={-375}>
+					      <div style={{ height: 700 }}>
+					      </div>
+					    </Parallax>
+              
+                
 		      		
 				    </Col>
-				    <Col md={6} mdPull={6}>
+				    <Col className="grid-margin" md={6} mdPull={6}>
 							<ScrollAnimation animateIn="fadeIn">
 								<div id="itunes-container">
 									<iframe className="itunes-player" title="tavius-dot-org" allow="autoplay *; encrypted-media *;" frameBorder="0" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/dark-night-of-the-digital-soul/1361877834?app=music"></iframe>
+				    <ScrollAnimation animateIn="bounceInRight">
+                    
+              <p>Various genres of experimental electronic music and spoken word. Great Kung Fu Vampire remix and some of the project "Beyond Dubstep". There are slower kinder tracks as well as some more uptempo blazing!</p>
+              </ScrollAnimation>
 								</div>
 							</ScrollAnimation>
 							<ScrollAnimation animateIn="bounceInUp">
@@ -51,3 +63,4 @@ export default MusicPlayer;
 				      
 				  
 			
+					        

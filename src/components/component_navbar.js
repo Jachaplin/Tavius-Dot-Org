@@ -129,6 +129,8 @@ class Navbar2 extends Component {
 		            </Button>,
 		          ]}
 		        >
+		        	<Input placeholder="first name" />
+		        	<Input placeholder="last name" />
 		          <Input placeholder="email" />
 		        </Modal>
 					</div>
