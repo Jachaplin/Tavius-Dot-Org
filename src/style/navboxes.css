@@ -14,15 +14,36 @@
 	display: none;
 }
 
+#music-box:before {
+		content: url("/images/black-white-vinyl.jpg");
+		width:0;
+		height:0;
+		display: none;
+}
+
 #music-box:hover {
 	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/black-white-vinyl.jpg");
 
+}
+
+#store-box:before {
+		content: url("/images/black-white-store.jpg");
+		width:0;
+		height:0;
+		display: none;
 }
 
 #store-box:hover {
 	background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/black-white-store.jpg");
 	/*background-image: url("/images/black-white-store.jpg");*/
 	background-size: cover;
+}
+
+#event-box:before {
+		content: url("/images/black-white-laughing-on-stage.jpg");
+		width:0;
+		height:0;
+		display: none;
 }
 
 #event-box:hover {

@@ -20,7 +20,7 @@ class NavBoxes extends Component {
 				      </Row>
 				     	<Row className="show-grid">
 				     		<Col xs={6} xsOffset={6}>
-				      		<Button id="box-button">Listen Here</Button>
+				      		<a href='#music'><Button id="box-button">Listen Here</Button></a>
 				      	</Col>
 				      </Row>
 			    	</div>

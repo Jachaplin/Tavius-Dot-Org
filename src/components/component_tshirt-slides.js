@@ -3,6 +3,10 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { Carousel } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
 import '../style/tshirt-slides.css';
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { configureAnchors } from 'react-scrollable-anchor'
+
+configureAnchors({offset: -80, scrollDuration: 500})
 
 class TshirtSlides extends Component {
             
@@ -12,12 +16,13 @@ class TshirtSlides extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col md={12}>
+            <Col className="header-img-col" md={12}>
               <img className="img-header" src="/images/merch-header.png" alt="merch" />
             </Col>
           </Row>
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
+            <ScrollableAnchor id={'merch'}>
               <div id="slider-container">
                 <Carousel autoplay>
                   <div className="img-wrapper"><a href="link">
@@ -53,6 +58,7 @@ class TshirtSlides extends Component {
                 </Carousel>
                 
               </div>
+            </ScrollableAnchor>
               
             </Col>
             <Col md={6} mdPull={6}>

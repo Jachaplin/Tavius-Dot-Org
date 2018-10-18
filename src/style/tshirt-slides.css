@@ -20,6 +20,10 @@
   background: #8c999e;
 }
 
+.header-img-col {
+  height: 187px;
+}
+
 
 .ant-carousel {
   /*margin-top: 30px;*/

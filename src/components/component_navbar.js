@@ -5,6 +5,10 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Icon, Modal, Button, Input } from 'antd';
 import '../style/navbar.css';
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { configureAnchors } from 'react-scrollable-anchor'
+
+configureAnchors({offset: -80, scrollDuration: 500})
 
 // custom tumblr Icon
 const IconFont = Icon.createFromIconfontCN({
@@ -41,22 +45,22 @@ class Navbar2 extends Component {
 				<Navbar inverse collapseOnSelect fixedTop>
 				  <Navbar.Header>
 				    <Navbar.Brand>
-				      <a href="#brand"><img id="logo" src="images/nav-logo.png" alt="tavius.org banner"/></a>
+				      <a href="#home"><img id="logo" src="images/nav-logo.png" alt="tavius.org banner"/></a>
 				    </Navbar.Brand>
 				    <Navbar.Toggle />
 				  </Navbar.Header>
 				  <Navbar.Collapse>
 				    <Nav>
-				      <NavItem className="button" eventKey={1} href="#">
+				      <NavItem className="button" eventKey={1} href="#home">
 				        Home
 				      </NavItem>
-				      <NavItem className="button" eventKey={2} href="#">
+				      <NavItem className="button" eventKey={2} href="#music">
 				        Music
 				      </NavItem>
 				      <NavItem className="button" eventKey={3} href="#">
 				        Blog
 				      </NavItem>
-				      <NavItem className="button" eventKey={4} href="#">
+				      <NavItem className="button" eventKey={4} href="#merch">
 				        Merch
 				      </NavItem>
 				      <NavItem className="button" eventKey={5} href="#">
@@ -85,6 +89,7 @@ class Navbar2 extends Component {
 				    </Nav>
 				  </Navbar.Collapse>
 				</Navbar>
+				<ScrollableAnchor id={'home'}>
 				<Jumbotron>
 					<div id="banner-container">
 					<div id="padding">
@@ -136,6 +141,7 @@ class Navbar2 extends Component {
 					</div>
 				  
 				</Jumbotron>
+				</ScrollableAnchor>
 	    </div>
 		)
 	}
