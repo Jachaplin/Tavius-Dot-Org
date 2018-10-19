@@ -9,25 +9,25 @@ import FooterLinks from './components/component_footer';
 
 
 class App extends Component {
-	// constructor(props) {
-	// 	super(props)
-	// }
+  // constructor(props) {
+  //  super(props)
+  // }
 
-	render() {
-		return(
-			<div>
-				<FixedNavbar />
-				<NavBoxes />
-				<CenterContent />
-				<FooterLinks />
-			</div>
-		)
-	}
+  render() {
+    return(
+      <div>
+        <FixedNavbar />
+        <NavBoxes />
+        <CenterContent />
+        <FooterLinks />
+      </div>
+    )
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
-				
-				
-				
+        
+        
+        
 

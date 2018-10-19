@@ -1,14 +1,14 @@
 #amazon-icon {
-	width: 250px;
-	height: auto;
-	display: block;
-	margin: 40px auto 20px auto;
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: 40px auto 20px auto;
 }
 
 
 @media screen and (max-width: 991px) {
 .ant-layout-sider.ant-layout-sider-dark {
-		flex: 0 0 200px !important;
+    flex: 0 0 200px !important;
     max-width: 200px !important;
     min-width: 200px !important;
 } 
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.ant-layout-sider.ant-layout-sider-dark {
-		display: none;
-	}
+  .ant-layout-sider.ant-layout-sider-dark {
+    display: none;
+  }
 }

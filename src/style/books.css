@@ -1,19 +1,19 @@
 #book-container {
-	margin: 30px 15px 15px 15px;
-	width: 250px;
-	/*margin-right: auto;*/
-	/*margin-left: 30px;*/
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	
+  margin: 30px 15px 15px 15px;
+  width: 250px;
+  /*margin-right: auto;*/
+  /*margin-left: 30px;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 .book-img {
-	margin-right: auto;
-	margin-left: auto;
-	width: 250px;
-	height: auto;
-	padding: 20px;
-	
+  margin-right: auto;
+  margin-left: auto;
+  width: 250px;
+  height: auto;
+  padding: 20px;
+  
 }
 
 #grow {
@@ -21,18 +21,18 @@ transition: initial 0.2s ease-in-out;
 }
 
 #grow :hover #book-container {
-	transform: scale(1.05);
+  transform: scale(1.05);
 
 }
 /*.ant-card-bordered 
 .ant-card-hoverable*/
 
 @media screen and (max-width: 991px) {
-	#book-container.ant-card.ant-card-bordered.ant-card-hoverable {
-		width: 200px;
-	}
+  #book-container.ant-card.ant-card-bordered.ant-card-hoverable {
+    width: 200px;
+  }
 
-	.book-img {
-		width: 200px;
-	}
+  .book-img {
+    width: 200px;
+  }
 }

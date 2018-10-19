@@ -8,10 +8,10 @@ import '../style/center-content.css';
 const { Content, Sider } = Layout;
 
 class CenterContent extends Component {
-	render() {
-		return(
-			<Layout style={{ background: 'white' }}>
-    		<Content style={{ padding: '0 50px' }}>
+  render() {
+    return(
+      <Layout style={{ background: 'white' }}>
+        <Content style={{ padding: '0 50px' }}>
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
             <Sider width={280} style={{ background: '#fff' }}>
               <SideContent />
@@ -22,9 +22,9 @@ class CenterContent extends Component {
             </Content>
           </Layout>
         </Content>
-			</Layout>
-		)
-	}
+      </Layout>
+    )
+  }
 } 
 
 export default CenterContent;
