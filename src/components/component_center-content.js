@@ -28,10 +28,3 @@ class CenterContent extends Component {
 } 
 
 export default CenterContent;
-
-
-      
-
-
-
-      

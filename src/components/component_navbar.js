@@ -4,19 +4,22 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Icon, Modal, Button, Input } from 'antd';
-import '../style/navbar.css';
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { configureAnchors } from 'react-scrollable-anchor'
+import '../style/navbar.css';
 
-configureAnchors({offset: -80, scrollDuration: 500})
+configureAnchors({
+	offset: -80, 
+	scrollDuration: 500
+})
 
 // custom tumblr Icon
 const IconFont = Icon.createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_862540_ekbd0ks4ksa.js',
 });
 
-class Navbar2 extends Component {
-	  state = {
+class FixedNavbar extends Component {
+	state = {
     loading: false,
     visible: false,
   }
@@ -45,7 +48,9 @@ class Navbar2 extends Component {
 				<Navbar inverse collapseOnSelect fixedTop>
 				  <Navbar.Header>
 				    <Navbar.Brand>
-				      <a href="#home"><img id="logo" src="images/nav-logo.png" alt="tavius.org banner"/></a>
+				      <a href="#home">
+				      	<img id="logo" src="images/nav-logo.png" alt="tavius.org banner"/>
+				      </a>
 				    </Navbar.Brand>
 				    <Navbar.Toggle />
 				  </Navbar.Header>
@@ -90,62 +95,66 @@ class Navbar2 extends Component {
 				  </Navbar.Collapse>
 				</Navbar>
 				<ScrollableAnchor id={'home'}>
-				<Jumbotron>
-					<div id="banner-container">
-					<div id="padding">
-					</div>
-					  <CSSTransitionGroup
-				      transitionName="example"
-				      transitionAppear={true}
-				      transitionAppearTimeout={1000}
-				      transitionEnter={false}
-				      transitionLeave={false}>
-							<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
-						</CSSTransitionGroup>
-						<Grid>
-							<Row>
-								<Col md={9}>
-									<ScrollAnimation animateIn="slideInLeft">
-										<div id="banner-quote">"A quote for you,</div>
-									</ScrollAnimation>
-									<ScrollAnimation  animateIn="slideInRight">
-										<div id="banner-quote">from me."</div>
-									</ScrollAnimation>
-									<ScrollAnimation animateIn="slideInUp" delay-3s>
-										<div id="banner-quote">- Tavius</div>
-									</ScrollAnimation>
-								</Col>
-								<Col md={3}>
-									<ScrollAnimation className="delay-1s" animateIn="bounceInRight">
-										<Button id="subscribe-button" onClick={this.showModal}>Subscribe</Button>
-									</ScrollAnimation>
-								</Col>
-							</Row>
-						</Grid>
-						<Modal
-		          visible={visible}
-		          title="Title"
-		          onOk={this.handleOk}
-		          onCancel={this.handleCancel}
-		          footer={[
-		            <Button key="back" onClick={this.handleCancel}>Return</Button>,
-		            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-		              Submit
-		            </Button>,
-		          ]}
-		        >
-		        	<Input placeholder="first name" />
-		        	<Input placeholder="last name" />
-		          <Input placeholder="email" />
-		        </Modal>
-					</div>
-				  
-				</Jumbotron>
+					<Jumbotron>
+						<div id="banner-container">
+							<div id="padding">
+							</div>
+						  <CSSTransitionGroup
+					      transitionName="example"
+					      transitionAppear={true}
+					      transitionAppearTimeout={1000}
+					      transitionEnter={false}
+					      transitionLeave={false}
+					      >
+								<img id="banner" src="images/tavius-logo-smaller-blue.png" alt="tavius.org banner"/>
+							</CSSTransitionGroup>
+							<Grid>
+								<Row>
+									<Col md={9}>
+										<ScrollAnimation animateIn="slideInLeft">
+											<div id="banner-quote">"A quote for you,</div>
+										</ScrollAnimation>
+										<ScrollAnimation  animateIn="slideInRight">
+											<div id="banner-quote">from me."</div>
+										</ScrollAnimation>
+										<ScrollAnimation animateIn="slideInUp" delay-3s>
+											<div id="banner-quote">- Tavius</div>
+										</ScrollAnimation>
+									</Col>
+									<Col md={3}>
+										<ScrollAnimation className="delay-1s" animateIn="bounceInRight">
+											<Button id="subscribe-button" onClick={this.showModal}>
+												Subscribe
+											</Button>
+										</ScrollAnimation>
+									</Col>
+								</Row>
+							</Grid>
+							<Modal
+			          visible={visible}
+			          title="Title"
+			          onOk={this.handleOk}
+			          onCancel={this.handleCancel}
+			          footer={[
+			            <Button key="back" onClick={this.handleCancel}>
+			            	Return
+			            </Button>,
+			            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
+			              Submit
+			            </Button>
+			          	]}
+			        	>
+			        	<Input placeholder="first name" />
+			        	<Input placeholder="last name" />
+			          <Input placeholder="email" />
+			        </Modal>
+						</div>
+					</Jumbotron>
 				</ScrollableAnchor>
 	    </div>
 		)
 	}
 }
 
-export default Navbar2;
+export default FixedNavbar;
 							
