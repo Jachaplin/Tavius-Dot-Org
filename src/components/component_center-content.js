@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';
 import TshirtSlides from './component_tshirt-slides'
 import MusicPlayer from './component_itunes-player'
+import Blog from './component_blog';
 import SideContent from './component_sider'
 import '../style/center-content.css';
 
@@ -19,6 +20,7 @@ class CenterContent extends Component {
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
               <TshirtSlides />
               <MusicPlayer />
+              <Blog />
             </Content>
           </Layout>
         </Content>

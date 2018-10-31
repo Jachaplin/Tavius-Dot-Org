@@ -62,7 +62,7 @@ class FixedNavbar extends Component {
               <NavItem className="button" eventKey={2} href="#music">
                 Music
               </NavItem>
-              <NavItem className="button" eventKey={3} href="#">
+              <NavItem className="button" eventKey={3} href="#blog">
                 Blog
               </NavItem>
               <NavItem className="button" eventKey={4} href="#merch">
