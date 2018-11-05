@@ -14,6 +14,10 @@
 	margin-left: 20px;
 }
 
+#text {
+	margin-top: -10px;
+}
+
 #blog-content {
 	background-color: #f5f5f5;
 	display: block;
@@ -23,6 +27,34 @@
 	margin-right: auto;
 }
 
-#read-more {
+/*#read-more {
 	text-align: center;
+}*/
+
+.blog-text br {
+  display: none;
 }
+
+.blog-text span {
+  margin-right: 4px;
+  font-size: 16px;
+}
+
+.blog-text span a {
+	display: inline-block;
+	margin-left: -10px;
+	margin-top: -9px;
+}
+
+#blog-discription {
+	font-size: 20px;
+}
+
+.ant-pagination.mini {
+	margin-bottom: 30px;
+}
+
+
+
+
+

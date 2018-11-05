@@ -21,6 +21,7 @@ class MusicPlayer extends Component {
             <img className="img-header" src="/images/music-header.png" alt="music" />
           </Col>
         </Row>
+          <ScrollAnimation animateIn="fadeIn">
           <Row className="show-grid">
           <ScrollableAnchor id={'music'}>
             <figure className="mb-0 figure-bg pos-abs bg-gray-100 z-3 d-none d-lg-block" data-userway-font-size="16">
@@ -38,7 +39,7 @@ class MusicPlayer extends Component {
               </Parallax>
             </Col>
             <Col className="grid-margin" md={6} mdPull={6}>
-              <ScrollAnimation animateIn="fadeIn">
+              
                 <div id="itunes-container">
                   <iframe 
                     className="itunes-player" 
@@ -51,15 +52,19 @@ class MusicPlayer extends Component {
                     >
                   </iframe>
                 </div>
-              </ScrollAnimation>
-              <ScrollAnimation animateIn="bounceInRight">
+              
                 <p>
                   Various genres of experimental electronic music and spoken word. 
                   Great Kung Fu Vampire remix and some of the project "Beyond Dubstep". 
                   There are slower kinder tracks as well as some more uptempo blazing!
                 </p>
-              </ScrollAnimation>
-              <ScrollAnimation animateIn="bounceInUp">
+              
+              <ScrollAnimation animateIn="fadeIn">
+              <ScrollAnimation delay={2000}
+                animateIn='tada'
+                initiallyVisible={true}
+                animateOnce={true}
+                >
                 <div id="grow">
                   <div id="button-container">
                     <a target="blank" href="https://itunes.apple.com/us/album/dark-night-of-the-digital-soul/1361877834?app=itunes">
@@ -68,8 +73,11 @@ class MusicPlayer extends Component {
                   </div>
                 </div>
               </ScrollAnimation>
+              </ScrollAnimation>
+              
             </Col>
           </Row>
+          </ScrollAnimation>
         </Grid>
       </div>
     )

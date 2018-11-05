@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Pagination } from 'antd';
 import '../style/blog.css';
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { configureAnchors } from 'react-scrollable-anchor'
@@ -11,6 +12,16 @@ configureAnchors({
 })
 
 class Blog extends Component {
+	state = {
+    current: 1,
+  }
+
+  onChange = (page) => {
+    console.log(page);
+    this.setState({
+      current: page,
+    });
+  }
 
 	render() {
 		return(
@@ -28,11 +39,13 @@ class Blog extends Component {
 	        			Blog Title
 	        		</h1>
 	        	</ScrollableAnchor>
-	        		<p>
+	        		<p id="blog-discription">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Ut sed odio sagittis, scelerisque sapien nec, facilisis nunc. 
                 Aenean imperdiet metus dignissim volutpat euismod.
               </p>
+              
+              <Pagination current={this.state.current} onChange={this.onChange} total={50} size="small" />
 	        	</Col>
 	        	<Col id="blog-img" md={6}>
 	        		<img id="blog-img" src="/images/laughing-on-stage.jpg" alt="blog" />
@@ -49,7 +62,7 @@ class Blog extends Component {
 			                less='Read less'
 			                anchorClass='blog-text'
 			            >
-	                	<p>
+	                	<p id="text">
 											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac hendrerit arcu, tempor malesuada sapien. Praesent imperdiet posuere eros, eu consectetur erat tristique ac. Phasellus ac orci magna. Nunc quis varius nisl, et tincidunt neque. Maecenas ut vulputate turpis, eu dapibus felis. Etiam leo tortor, eleifend eleifend ipsum a, posuere lobortis mauris. Morbi et ipsum auctor dui tempor feugiat non id felis. Duis sed mattis libero. Pellentesque vitae lacinia diam, sit amet blandit nibh.
 				            </p>
 				            <p>

@@ -73,22 +73,22 @@ class FixedNavbar extends Component {
               </NavItem>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={1} target="blank" href="#">
+              <NavItem eventKey={1} target="blank" href="https://www.facebook.com/tavius?fref=search&__tn__=%2Cd%2CP-R&eid=ARDPs2YfFx0ZUHhMAQAZ6QOoAidyvIJyEFgyu44DBBz_volC9Nh5mGXW5aJWdyh951CsmMKIjwnCi5l9">
                 <Icon type="facebook" theme="outlined" />
               </NavItem>
-              <NavItem eventKey={2} target="blank" href="#">
+              <NavItem eventKey={2} target="blank" href="https://www.instagram.com/tavius_dyer/?hl=en">
                 <Icon type="instagram" theme="outlined" />
               </NavItem>
-              <NavItem eventKey={3} target="blank" href="#">
+              <NavItem eventKey={3} target="blank" href="https://twitter.com/taviusdyer">
                 <Icon type="twitter" theme="outlined" />
               </NavItem>
-              <NavItem eventKey={4} target="blank" href="#">
+              <NavItem eventKey={4} target="blank" href="https://www.youtube.com/channel/UC279oRJBWZMDPoAeET7RBqg">
                 <Icon type="youtube" theme="outlined" />
               </NavItem>
-              <NavItem eventKey={5} target="blank" href="#">
+              <NavItem eventKey={5} target="blank" href="https://www.tumblr.com/">
                 <IconFont type="icon-tumblr" theme="outlined" />
               </NavItem>
-              <NavItem eventKey={6} target="blank" href="#">
+              <NavItem eventKey={6} target="blank" href="https://www.amazon.com/Tavius-Dyer/e/B07B2M344X">
                 <Icon type="amazon" theme="outlined" />
               </NavItem>
             </Nav>
@@ -111,18 +111,18 @@ class FixedNavbar extends Component {
               <Grid>
                 <Row>
                   <Col md={9}>
-                    <ScrollAnimation animateIn="slideInLeft">
+                    <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
                       <div id="banner-quote">"A quote for you,</div>
                     </ScrollAnimation>
-                    <ScrollAnimation  animateIn="slideInRight">
+                    <ScrollAnimation  animateIn="slideInRight" animateOnce={true}>
                       <div id="banner-quote">from me."</div>
                     </ScrollAnimation>
-                    <ScrollAnimation animateIn="slideInUp" delay-3s>
+                    <ScrollAnimation animateIn="slideInUp" delay-3s animateOnce={true}>
                       <div id="banner-quote">- Tavius</div>
                     </ScrollAnimation>
                   </Col>
                   <Col md={3}>
-                    <ScrollAnimation className="delay-1s" animateIn="bounceInRight">
+                    <ScrollAnimation className="delay-1s" animateIn="bounceInRight" animateOnce={true}>
                       <Button id="subscribe-button" onClick={this.showModal}>
                         Subscribe
                       </Button>
