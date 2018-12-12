@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
+
+const user = require('./routes/api/user');
+const subscriber = require('./routes/api/subscribe');
 
 const app = express();
 
@@ -19,6 +23,10 @@ mongoose
 	)
 	.then(() => console.log('MongoDB Connected'))
 	.catch(err => console.log(err));
+
+// Use Routes
+app.use('/api/user', user);
+app.use('/api/subscribe', subscriber);
 
 const port = process.env.PORT || 5000;
 
