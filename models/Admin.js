@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Scheme
-const SubscribeScheme = new Schema({
+//Create Schema
+const AdminSchema = new Schema({
 	name: {
 		type: String,
 		require: true
 	},
 	email: {
+		type: String,
+		require: true
+	},
+	password: {
 		type: String,
 		require: true
 	},
@@ -17,4 +21,4 @@ const SubscribeScheme = new Schema({
 	}
 });
 
-module.exports = Subscriber = mongoose.model('subscriber', SubscribeScheme);
+module.exports = Admin = mongoose.model('admin', AdminSchema);
