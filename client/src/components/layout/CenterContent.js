@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import TshirtSlides from './component_tshirt-slides'
-import MusicPlayer from './component_itunes-player'
-import Blog from './component_blog';
-import SideContent from './component_sider'
-import '../style/center-content.css';
+import TshirtSlides from '../merch/Merch';
+import MusicPlayer from '../music/Music';
+import Blog from '../blog/Blog';
+import SideContent from './Sider';
+import './style/CenterContent.css';
 
 const { Content, Sider } = Layout;
 
 class CenterContent extends Component {
   render() {
-    return(
+    return (
       <Layout style={{ background: 'white' }}>
         <Content style={{ padding: '0 50px' }}>
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
@@ -25,8 +25,8 @@ class CenterContent extends Component {
           </Layout>
         </Content>
       </Layout>
-    )
+    );
   }
-} 
+}
 
 export default CenterContent;
