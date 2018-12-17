@@ -11,7 +11,7 @@ configureAnchors({
   scrollDuration: 500
 });
 
-class MusicPlayer extends Component {
+class Music extends Component {
   render() {
     return (
       <div id="music-container">
@@ -95,4 +95,4 @@ class MusicPlayer extends Component {
   }
 }
 
-export default MusicPlayer;
+export default Music;

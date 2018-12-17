@@ -108,7 +108,7 @@ class FixedNavbar extends Component {
               <NavItem
                 eventKey={5}
                 target="blank"
-                href="https://www.tumblr.com/"
+                href="https://taviusdotorg.tumblr.com/"
               >
                 <IconFont type="icon-tumblr" theme="outlined" />
               </NavItem>

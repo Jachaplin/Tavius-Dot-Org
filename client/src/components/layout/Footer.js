@@ -9,7 +9,7 @@ class FooterLinks extends Component {
 		return (
 			<Layout id="footer" className="layout">
 				<Footer style={{ textAlign: 'center' }}>
-					Copyright &copy; {new Date().getFullYear()} tavius.org
+					Copyright &copy; {new Date().getFullYear()} Tavius Dot Org
 				</Footer>
 			</Layout>
 		);

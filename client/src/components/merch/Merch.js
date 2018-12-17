@@ -5,14 +5,70 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import './style/Merch.css';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
+import feed from 'rss-to-json';
+import htmlToJson from 'html-to-json';
 
 configureAnchors({
   offset: -80,
   scrollDuration: 500
 });
 
-class TshirtSlides extends Component {
+class Merch extends Component {
+  constructor() {
+    super();
+    this.state = {
+      itemListing: []
+    };
+  }
+
+  componentDidMount() {
+    const zazzleURL = 'http://feed.zazzle.com/oneofftees/rss';
+    const corsURL = 'https://cors-anywhere.herokuapp.com/';
+    const items = [];
+
+    feed.load(corsURL + zazzleURL, (err, rss) => {
+      rss.items.map(res => {
+        let price = res.description;
+        let itemPrice = htmlToJson.parse(price, [
+          '.ZazzleCollectionItemCellProduct-price',
+          function($item) {
+            return $item.text();
+          }
+        ]);
+
+        let itemThumbnail = res.media.thumbnail[0].url[0];
+        let itemPic = itemThumbnail.replace('_152', '_500');
+
+        let titleCommaFix = res.title;
+        let itemTitle = titleCommaFix.replace('&#39;', "'");
+
+        items.push({
+          title: itemTitle,
+          link: res.link,
+          picture: itemPic,
+          thumbnail: itemThumbnail,
+          price: itemPrice._rejectionHandler0[0],
+          created: res.created
+        });
+        return rss.items;
+      });
+      this.setState({ itemListing: items });
+    });
+  }
+
   render() {
+    const { itemListing } = this.state;
+
+    const slideShowItems = itemListing.map(item => (
+      <div key={item.created} className="img-wrapper">
+        <a href={item.link} target="blank">
+          <img className="merch-img" src={item.picture} alt="shirt" />
+        </a>
+        <h4>{item.title}</h4>
+        <h4>{item.price}</h4>
+      </div>
+    ));
+
     return (
       <div>
         <Grid>
@@ -29,74 +85,7 @@ class TshirtSlides extends Component {
             <Col md={6} mdPush={6}>
               <ScrollableAnchor id={'merch'}>
                 <div id="slider-container">
-                  <Carousel autoplay>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://rlv.zcache.com/tavius_dot_org_t_shirt-rc24af40ed0054ab9b888a543def9866c_k2gr0_307.jpg"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Tavius Dot Org</h4>
-                      <h4>$25</h4>
-                    </div>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://i2.wp.com/rlv.zcache.com/apple_forbidden_fruit_tee_shirt-rf25ae03960b84c868002de4d2f489a56_jg4de_325.jpg?w=730"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Forbidden Fruit</h4>
-                      <h4>$50</h4>
-                    </div>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://rlv.zcache.com/forbidden_apple_red_on_black_t_shirt-r1f6d36c9876f4376af681b3029ee84f0_k2gm8_307.jpg"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Forbidden Fruit - Black</h4>
-                      <h4>$25</h4>
-                    </div>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://i2.wp.com/rlv.zcache.com/probiotics_not_antibiotics_t_shirts-rd939fa5fe6cd4359b79c22b6f266662f_jg95v_325.jpg?w=730"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Probiotics Not Antibiotics</h4>
-                      <h4>$20</h4>
-                    </div>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://rlv.zcache.com/hella_sober_grey_t_shirt-ra5b063e72f5b40e1abd2823bae2db9ec_k21au_307.jpg"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Hella Sober</h4>
-                      <h4>$25</h4>
-                    </div>
-                    <div className="img-wrapper">
-                      <a href="link">
-                        <img
-                          className="merch-img"
-                          src="https://i1.wp.com/rlv.zcache.com/global_warming_t_shirt-red7476e0f3e84d73844bbfc79c138186_jg4dk_325.jpg?w=730"
-                          alt="shirt"
-                        />
-                      </a>
-                      <h4>Global Warming</h4>
-                      <h4>$25</h4>
-                    </div>
-                  </Carousel>
+                  <Carousel autoplay>{slideShowItems}</Carousel>
                 </div>
               </ScrollableAnchor>
             </Col>
@@ -116,4 +105,4 @@ class TshirtSlides extends Component {
   }
 }
 
-export default TshirtSlides;
+export default Merch;

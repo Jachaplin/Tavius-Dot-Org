@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import TshirtSlides from '../merch/Merch';
-import MusicPlayer from '../music/Music';
+import Merch from '../merch/Merch';
+import Music from '../music/Music';
 import Blog from '../blog/Blog';
 import SideContent from './Sider';
 import './style/CenterContent.css';
@@ -18,8 +18,8 @@ class CenterContent extends Component {
               <SideContent />
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
-              <TshirtSlides />
-              <MusicPlayer />
+              <Merch />
+              <Music />
               <Blog />
             </Content>
           </Layout>
