@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Carousel } from 'antd';
-import ScrollAnimation from 'react-animate-on-scroll';
+// import ScrollAnimation from 'react-animate-on-scroll';
 import './style/Merch.css';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import feed from 'rss-to-json';
 import htmlToJson from 'html-to-json';
-
-configureAnchors({
-  offset: -80,
-  scrollDuration: 500
-});
 
 class Merch extends Component {
   constructor() {
@@ -19,6 +14,10 @@ class Merch extends Component {
     this.state = {
       itemListing: []
     };
+    configureAnchors({
+      offset: -90,
+      scrollDuration: 500
+    });
   }
 
   componentDidMount() {
@@ -26,9 +25,12 @@ class Merch extends Component {
     const corsURL = 'https://cors-anywhere.herokuapp.com/';
     const items = [];
 
+    // convert XML response to json with this call
     feed.load(corsURL + zazzleURL, (err, rss) => {
       rss.items.map(res => {
+        // set price to the description which is now a body of HTML
         let price = res.description;
+        // Parse through the HTML for the class containing the price, then covert the class to json
         let itemPrice = htmlToJson.parse(price, [
           '.ZazzleCollectionItemCellProduct-price',
           function($item) {
@@ -37,8 +39,9 @@ class Merch extends Component {
         ]);
 
         let itemThumbnail = res.media.thumbnail[0].url[0];
+        // change the thumbnail pic to a larger pic not included in the response
         let itemPic = itemThumbnail.replace('_152', '_500');
-
+        // place comma's inside the titles where they should be
         let titleCommaFix = res.title;
         let itemTitle = titleCommaFix.replace('&#39;', "'");
 
@@ -69,6 +72,17 @@ class Merch extends Component {
       </div>
     ));
 
+    // only show 9 thumbnails
+    const thumbnailGal = itemListing.slice(0, 9).map((item, i) => (
+      <div key={i}>
+        <Col xs={6} md={4}>
+          <a href={item.link} target="blank">
+            <Thumbnail src={item.thumbnail} alt="242x200" />
+          </a>
+        </Col>
+      </div>
+    ));
+
     return (
       <div>
         <Grid>
@@ -90,13 +104,20 @@ class Merch extends Component {
               </ScrollableAnchor>
             </Col>
             <Col md={6} mdPull={6}>
-              <ScrollAnimation animateIn="bounceInLeft">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                  sed odio sagittis, scelerisque sapien nec, facilisis nunc.
-                  Aenean imperdiet metus dignissim volutpat euismod.
-                </p>
-              </ScrollAnimation>
+              <img
+                src="/images/forbidden01.png"
+                style={{
+                  display: 'block',
+                  'margin-left': 'auto',
+                  'margin-right': 'auto',
+                  'margin-top': '-15px',
+                  'margin-bottom': '10px',
+                  width: '100px',
+                  height: 'auto'
+                }}
+                alt=""
+              />
+              {thumbnailGal}
             </Col>
           </Row>
         </Grid>

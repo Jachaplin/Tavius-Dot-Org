@@ -5,14 +5,12 @@
   margin: 40px auto 20px auto;
 }
 
-
 @media screen and (max-width: 991px) {
-.ant-layout-sider.ant-layout-sider-dark {
+  .ant-layout-sider.ant-layout-sider-dark {
     flex: 0 0 200px !important;
     max-width: 200px !important;
     min-width: 200px !important;
-} 
-
+  }
 }
 
 @media screen and (max-width: 767px) {

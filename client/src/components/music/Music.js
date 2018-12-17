@@ -35,7 +35,7 @@ class Music extends Component {
               </ScrollableAnchor>
               <Col md={6} mdPush={6}>
                 <Parallax
-                  bgImage="/images/laughing-on-stage.jpg"
+                  bgImage="/images/Finding-The-Superhero-Within.jpg"
                   bgHeight="400px"
                   bgWidth="auto"
                   strength={-375}
@@ -79,7 +79,7 @@ class Music extends Component {
                           <img
                             alt="itunes"
                             className="itunes-badge"
-                            src="http://static1.squarespace.com/static/5540ce85e4b0a2d6c580ebd4/t/560d4012e4b066b1a89f43e6/1443708947047/?format=1000w"
+                            src="/images/itunes-badge.png"
                           />
                         </a>
                       </div>
