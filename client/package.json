@@ -30,30 +30,21 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "description": "![tavius.org banner](https://github.com/Jachaplin/tavius-org/blob/master/style/images/banner.JPG)",
+  "description": "![tavius.org banner](https://github.com/Jachaplin/Tavius-Dot-Org/blob/master/style/images/banner.JPG)",
   "main": "config-overrides.js",
   "devDependencies": {
     "less": "^3.8.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jachaplin/tavius-org.git"
+    "url": "git+https://github.com/Jachaplin/Tavius-Dot-Org.git"
   },
-  "keywords": [
-    "Tavius",
-    "Aiton's",
-    "Website"
-  ],
+  "keywords": ["Tavius", "Aiton's", "Website"],
   "author": "Jake Chaplin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jachaplin/tavius-org/issues"
+    "url": "https://github.com/Jachaplin/Tavius-Dot-Org/issues"
   },
-  "homepage": "https://github.com/Jachaplin/tavius-org#readme",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "homepage": "https://github.com/Jachaplin/Tavius-Dot-Org#readme",
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
