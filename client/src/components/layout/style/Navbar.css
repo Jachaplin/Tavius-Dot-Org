@@ -1,9 +1,10 @@
 #banner-container {
   margin-top: 44px;
-  background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3) ), url("/images/analogue-blur-classic-164828.jpg");
-  background-repeat:no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
+    url('/images/analogue-blur-classic-164828.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position:center;
+  background-position: center;
 }
 
 .example-appear {
@@ -42,7 +43,6 @@
   width: 98.5%;
 }
 
-
 .button:hover {
   background-color: grey;
   transition: background-color 0.3s;
@@ -55,7 +55,6 @@
   height: 33px;
   width: auto;
   margin-top: -4px;
-
 }
 
 #banner {
@@ -64,7 +63,6 @@
   margin-left: auto;
   width: 800px;
   height: auto;
-
 }
 
 #padding {
@@ -72,7 +70,7 @@
 }
 
 #banner-quote {
-  font-size: 70px;
+  font-size: 60px;
   text-align: left;
   margin-left: 10%;
   color: white;
@@ -82,25 +80,23 @@
 #subscribe-button.ant-btn {
   font-size: 25px;
   font-weight: 600;
-  font-family: "Helvetica Neue";
+  font-family: 'Helvetica Neue';
   display: inline-block;
   height: 80px;
   padding-left: 40px;
   padding-right: 40px;
   margin-right: 20%;
   margin-top: 150px;
-  background-image: linear-gradient(to bottom,#9d9d9d 0,#00cdff 100%);
+  background-image: linear-gradient(to bottom, #9d9d9d 0, #00cdff 100%);
   color: #ffffff;
   border-radius: 0px;
   border: 0px;
   background-color: #ff8800;
   /*margin-left: 30%;*/
-
 }
 
 #subscribe-button.ant-btn:hover {
   background-image: none;
-  
 }
 
 .ant-input {
@@ -117,15 +113,14 @@
   }
 
   #padding {
-  height: 65px;
+    height: 65px;
   }
 
   .anticon svg {
-
-  margin: 0;
+    margin: 0;
   }
 
-    #subscribe-button.ant-btn {
+  #subscribe-button.ant-btn {
     margin-left: 70%;
     margin-bottom: 40px;
   }
@@ -133,7 +128,6 @@
   #quote-col {
     margin-bottom: -150px;
   }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -142,15 +136,14 @@
   }
 
   #padding {
-  height: 65px;
+    height: 65px;
   }
 
-    .anticon svg {
+  .anticon svg {
     display: none;
   }
   #subscribe-button.ant-btn {
     margin-left: 60%;
-    
   }
 }
 
@@ -160,11 +153,9 @@
   }
 
   #padding {
-  height: 110px;
+    height: 110px;
   }
   #subscribe-button.ant-btn {
     margin-left: 45%;
-    
   }
-
 }

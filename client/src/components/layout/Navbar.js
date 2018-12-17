@@ -143,13 +143,13 @@ class FixedNavbar extends Component {
                 <Row>
                   <Col md={9}>
                     <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
-                      <div id="banner-quote">"A quote for you,</div>
+                      <div id="banner-quote">"Creative Expression</div>
                     </ScrollAnimation>
                     <ScrollAnimation
                       animateIn="slideInRight"
                       animateOnce={true}
                     >
-                      <div id="banner-quote">from me."</div>
+                      <div id="banner-quote">Is Self Exploration."</div>
                     </ScrollAnimation>
                     <ScrollAnimation
                       animateIn="slideInUp"
