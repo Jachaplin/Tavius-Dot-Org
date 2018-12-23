@@ -15,6 +15,7 @@
     "react-app-rewired": "^1.6.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.0.0",
+    "react-html-parser": "^2.0.2",
     "react-lazy-load-image-component": "^1.1.5",
     "react-parallax": "^2.0.0",
     "react-pose": "^3.3.6",
@@ -22,7 +23,8 @@
     "react-scrollable-anchor": "^0.6.1",
     "react-show-more": "^2.0.0",
     "react-transition-group": "^1.2.1",
-    "rss-to-json": "^1.0.4"
+    "rss-to-json": "^1.0.4",
+    "tumblr.js": "^2.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -39,12 +41,21 @@
     "type": "git",
     "url": "git+https://github.com/Jachaplin/Tavius-Dot-Org.git"
   },
-  "keywords": ["Tavius", "Aiton's", "Website"],
+  "keywords": [
+    "Tavius",
+    "Aiton's",
+    "Website"
+  ],
   "author": "Jake Chaplin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jachaplin/Tavius-Dot-Org/issues"
   },
   "homepage": "https://github.com/Jachaplin/Tavius-Dot-Org#readme",
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

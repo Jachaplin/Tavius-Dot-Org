@@ -1,12 +1,17 @@
 #blog-container {
-  margin-top: 100px;
+	margin-top: 100px;
+	margin-bottom: 30px;
+}
+
+#blog-component {
+	margin-bottom: 60px;
 }
 
 #blog-img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-
+	width: 400px;
 }
 
 .blog-text {
@@ -32,12 +37,12 @@
 }*/
 
 .blog-text br {
-  display: none;
+	display: none;
 }
 
 .blog-text span {
-  margin-right: 4px;
-  font-size: 16px;
+	margin-right: 4px;
+	font-size: 16px;
 }
 
 .blog-text span a {
@@ -53,8 +58,3 @@
 .ant-pagination.mini {
 	margin-bottom: 30px;
 }
-
-
-
-
-

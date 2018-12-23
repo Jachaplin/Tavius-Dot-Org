@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { Pagination } from 'antd';
+import { Divider } from 'antd';
 import './style/Blog.css';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
-import ShowMore from 'react-show-more';
+import tumblr from 'tumblr.js';
+// import htmlToJson from 'html-to-json';
+import ReactHtmlParser from 'react-html-parser';
+
+import tumblrApi from '../../config/keys_dev.js';
 
 configureAnchors({
   offset: -80,
@@ -12,18 +16,115 @@ configureAnchors({
 });
 
 class Blog extends Component {
-  state = {
-    current: 1
-  };
+  constructor() {
+    super();
+    this.state = {
+      posts: []
+    };
+  }
 
-  onChange = page => {
-    console.log(page);
-    this.setState({
-      current: page
+  componentDidMount() {
+    const tumblrPosts = [];
+
+    const client = tumblr.createClient({
+      consumer_key: tumblrApi.key,
+      consumer_secret: tumblrApi.secret,
+      token: tumblrApi.token,
+      token_secret: tumblrApi.tokensecret
     });
-  };
+
+    client.blogPosts('taviusdotorg.tumblr.com', (err, data) => {
+      data.posts.map(res => {
+        const blogHTML = res.reblog.comment;
+        const summary =
+          res.slug.charAt(0).toUpperCase() +
+          res.slug.slice(1).replace(/-/gi, ' ');
+
+        const blogPics = [];
+        const blogBody = [];
+        const blogLink = [];
+
+        if (res.photos === undefined) {
+          res.photos = '';
+          blogPics.push('');
+        } else if (res.photos[0].original_size === undefined) {
+          res.photos[0].original_size = '';
+          blogPics.push('');
+        } else {
+          blogPics.push(res.photos[0].original_size.url);
+        }
+
+        if (res.body === undefined) {
+          blogBody.push(res.reblog.comment);
+        } else {
+          blogBody.push(res.body);
+        }
+
+        if (res.link_url === undefined) {
+          blogLink.push(res.post_url);
+        } else {
+          blogLink.push(res.link_url);
+        }
+
+        tumblrPosts.push({
+          blogtext: blogHTML,
+          blogpic: blogPics[0],
+          date: res.date,
+          title: summary,
+          link: blogLink
+        });
+        return data.posts;
+      });
+      this.setState({ posts: tumblrPosts });
+    });
+  }
 
   render() {
+    const { posts } = this.state;
+    const blogContent = posts.map((post, i) => (
+      <div id="blog-component" key={i}>
+        <Row className="show-grid">
+          <Col md={12}>
+            <Divider>{post.date}</Divider>
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Col id="blog-img" md={6}>
+            <ScrollableAnchor id={'blog'}>
+              {post.blogpic === '' ? (
+                <img
+                  id="blog-img"
+                  src="/images/sitting-on-stage-reading.jpg"
+                  alt="blog"
+                />
+              ) : (
+                <img id="blog-img" src={post.blogpic} alt="blog" />
+              )}
+            </ScrollableAnchor>
+          </Col>
+          <Col md={6}>
+            <div>{post.link}</div>
+            <div>{post.title} ...</div>
+          </Col>
+        </Row>
+        <Row className="show-grid">
+          <Col md={12}>
+            <div id="blog-content">
+              <div className="blog-text">
+                <div>
+                  {ReactHtmlParser(
+                    post.blogtext.substring(0, 4) === '<p><'
+                      ? post.blogtext.slice(3, -4)
+                      : post.blogtext
+                  )}
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    ));
+
     return (
       <div id="blog-container">
         <Grid>
@@ -36,110 +137,7 @@ class Blog extends Component {
               />
             </Col>
           </Row>
-          <Row className="show-grid">
-            <Col id="blog-title" md={6}>
-              <ScrollableAnchor id={'blog'}>
-                <h1>Blog Title</h1>
-              </ScrollableAnchor>
-              <p id="blog-discription">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
-                odio sagittis, scelerisque sapien nec, facilisis nunc. Aenean
-                imperdiet metus dignissim volutpat euismod.
-              </p>
-
-              <Pagination
-                current={this.state.current}
-                onChange={this.onChange}
-                total={50}
-                size="small"
-              />
-            </Col>
-            <Col id="blog-img" md={6}>
-              <img
-                id="blog-img"
-                src="/images/laughing-on-stage.jpg"
-                alt="blog"
-              />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col md={12}>
-              <div id="blog-content">
-                <div className="blog-text">
-                  <ShowMore
-                    lines={3}
-                    more="Read more"
-                    less="Read less"
-                    anchorClass="blog-text"
-                  >
-                    <p id="text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Etiam ac hendrerit arcu, tempor malesuada sapien. Praesent
-                      imperdiet posuere eros, eu consectetur erat tristique ac.
-                      Phasellus ac orci magna. Nunc quis varius nisl, et
-                      tincidunt neque. Maecenas ut vulputate turpis, eu dapibus
-                      felis. Etiam leo tortor, eleifend eleifend ipsum a,
-                      posuere lobortis mauris. Morbi et ipsum auctor dui tempor
-                      feugiat non id felis. Duis sed mattis libero. Pellentesque
-                      vitae lacinia diam, sit amet blandit nibh.
-                    </p>
-                    <p>
-                      Aliquam efficitur turpis tincidunt, vestibulum purus eget,
-                      elementum quam. Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit. Donec ac iaculis mi. Pellentesque egestas
-                      tempus sapien vitae commodo. Nunc dolor neque, tempor at
-                      odio eu, elementum commodo orci. Sed vehicula magna sit
-                      amet risus congue, non sagittis nisi imperdiet. Aenean nec
-                      justo nibh. Vivamus eu consectetur turpis.
-                    </p>
-                    <p>
-                      Sed ultrices mattis lacus sed interdum. Etiam ipsum
-                      libero, maximus porttitor dignissim ac, tincidunt in
-                      justo. Vestibulum dignissim molestie felis, id pulvinar
-                      metus egestas id. Sed sit amet felis tristique, viverra
-                      leo at, posuere est. Mauris lacinia, arcu in tincidunt
-                      viverra, nisi magna consequat enim, vel condimentum massa
-                      sem vitae diam. Integer eget libero molestie, elementum
-                      lacus nec, placerat erat. Nam vehicula tristique orci,
-                      vitae congue nisi tincidunt nec. Nulla eu tincidunt lorem.
-                      Morbi mollis nulla libero, a venenatis nisl semper non.
-                      Curabitur volutpat tellus sed vehicula laoreet. Sed quis
-                      eros ac nulla tristique finibus. Aliquam efficitur orci et
-                      lectus rhoncus, mollis hendrerit ipsum congue.
-                    </p>
-                    <p>
-                      Sed quis nisi venenatis, hendrerit dui elementum, mattis
-                      diam. Donec convallis nibh eu blandit pulvinar. Maecenas
-                      placerat egestas nibh nec interdum. Pellentesque habitant
-                      morbi tristique senectus et netus et malesuada fames ac
-                      turpis egestas. Pellentesque commodo felis id tortor
-                      feugiat maximus. Proin quis gravida magna. Proin ultrices
-                      dolor et iaculis pharetra. Class aptent taciti sociosqu ad
-                      litora torquent per conubia nostra, per inceptos
-                      himenaeos. Donec ullamcorper diam eget commodo luctus. Sed
-                      placerat quam at urna ultrices ultrices. Vestibulum
-                      aliquam congue sapien, eget sagittis nunc venenatis in.
-                      Mauris euismod quam eu dui fringilla, sed mollis ex
-                      suscipit. Aenean ligula leo, luctus ac quam vitae,
-                      bibendum ornare nunc. Aliquam erat volutpat. Phasellus mi
-                      sapien, vulputate et accumsan nec, sollicitudin sit amet
-                      turpis.
-                    </p>
-                    <p>
-                      Aenean porttitor elit mattis erat tempor hendrerit.
-                      Suspendisse porta accumsan mi vitae tincidunt. Nullam ut
-                      nisl suscipit libero fermentum commodo vitae non enim.
-                      Donec varius enim venenatis nisl convallis, ut vehicula
-                      justo ultricies. Curabitur varius dictum semper. Phasellus
-                      pharetra condimentum metus, at sollicitudin nisl egestas
-                      id. Ut sagittis luctus lacus, et dictum leo venenatis in.
-                      Phasellus mollis mattis tortor eget dignissim.
-                    </p>
-                  </ShowMore>
-                </div>
-              </div>
-            </Col>
-          </Row>
+          {blogContent}
         </Grid>
       </div>
     );

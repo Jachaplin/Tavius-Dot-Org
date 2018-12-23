@@ -62,7 +62,7 @@ class Merch extends Component {
   render() {
     const { itemListing } = this.state;
 
-    const slideShowItems = itemListing.map(item => (
+    const slideShowItems = itemListing.slice(0, 9).map(item => (
       <div key={item.created} className="img-wrapper">
         <a href={item.link} target="blank">
           <img className="merch-img" src={item.picture} alt="shirt" />
@@ -104,19 +104,7 @@ class Merch extends Component {
               </ScrollableAnchor>
             </Col>
             <Col md={6} mdPull={6}>
-              <img
-                src="/images/forbidden01.png"
-                style={{
-                  display: 'block',
-                  'margin-left': 'auto',
-                  'margin-right': 'auto',
-                  'margin-top': '-15px',
-                  'margin-bottom': '10px',
-                  width: '100px',
-                  height: 'auto'
-                }}
-                alt=""
-              />
+              <img id="apple-img" src="/images/forbidden01.png" alt="" />
               {thumbnailGal}
             </Col>
           </Row>
