@@ -25,7 +25,7 @@ class Music extends Component {
               />
             </Col>
           </Row>
-          <ScrollAnimation animateIn="fadeIn">
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
             <Row className="show-grid">
               <ScrollableAnchor id={'music'}>
                 <figure
@@ -63,7 +63,7 @@ class Music extends Component {
                   some more uptempo blazing!
                 </p>
 
-                <ScrollAnimation animateIn="fadeIn">
+                <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
                   <ScrollAnimation
                     delay={2000}
                     animateIn="tada"

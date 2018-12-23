@@ -7,7 +7,7 @@ import './style/Navboxes.css';
 class NavBoxes extends Component {
   render() {
     return (
-      <ScrollAnimation animateIn="fadeIn">
+      <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
         <Grid>
           <Row className="show-grid">
             <Col className="box grow" id="music-box" md={4}>

@@ -6,6 +6,7 @@ const path = require('path');
 const user = require('./routes/api/user');
 const subscriber = require('./routes/api/subscribe');
 const admin = require('./routes/api/admin');
+const store = require('./routes/api/store');
 
 const app = express();
 
@@ -29,6 +30,7 @@ mongoose
 app.use('/api/user', user);
 app.use('/api/subscribe', subscriber);
 app.use('/api/admin', admin);
+app.use('/api/store', store);
 
 const port = process.env.PORT || 5000;
 

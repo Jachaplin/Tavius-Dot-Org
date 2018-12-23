@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
-import { Carousel } from 'antd';
+import { Carousel, Divider } from 'antd';
 // import ScrollAnimation from 'react-animate-on-scroll';
 import './style/Merch.css';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -106,6 +106,11 @@ class Merch extends Component {
             <Col md={6} mdPull={6}>
               <img id="apple-img" src="/images/forbidden01.png" alt="" />
               {thumbnailGal}
+            </Col>
+          </Row>
+          <Row className="show-grid">
+            <Col md={12}>
+              <Divider>See More</Divider>
             </Col>
           </Row>
         </Grid>

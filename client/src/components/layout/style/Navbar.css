@@ -38,10 +38,10 @@
   margin: 0 10px 0 10px;
 }
 
-.container {
+/*.container {
   margin-left: 10px;
   width: 98.5%;
-}
+}*/
 
 .button:hover {
   background-color: grey;

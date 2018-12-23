@@ -3,9 +3,9 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
 import './style/Blog.css';
 import ScrollableAnchor from 'react-scrollable-anchor';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { configureAnchors } from 'react-scrollable-anchor';
 import tumblr from 'tumblr.js';
-// import htmlToJson from 'html-to-json';
 import ReactHtmlParser from 'react-html-parser';
 
 import tumblrApi from '../../config/keys_dev.js';
@@ -85,12 +85,12 @@ class Blog extends Component {
       <div id="blog-component" key={i}>
         <Row className="show-grid">
           <Col md={12}>
-            <Divider>{post.date}</Divider>
+            <Divider style={{ marginBottom: '80px' }}>{post.date}</Divider>
           </Col>
         </Row>
         <Row className="show-grid">
-          <Col id="blog-img" md={6}>
-            <ScrollableAnchor id={'blog'}>
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+            <Col id="blog-img" md={6}>
               {post.blogpic === '' ? (
                 <img
                   id="blog-img"
@@ -100,27 +100,63 @@ class Blog extends Component {
               ) : (
                 <img id="blog-img" src={post.blogpic} alt="blog" />
               )}
-            </ScrollableAnchor>
-          </Col>
-          <Col md={6}>
-            <div>{post.link}</div>
-            <div>{post.title} ...</div>
-          </Col>
+            </Col>
+            <Col md={6}>
+              {post.blogpic !== '' ? (
+                <div id="post-title" style={{ marginTop: '50px' }}>
+                  "{post.title} ..."
+                </div>
+              ) : (
+                <div id="post-title">"{post.title} ..."</div>
+              )}
+              {post.link.toString().charAt(12) !== 'i' ? (
+                <div>
+                  <a href={post.link} target="blank">
+                    <img
+                      id="blog-icon"
+                      src="/images/Tumblr_Logos_2018.03.06_iOS_Icon_Blue.png"
+                      alt="tumblr"
+                      style={{
+                        width: '65px',
+                        height: 'auto'
+                      }}
+                    />
+                  </a>
+                </div>
+              ) : (
+                <div>
+                  <a href={post.link} target="blank">
+                    <img
+                      id="blog-icon"
+                      src="/images/IG_Glyph_Fill.png"
+                      alt="instagram"
+                      style={{
+                        width: '100px',
+                        height: 'auto'
+                      }}
+                    />
+                  </a>
+                </div>
+              )}
+            </Col>
+          </ScrollAnimation>
         </Row>
         <Row className="show-grid">
-          <Col md={12}>
-            <div id="blog-content">
-              <div className="blog-text">
-                <div>
-                  {ReactHtmlParser(
-                    post.blogtext.substring(0, 4) === '<p><'
-                      ? post.blogtext.slice(3, -4)
-                      : post.blogtext
-                  )}
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+            <Col md={12}>
+              <div id="blog-content">
+                <div className="blog-text">
+                  <div>
+                    {ReactHtmlParser(
+                      post.blogtext.substring(0, 4) === '<p><'
+                        ? post.blogtext.slice(3, -4)
+                        : post.blogtext
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Col>
+            </Col>
+          </ScrollAnimation>
         </Row>
       </div>
     ));
@@ -137,6 +173,9 @@ class Blog extends Component {
               />
             </Col>
           </Row>
+          <ScrollableAnchor id={'blog'}>
+            <div />
+          </ScrollableAnchor>
           {blogContent}
         </Grid>
       </div>
