@@ -3,7 +3,7 @@ import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { Icon, Modal, Button, Input } from 'antd';
+import { Icon, Button } from 'antd';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import './style/Navbar.css';
@@ -19,30 +19,7 @@ const IconFont = Icon.createFromIconfontCN({
 });
 
 class FixedNavbar extends Component {
-  state = {
-    loading: false,
-    visible: false
-  };
-
-  showModal = () => {
-    this.setState({
-      visible: true
-    });
-  };
-
-  handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, visible: false });
-    }, 3000);
-  };
-
-  handleCancel = () => {
-    this.setState({ visible: false });
-  };
-
   render() {
-    const { visible, loading } = this.state;
     return (
       <div>
         <Navbar inverse collapseOnSelect fixedTop>
@@ -165,36 +142,13 @@ class FixedNavbar extends Component {
                       animateIn="bounceInRight"
                       animateOnce={true}
                     >
-                      <Button id="subscribe-button" onClick={this.showModal}>
+                      <Button id="subscribe-button" onClick={this.onClick}>
                         Subscribe
                       </Button>
                     </ScrollAnimation>
                   </Col>
                 </Row>
               </Grid>
-              <Modal
-                visible={visible}
-                title="Title"
-                onOk={this.handleOk}
-                onCancel={this.handleCancel}
-                footer={[
-                  <Button key="back" onClick={this.handleCancel}>
-                    Return
-                  </Button>,
-                  <Button
-                    key="submit"
-                    type="primary"
-                    loading={loading}
-                    onClick={this.handleOk}
-                  >
-                    Submit
-                  </Button>
-                ]}
-              >
-                <Input placeholder="first name" />
-                <Input placeholder="last name" />
-                <Input placeholder="email" />
-              </Modal>
             </div>
           </Jumbotron>
         </ScrollableAnchor>

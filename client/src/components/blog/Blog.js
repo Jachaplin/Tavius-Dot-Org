@@ -7,6 +7,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { configureAnchors } from 'react-scrollable-anchor';
 import tumblr from 'tumblr.js';
 import ReactHtmlParser from 'react-html-parser';
+import moment from 'moment';
 
 import tumblrApi from '../../config/keys_dev.js';
 
@@ -66,10 +67,13 @@ class Blog extends Component {
           blogLink.push(res.link_url);
         }
 
+        const timeStamp = moment(new Date(res.date)).format('LLLL');
+        // console.log(timeStamp);
+
         tumblrPosts.push({
           blogtext: blogHTML,
           blogpic: blogPics[0],
-          date: res.date,
+          date: timeStamp,
           title: summary,
           link: blogLink
         });
@@ -90,7 +94,7 @@ class Blog extends Component {
         </Row>
         <Row className="show-grid">
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-            <Col id="blog-img" md={6}>
+            <Col md={6}>
               {post.blogpic === '' ? (
                 <img
                   id="blog-img"
@@ -101,7 +105,7 @@ class Blog extends Component {
                 <img id="blog-img" src={post.blogpic} alt="blog" />
               )}
             </Col>
-            <Col md={6}>
+            <Col id="blog-info" md={6}>
               {post.blogpic !== '' ? (
                 <div id="post-title" style={{ marginTop: '50px' }}>
                   "{post.title} ..."
@@ -165,7 +169,7 @@ class Blog extends Component {
       <div id="blog-container">
         <Grid>
           <Row className="show-grid">
-            <Col className="header-img-col" md={12}>
+            <Col id="img-blog-header" className="header-img-col" md={12}>
               <img
                 className="img-header"
                 src="/images/blog-header.png"

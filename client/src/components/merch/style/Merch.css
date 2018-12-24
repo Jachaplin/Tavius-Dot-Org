@@ -53,7 +53,7 @@
   transition-timing-function: ease;
 }
 
-#slider-container {
+.slider-container {
   /*min-width: 363px;*/
   background-color: #f2f2f2;
 }

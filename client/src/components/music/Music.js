@@ -36,8 +36,8 @@ class Music extends Component {
               <Col md={6} mdPush={6}>
                 <Parallax
                   bgImage="/images/Finding-The-Superhero-Within.jpg"
-                  bgHeight="400px"
-                  bgWidth="auto"
+                  bgHeight="auto"
+                  bgWidth="100%"
                   strength={-375}
                 >
                   <div style={{ height: 700 }} />

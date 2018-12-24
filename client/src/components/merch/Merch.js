@@ -98,7 +98,7 @@ class Merch extends Component {
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
               <ScrollableAnchor id={'merch'}>
-                <div id="slider-container">
+                <div className="slider-container">
                   <Carousel autoplay>{slideShowItems}</Carousel>
                 </div>
               </ScrollableAnchor>
