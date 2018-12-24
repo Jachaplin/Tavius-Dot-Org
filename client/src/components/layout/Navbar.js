@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, Jumbotron } from 'react-bootstrap';
-import { CSSTransitionGroup } from 'react-transition-group';
-import ScrollAnimation from 'react-animate-on-scroll';
-import { Grid, Row, Col } from 'react-bootstrap';
-import { Icon, Button } from 'antd';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import { configureAnchors } from 'react-scrollable-anchor';
-import './style/Navbar.css';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
-configureAnchors({
-  offset: -80,
-  scrollDuration: 500
-});
+import { Icon } from 'antd';
+import './style/Navbar.css';
 
 // custom tumblr Icon
 const IconFont = Icon.createFromIconfontCN({
@@ -99,59 +90,6 @@ class FixedNavbar extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <ScrollableAnchor id={'home'}>
-          <Jumbotron>
-            <div id="banner-container">
-              <div id="padding" />
-              <CSSTransitionGroup
-                transitionName="example"
-                transitionAppear={true}
-                transitionAppearTimeout={1000}
-                transitionEnter={false}
-                transitionLeave={false}
-              >
-                <img
-                  id="banner"
-                  src="images/tavius-logo-smaller-blue.png"
-                  alt="tavius.org banner"
-                />
-              </CSSTransitionGroup>
-              <Grid>
-                <Row>
-                  <Col md={9}>
-                    <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
-                      <div id="banner-quote">"Creative Expression</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation
-                      animateIn="slideInRight"
-                      animateOnce={true}
-                    >
-                      <div id="banner-quote">Is Self Exploration."</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation
-                      animateIn="slideInUp"
-                      delay-3s
-                      animateOnce={true}
-                    >
-                      <div id="banner-quote">- Tavius</div>
-                    </ScrollAnimation>
-                  </Col>
-                  <Col md={3}>
-                    <ScrollAnimation
-                      className="delay-1s"
-                      animateIn="bounceInRight"
-                      animateOnce={true}
-                    >
-                      <Button id="subscribe-button" onClick={this.onClick}>
-                        Subscribe
-                      </Button>
-                    </ScrollAnimation>
-                  </Col>
-                </Row>
-              </Grid>
-            </div>
-          </Jumbotron>
-        </ScrollableAnchor>
       </div>
     );
   }

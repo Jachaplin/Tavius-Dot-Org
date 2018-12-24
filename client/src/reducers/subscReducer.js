@@ -1,5 +1,3 @@
-import isEmpty from '../validation/is-empty';
-
 import { POST_SUBSCRIBER } from '../actions/types';
 
 const initialState = {

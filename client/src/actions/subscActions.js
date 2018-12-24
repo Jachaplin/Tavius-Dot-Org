@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_SUBSCRIBER, GET_ERRORS } from './types';
+import { POST_SUBSCRIBER, GET_SUBSCRIBER, GET_ERRORS } from './types';
 
 export const newSubscriber = (userData, history) => dispatch => {
 	axios

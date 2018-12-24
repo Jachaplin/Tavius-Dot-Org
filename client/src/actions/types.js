@@ -1,3 +1,4 @@
 export const POST_SUBSCRIBER = 'POST_SUBSCRIBER';
+export const GET_SUBSCRIBER = 'GET_SUBSCRIBER';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';

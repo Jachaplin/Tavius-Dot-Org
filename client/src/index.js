@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'animate.css/animate.min.css';
-import CenterContent from './components/layout/CenterContent';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import Landing from './components/layout/Landing';
 import FixedNavbar from './components/layout/Navbar';
-import NavBoxes from './components/layout/Navboxes';
 import FooterLinks from './components/layout/Footer';
 
 class App extends Component {
@@ -14,12 +18,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <FixedNavbar />
-        <NavBoxes />
-        <CenterContent />
-        <FooterLinks />
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div>
+            <FixedNavbar />
+            <Route exact path="/" component={Landing} />
+            <FooterLinks />
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
