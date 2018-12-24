@@ -29,9 +29,7 @@ class FixedNavbar extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem className="button" eventKey={1}>
-                <Link to="/">Home</Link>
-              </NavItem>
+              <NavItem className="button" eventKey={1} />
               <NavItem className="button" eventKey={2} href="/#music">
                 Music
               </NavItem>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import { Button } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -38,22 +39,30 @@ class NavBoxes extends Component {
               <Grid>
                 <Row>
                   <Col md={9}>
-                    <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
-                      <div id="banner-quote">"Creative Expression</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation
-                      animateIn="slideInRight"
-                      animateOnce={true}
+                    <CSSTransitionGroup
+                      transitionName="example"
+                      transitionAppear={true}
+                      transitionAppearTimeout={5000}
+                      transitionEnter={false}
+                      transitionLeave={false}
                     >
-                      <div id="banner-quote">Is Self Exploration."</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation
-                      animateIn="slideInUp"
-                      delay-3s
-                      animateOnce={true}
-                    >
-                      <div id="banner-quote">- Tavius</div>
-                    </ScrollAnimation>
+                      <ScrollAnimation
+                        animateIn="slideInLeft"
+                        animateOnce={true}
+                      >
+                        <div id="banner-quote">"Creative Expression</div>
+                      </ScrollAnimation>
+                      <ScrollAnimation
+                        animateIn="slideInRight"
+                        animateOnce={true}
+                        className="delay-1s"
+                      >
+                        <div id="banner-quote">Is Self Exploration."</div>
+                      </ScrollAnimation>
+                      <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
+                        <div id="banner-quote">- Tavius</div>
+                      </ScrollAnimation>
+                    </CSSTransitionGroup>
                   </Col>
                   <Col md={3}>
                     <ScrollAnimation
@@ -61,9 +70,11 @@ class NavBoxes extends Component {
                       animateIn="bounceInRight"
                       animateOnce={true}
                     >
-                      <Button id="subscribe-button" onClick={this.onClick}>
-                        Subscribe
-                      </Button>
+                      <Link to="/subscribe">
+                        <Button id="subscribe-button" onClick={this.onClick}>
+                          Subscribe
+                        </Button>
+                      </Link>
                     </ScrollAnimation>
                   </Col>
                 </Row>

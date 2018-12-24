@@ -7,8 +7,9 @@ import 'animate.css/animate.min.css';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import Landing from './components/layout/Landing';
 import FixedNavbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+import Subscribe from './components/subscribe/Subscribe';
 import FooterLinks from './components/layout/Footer';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           <div>
             <FixedNavbar />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/subscribe" component={Subscribe} />
             <FooterLinks />
           </div>
         </Router>
