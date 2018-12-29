@@ -1,85 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { getMerch } from '../../actions/merchActions';
 import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Carousel, Divider } from 'antd';
-// import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
 import './style/Merch.css';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import { configureAnchors } from 'react-scrollable-anchor';
-import feed from 'rss-to-json';
-import htmlToJson from 'html-to-json';
 
 class Merch extends Component {
-  constructor() {
-    super();
-    this.state = {
-      itemListing: []
-    };
-    configureAnchors({
-      offset: -90,
-      scrollDuration: 500
-    });
-  }
-
-  componentDidMount() {
-    const zazzleURL = 'http://feed.zazzle.com/oneofftees/rss';
-    const corsURL = 'https://cors-anywhere.herokuapp.com/';
-    const items = [];
-
-    // convert XML response to json with this call
-    feed.load(corsURL + zazzleURL, (err, rss) => {
-      rss.items.map(res => {
-        // set price to the description which is now a body of HTML
-        let price = res.description;
-        // Parse through the HTML for the class containing the price, then covert the class to json
-        let itemPrice = htmlToJson.parse(price, [
-          '.ZazzleCollectionItemCellProduct-price',
-          function($item) {
-            return $item.text();
-          }
-        ]);
-
-        let itemThumbnail = res.media.thumbnail[0].url[0];
-        // change the thumbnail pic to a larger pic not included in the response
-        let itemPic = itemThumbnail.replace('_152', '_500');
-        // place comma's inside the titles where they should be
-        let titleCommaFix = res.title;
-        let itemTitle = titleCommaFix.replace('&#39;', "'");
-
-        items.push({
-          title: itemTitle,
-          link: res.link,
-          picture: itemPic,
-          thumbnail: itemThumbnail,
-          price: itemPrice._rejectionHandler0[0],
-          created: res.created
-        });
-        return rss.items;
-      });
-      this.setState({ itemListing: items });
-    });
+  componentWillMount() {
+    this.props.getMerch();
   }
 
   render() {
-    const { itemListing } = this.state;
+    const { itemListing } = this.props.itemListing;
 
     const slideShowItems = itemListing.slice(0, 9).map(item => (
       <div key={item.created} className="img-wrapper">
-        <a href={item.link} target="blank">
-          <img className="merch-img" src={item.picture} alt="shirt" />
-        </a>
-        <h4>{item.title}</h4>
-        <h4>{item.price}</h4>
+        <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+          <a href={item.link} target="blank">
+            <img className="merch-img" src={item.picture} alt="shirt" />
+          </a>
+          <h4>{item.title}</h4>
+          <h4>{item.price}</h4>
+        </ScrollAnimation>
       </div>
     ));
 
     // only show 9 thumbnails
     const thumbnailGal = itemListing.slice(0, 9).map((item, i) => (
       <div key={i}>
-        <Col xs={6} md={4}>
-          <a href={item.link} target="blank">
-            <Thumbnail src={item.thumbnail} alt="242x200" />
-          </a>
-        </Col>
+        <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+          <Col xs={6} md={4}>
+            <a href={item.link} target="blank">
+              <Thumbnail src={item.thumbnail} alt="242x200" />
+            </a>
+          </Col>
+        </ScrollAnimation>
       </div>
     ));
 
@@ -97,20 +55,22 @@ class Merch extends Component {
           </Row>
           <Row className="show-grid">
             <Col md={6} mdPush={6}>
-              <ScrollableAnchor id={'merch'}>
-                <div className="slider-container">
-                  <Carousel autoplay>{slideShowItems}</Carousel>
-                </div>
-              </ScrollableAnchor>
+              <div className="slider-container">
+                <Carousel autoplay>{slideShowItems}</Carousel>
+              </div>
             </Col>
             <Col md={6} mdPull={6}>
-              <img id="apple-img" src="/images/forbidden01.png" alt="" />
+              <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+                <img id="apple-img" src="/images/forbidden01.png" alt="" />
+              </ScrollAnimation>
               {thumbnailGal}
             </Col>
           </Row>
           <Row className="show-grid">
             <Col md={12}>
-              <Divider>See More</Divider>
+              <Link to="/store">
+                <Divider>See More</Divider>
+              </Link>
             </Col>
           </Row>
         </Grid>
@@ -119,4 +79,16 @@ class Merch extends Component {
   }
 }
 
-export default Merch;
+Merch.propTypes = {
+  getMerch: PropTypes.func.isRequired,
+  itemListing: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  itemListing: state.itemListing
+});
+
+export default connect(
+  mapStateToProps,
+  { getMerch }
+)(Merch);

@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Parallax } from 'react-parallax';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import { configureAnchors } from 'react-scrollable-anchor';
-import './style/Music.css';
 
-configureAnchors({
-  offset: -80,
-  scrollDuration: 500
-});
+import './style/Music.css';
 
 class Music extends Component {
   render() {
@@ -27,12 +21,11 @@ class Music extends Component {
           </Row>
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
             <Row className="show-grid">
-              <ScrollableAnchor id={'music'}>
-                <figure
-                  className="mb-0 figure-bg pos-abs bg-gray-100 z-3 d-none d-lg-block"
-                  data-userway-font-size="16"
-                />
-              </ScrollableAnchor>
+              <figure
+                className="mb-0 figure-bg pos-abs bg-gray-100 z-3 d-none d-lg-block"
+                data-userway-font-size="16"
+              />
+
               <Col md={6} mdPush={6}>
                 <Parallax
                   bgImage="/images/Finding-The-Superhero-Within.jpg"

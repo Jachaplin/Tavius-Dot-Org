@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-import { POST_SUBSCRIBER, GET_SUBSCRIBER, GET_ERRORS } from './types';
+import { GET_ERRORS, CLEAR_ERRORS } from './types';
 
 export const newSubscriber = (userData, history) => dispatch => {
+	dispatch(clearErrors());
 	axios
 		.post('/api/subscribe', userData)
 		.then(res => history.push('/'))
@@ -12,4 +13,11 @@ export const newSubscriber = (userData, history) => dispatch => {
 				payload: err.response.data
 			})
 		);
+};
+
+// Clear errors
+export const clearErrors = () => {
+	return {
+		type: CLEAR_ERRORS
+	};
 };

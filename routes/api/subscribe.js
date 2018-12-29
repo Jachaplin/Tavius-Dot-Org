@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 
 // Load keys
@@ -15,6 +16,7 @@ const Subscriber = require('../../models/Subscriber');
 // Access: Public
 router.post('/', (req, res) => {
 	const { isValid, errors } = validationSubscribeInput(req.body);
+	console.log('hello');
 
 	if (!isValid) {
 		return res.status(404).json(errors);

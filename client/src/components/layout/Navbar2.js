@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
 
 import { Icon } from 'antd';
@@ -29,19 +30,20 @@ class FixedNavbar extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem className="button" eventKey={1} />
-              <NavItem className="button" eventKey={2} href="/#music">
-                Music
-              </NavItem>
-              <NavItem className="button" eventKey={3} href="/#blog">
-                Blog
-              </NavItem>
-              <NavItem className="button" eventKey={4} href="/#merch">
-                Merch
-              </NavItem>
-              <NavItem className="button" eventKey={5} href="/#">
-                Contact
-              </NavItem>
+              <LinkContainer to="/music">
+                <NavItem eventKey={1}>Music</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/blog">
+                <NavItem eventKey={2}>Blog</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/store">
+                <NavItem eventKey={3}>Store</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/contact">
+                <NavItem eventKey={4} href="/#">
+                  Contact
+                </NavItem>
+              </LinkContainer>
             </Nav>
             <Nav pullRight>
               <NavItem

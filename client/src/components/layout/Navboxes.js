@@ -3,85 +3,72 @@ import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import { Button } from 'antd';
 import ScrollAnimation from 'react-animate-on-scroll';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import { CSSTransitionGroup } from 'react-transition-group';
 import './style/Navboxes.css';
 import './style/Navbar.css';
-
-import { configureAnchors } from 'react-scrollable-anchor';
-
-configureAnchors({
-  offset: -80,
-  scrollDuration: 500
-});
 
 class NavBoxes extends Component {
   render() {
     return (
       <div>
-        <ScrollableAnchor id={'home'}>
-          <Jumbotron>
-            <div id="banner-container">
-              <div id="padding" />
-              <CSSTransitionGroup
-                transitionName="example"
-                transitionAppear={true}
-                transitionAppearTimeout={1000}
-                transitionEnter={false}
-                transitionLeave={false}
-              >
-                <img
-                  id="banner"
-                  src="images/tavius-logo-smaller-blue.png"
-                  alt="tavius.org banner"
-                />
-              </CSSTransitionGroup>
-              <Grid>
-                <Row>
-                  <Col md={9}>
-                    <CSSTransitionGroup
-                      transitionName="example"
-                      transitionAppear={true}
-                      transitionAppearTimeout={5000}
-                      transitionEnter={false}
-                      transitionLeave={false}
-                    >
-                      <ScrollAnimation
-                        animateIn="slideInLeft"
-                        animateOnce={true}
-                      >
-                        <div id="banner-quote">"Creative Expression</div>
-                      </ScrollAnimation>
-                      <ScrollAnimation
-                        animateIn="slideInRight"
-                        animateOnce={true}
-                        className="delay-1s"
-                      >
-                        <div id="banner-quote">Is Self Exploration."</div>
-                      </ScrollAnimation>
-                      <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
-                        <div id="banner-quote">- Tavius</div>
-                      </ScrollAnimation>
-                    </CSSTransitionGroup>
-                  </Col>
-                  <Col md={3}>
+        <Jumbotron>
+          <div id="banner-container">
+            <div id="padding" />
+            <CSSTransitionGroup
+              transitionName="example"
+              transitionAppear={true}
+              transitionAppearTimeout={1000}
+              transitionEnter={false}
+              transitionLeave={false}
+            >
+              <img
+                id="banner"
+                src="images/tavius-logo-smaller-blue.png"
+                alt="tavius.org banner"
+              />
+            </CSSTransitionGroup>
+            <Grid>
+              <Row>
+                <Col md={9}>
+                  <CSSTransitionGroup
+                    transitionName="example"
+                    transitionAppear={true}
+                    transitionAppearTimeout={5000}
+                    transitionEnter={false}
+                    transitionLeave={false}
+                  >
+                    <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
+                      <div id="banner-quote">"Creative Expression</div>
+                    </ScrollAnimation>
                     <ScrollAnimation
-                      className="delay-1s"
-                      animateIn="bounceInRight"
+                      animateIn="slideInRight"
                       animateOnce={true}
                     >
-                      <Link to="/subscribe">
-                        <Button id="subscribe-button" onClick={this.onClick}>
-                          Subscribe
-                        </Button>
-                      </Link>
+                      <div id="banner-quote">Is Self Exploration."</div>
                     </ScrollAnimation>
-                  </Col>
-                </Row>
-              </Grid>
-            </div>
-          </Jumbotron>
-        </ScrollableAnchor>
+                    <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
+                      <div id="banner-quote">- Tavius</div>
+                    </ScrollAnimation>
+                  </CSSTransitionGroup>
+                </Col>
+                <Col md={3}>
+                  <ScrollAnimation
+                    className="delay-1s"
+                    animateIn="bounceInRight"
+                    animateOnce={true}
+                  >
+                    <Link to="/subscribe">
+                      <Button id="subscribe-button" onClick={this.onClick}>
+                        Subscribe
+                      </Button>
+                    </Link>
+                  </ScrollAnimation>
+                </Col>
+              </Row>
+            </Grid>
+          </div>
+        </Jumbotron>
+
         <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
           <Grid>
             <Row className="show-grid">
@@ -98,9 +85,9 @@ class NavBoxes extends Component {
                   </Row>
                   <Row className="show-grid">
                     <Col xs={6} xsOffset={6}>
-                      <a href="#music">
+                      <Link to="/music">
                         <Button id="box-button">Listen Here</Button>
-                      </a>
+                      </Link>
                     </Col>
                   </Row>
                 </div>
@@ -118,7 +105,9 @@ class NavBoxes extends Component {
                   </Row>
                   <Row className="show-grid">
                     <Col xs={6} xsOffset={6}>
-                      <Button id="box-button">Shop Here</Button>
+                      <Link to="/store">
+                        <Button id="box-button">Shop Here</Button>
+                      </Link>
                     </Col>
                   </Row>
                 </div>
@@ -136,7 +125,9 @@ class NavBoxes extends Component {
                   </Row>
                   <Row className="show-grid">
                     <Col xs={6} xsOffset={6}>
-                      <Button id="box-button">See What's Next</Button>
+                      <Link to="events">
+                        <Button id="box-button">See What's Next</Button>
+                      </Link>
                     </Col>
                   </Row>
                 </div>

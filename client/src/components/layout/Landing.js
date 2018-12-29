@@ -10,6 +10,10 @@ import './style/Landing.css';
 const { Content, Sider } = Layout;
 
 class Landing extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div>

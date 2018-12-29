@@ -1,5 +1,5 @@
 {
-  "name": "tavius-org",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,6 @@
     "antd": "^3.9.2",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.9.1",
-    "html-to-json": "^0.6.0",
-    "moment": "^2.23.0",
     "prop-types": "^15.6.2",
     "react": "^16.0.0",
     "react-animate-on-scroll": "^2.1.5",
@@ -22,42 +20,25 @@
     "react-parallax": "^2.0.0",
     "react-pose": "^3.3.6",
     "react-redux": "^6.0.0",
+    "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.1",
-    "react-scrollable-anchor": "^0.6.1",
     "react-show-more": "^2.0.0",
+    "react-spinners": "^0.4.8",
     "react-transition-group": "^1.2.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "rss-to-json": "^1.0.4",
-    "tumblr.js": "^2.0.0"
+    "redux-thunk": "^2.3.0"
   },
+  "proxy": "http://localhost:5000/",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "description": "![tavius.org banner](https://github.com/Jachaplin/Tavius-Dot-Org/blob/master/style/images/banner.JPG)",
-  "main": "config-overrides.js",
-  "devDependencies": {
-    "less": "^3.8.1"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jachaplin/Tavius-Dot-Org.git"
-  },
-  "keywords": [
-    "Tavius",
-    "Aiton's",
-    "Website"
-  ],
-  "author": "Jake Chaplin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jachaplin/Tavius-Dot-Org/issues"
-  },
-  "homepage": "https://github.com/Jachaplin/Tavius-Dot-Org#readme",
   "browserslist": [
     ">0.2%",
     "not dead",

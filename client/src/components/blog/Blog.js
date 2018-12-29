@@ -1,90 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getPosts } from '../../actions/postsActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
 import './style/Blog.css';
-import ScrollableAnchor from 'react-scrollable-anchor';
-import ScrollAnimation from 'react-animate-on-scroll';
-import { configureAnchors } from 'react-scrollable-anchor';
-import tumblr from 'tumblr.js';
 import ReactHtmlParser from 'react-html-parser';
-import moment from 'moment';
-
-import tumblrApi from '../../config/keys_dev.js';
-
-configureAnchors({
-  offset: -80,
-  scrollDuration: 500
-});
+import ScrollAnimation from 'react-animate-on-scroll';
 
 class Blog extends Component {
-  constructor() {
-    super();
-    this.state = {
-      posts: []
-    };
-  }
-
-  componentDidMount() {
-    const tumblrPosts = [];
-
-    const client = tumblr.createClient({
-      consumer_key: tumblrApi.key,
-      consumer_secret: tumblrApi.secret,
-      token: tumblrApi.token,
-      token_secret: tumblrApi.tokensecret
-    });
-
-    client.blogPosts('taviusdotorg.tumblr.com', (err, data) => {
-      data.posts.map(res => {
-        const blogHTML = res.reblog.comment;
-        const summary =
-          res.slug.charAt(0).toUpperCase() +
-          res.slug.slice(1).replace(/-/gi, ' ');
-
-        const blogPics = [];
-        const blogBody = [];
-        const blogLink = [];
-
-        if (res.photos === undefined) {
-          res.photos = '';
-          blogPics.push('');
-        } else if (res.photos[0].original_size === undefined) {
-          res.photos[0].original_size = '';
-          blogPics.push('');
-        } else {
-          blogPics.push(res.photos[0].original_size.url);
-        }
-
-        if (res.body === undefined) {
-          blogBody.push(res.reblog.comment);
-        } else {
-          blogBody.push(res.body);
-        }
-
-        if (res.link_url === undefined) {
-          blogLink.push(res.post_url);
-        } else {
-          blogLink.push(res.link_url);
-        }
-
-        const timeStamp = moment(new Date(res.date)).format('LLLL');
-        // console.log(timeStamp);
-
-        tumblrPosts.push({
-          blogtext: blogHTML,
-          blogpic: blogPics[0],
-          date: timeStamp,
-          title: summary,
-          link: blogLink
-        });
-        return data.posts;
-      });
-      this.setState({ posts: tumblrPosts });
-    });
+  componentWillMount() {
+    this.props.getPosts();
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts } = this.props.posts;
     const blogContent = posts.map((post, i) => (
       <div id="blog-component" key={i}>
         <Row className="show-grid">
@@ -177,9 +107,9 @@ class Blog extends Component {
               />
             </Col>
           </Row>
-          <ScrollableAnchor id={'blog'}>
-            <div />
-          </ScrollableAnchor>
+
+          <div />
+
           {blogContent}
         </Grid>
       </div>
@@ -187,4 +117,16 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+Blog.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  posts: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  posts: state.posts
+});
+
+export default connect(
+  mapStateToProps,
+  { getPosts }
+)(Blog);
