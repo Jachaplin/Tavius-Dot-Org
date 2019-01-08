@@ -33,7 +33,7 @@ class Music extends Component {
                   bgWidth="100%"
                   strength={-375}
                 >
-                  <div style={{ height: 700 }} />
+                  <div style={{ height: 800 }} />
                 </Parallax>
               </Col>
               <Col className="grid-margin" md={6} mdPull={6}>

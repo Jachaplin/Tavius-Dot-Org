@@ -65,7 +65,11 @@
   height: 130px;
 }
 
-#box-button.ant-btn {
+a {
+  text-decoration: none !important;
+}
+
+#box-button.btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -76,11 +80,13 @@
   height: 50px;
   width: auto;
   border: 0px;
-  background-color: #ff8800;
+  text-decoration: none;
+  background-color: none;
 }
 
-#box-button.ant-btn:hover {
+#box-button.btn:hover {
   background-image: none;
+  background-color: #ff8800;
 }
 
 .container {
@@ -125,7 +131,7 @@
     height: 200px;
   }
 
-  #box-button.ant-btn {
+  #box-button.btn {
     margin-top: 0px;
     margin-left: -55px;
   }

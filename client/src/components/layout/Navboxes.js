@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
-import { Button } from 'antd';
+import { Grid, Row, Col, Jumbotron, Button } from 'react-bootstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { CSSTransitionGroup } from 'react-transition-group';
+import SubscribeModal from './Modal';
 import './style/Navboxes.css';
 import './style/Navbar.css';
 
@@ -30,26 +30,15 @@ class NavBoxes extends Component {
             <Grid>
               <Row>
                 <Col md={9}>
-                  <CSSTransitionGroup
-                    transitionName="example"
-                    transitionAppear={true}
-                    transitionAppearTimeout={5000}
-                    transitionEnter={false}
-                    transitionLeave={false}
-                  >
-                    <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
-                      <div id="banner-quote">"Creative Expression</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation
-                      animateIn="slideInRight"
-                      animateOnce={true}
-                    >
-                      <div id="banner-quote">Is Self Exploration."</div>
-                    </ScrollAnimation>
-                    <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
-                      <div id="banner-quote">- Tavius</div>
-                    </ScrollAnimation>
-                  </CSSTransitionGroup>
+                  <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
+                    <div id="banner-quote">"Creative Expression</div>
+                  </ScrollAnimation>
+                  <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
+                    <div id="banner-quote">Is Self Exploration."</div>
+                  </ScrollAnimation>
+                  <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
+                    <div id="banner-quote">- Tavius</div>
+                  </ScrollAnimation>
                 </Col>
                 <Col md={3}>
                   <ScrollAnimation
@@ -57,11 +46,7 @@ class NavBoxes extends Component {
                     animateIn="bounceInRight"
                     animateOnce={true}
                   >
-                    <Link to="/subscribe">
-                      <Button id="subscribe-button" onClick={this.onClick}>
-                        Subscribe
-                      </Button>
-                    </Link>
+                    <SubscribeModal />
                   </ScrollAnimation>
                 </Col>
               </Row>

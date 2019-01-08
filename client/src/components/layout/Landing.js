@@ -1,40 +1,80 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { getMerch } from '../../actions/merchActions';
+import { getPosts } from '../../actions/postsActions';
+import { getSubscribers } from '../../actions/subscActions';
+import Spinner from './Spinner';
+// import { Layout } from 'antd';
 import Navboxes from './Navboxes';
 import Merch from '../merch/Merch';
+import Books2 from '../books/Books2';
 import Music from '../music/Music';
 import Blog from '../blog/Blog';
-import SideContent from './Sider';
 import './style/Landing.css';
-
-const { Content, Sider } = Layout;
 
 class Landing extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    if (this.props.itemListing.itemListing.length === 0) {
+      this.props.getMerch();
+      this.props.getPosts();
+      this.props.getSubscribers();
+    }
   }
 
   render() {
-    return (
-      <div>
-        <Navboxes />
-        <Layout style={{ background: 'white' }}>
-          <Content style={{ padding: '0 50px' }}>
-            <Layout style={{ padding: '24px 0', background: '#fff' }}>
-              <Sider width={280} style={{ background: '#fff' }}>
-                <SideContent />
-              </Sider>
-              <Content style={{ padding: '0 24px', minHeight: 280 }}>
-                <Merch />
-                <Music />
-                <Blog />
-              </Content>
-            </Layout>
-          </Content>
-        </Layout>
-      </div>
-    );
+    const { itemListing, posts } = this.props;
+    let centerContent;
+    if (posts.posts.length === 0 || itemListing.itemListing === 0) {
+      centerContent = (
+        <div style={{ backgroundColor: '#222', padding: '30px' }}>
+          <Spinner />
+        </div>
+      );
+    } else {
+      centerContent = (
+        <div>
+          <Navboxes />
+          <div id="landing-layout">
+            <div style={{ padding: '0 50px' }}>
+              <div style={{ padding: '24px 0', background: '#fff' }}>
+                <div
+                  style={{
+                    padding: '0 24px',
+                    minHeight: 280
+                  }}
+                >
+                  <Merch />
+                  <Books2 />
+                  <Music />
+                  <Blog />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return <div>{centerContent}</div>;
   }
 }
 
-export default Landing;
+Landing.propTypes = {
+  posts: PropTypes.object.isRequired,
+  getMerch: PropTypes.func.isRequired,
+  getPosts: PropTypes.func.isRequired,
+  getSubscribers: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  itemListing: state.itemListing,
+  posts: state.posts
+});
+
+export default connect(
+  mapStateToProps,
+  { getMerch, getPosts, getSubscribers }
+)(withRouter(Landing));

@@ -77,9 +77,9 @@
   font-weight: 750;
 }
 
-#subscribe-button.ant-btn {
+#subscribe-button.btn {
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Helvetica Neue';
   display: inline-block;
   height: 80px;
@@ -91,12 +91,13 @@
   color: #ffffff;
   border-radius: 0px;
   border: 0px;
-  background-color: #ff8800;
+  background-color: #00cdff;
   /*margin-left: 30%;*/
 }
 
-#subscribe-button.ant-btn:hover {
+#subscribe-button.btn:hover {
   background-image: none;
+  background-color: #ff8800;
 }
 
 .ant-input {
@@ -120,7 +121,7 @@
     margin: 0;
   }
 
-  #subscribe-button.ant-btn {
+  #subscribe-button.btn {
     margin-left: 70%;
     margin-bottom: 40px;
   }
@@ -142,7 +143,7 @@
   .anticon svg {
     display: none;
   }
-  #subscribe-button.ant-btn {
+  #subscribe-button.btn {
     margin-left: 60%;
   }
 }
@@ -155,7 +156,7 @@
   #padding {
     height: 110px;
   }
-  #subscribe-button.ant-btn {
+  #subscribe-button.btn {
     margin-left: 45%;
   }
 }

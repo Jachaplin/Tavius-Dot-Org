@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Blog from '../../blog/Blog';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './style/BlogPage.css';
 
 class BlogPage extends Component {
 	componentDidMount() {
@@ -9,7 +10,7 @@ class BlogPage extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div id="blog-page-container">
 				<Blog />
 			</div>
 		);

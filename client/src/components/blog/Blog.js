@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getMerch } from '../../actions/merchActions';
 import { getPosts } from '../../actions/postsActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
@@ -9,10 +10,12 @@ import ReactHtmlParser from 'react-html-parser';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class Blog extends Component {
-  componentWillMount() {
-    this.props.getPosts();
+  componentDidMount() {
+    if (this.props.posts.posts.length === 0) {
+      this.props.getMerch();
+      this.props.getPosts();
+    }
   }
-
   render() {
     const { posts } = this.props.posts;
     const blogContent = posts.map((post, i) => (
@@ -118,8 +121,9 @@ class Blog extends Component {
 }
 
 Blog.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  posts: PropTypes.object.isRequired
+  posts: PropTypes.object.isRequired,
+  getMerch: PropTypes.func.isRequired,
+  getPosts: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -128,5 +132,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getPosts }
+  { getMerch, getPosts }
 )(Blog);

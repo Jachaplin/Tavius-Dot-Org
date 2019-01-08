@@ -28,15 +28,15 @@
     "html-to-json": "^0.6.0",
     "jsonwebtoken": "^8.4.0",
     "moment": "^2.23.0",
-    "mongoose": "^5.3.16",
+    "mongoose": "^5.4.2",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "request": "^2.88.0",
     "rss-to-json": "^1.0.4",
     "tumblr.js": "^2.0.0",
-    "validator": "^10.9.0"
+    "validator": "^10.10.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.8"
+    "nodemon": "^1.18.9"
   }
 }

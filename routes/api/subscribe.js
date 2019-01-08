@@ -11,12 +11,11 @@ const validationSubscribeInput = require('../../validation/subscribe');
 // import Subscriber Model
 const Subscriber = require('../../models/Subscriber');
 
-// Route: GET api/subscribe/
+// Route: POST api/subscribe/
 // Desc: Subscribe to website
 // Access: Public
 router.post('/', (req, res) => {
 	const { isValid, errors } = validationSubscribeInput(req.body);
-	console.log('hello');
 
 	if (!isValid) {
 		return res.status(404).json(errors);
@@ -37,6 +36,17 @@ router.post('/', (req, res) => {
 				.catch(err => console.log(err));
 		}
 	});
+});
+
+// Route: GET api/subscribe/
+// Desc: Subscribe to website
+// Access: Public
+router.get('/', (req, res) => {
+	Subscriber.find()
+		.then(subscriber => res.json(subscriber))
+		.catch(err =>
+			res.status(404).json({ nosubscribers: 'No subscribers yet' })
+		);
 });
 
 module.exports = router;

@@ -1,11 +1,11 @@
-#amazon-icon {
+/*#amazon-icon {
   width: 250px;
   height: auto;
   display: block;
   margin: 40px auto 20px auto;
-}
+}*/
 
-@media screen and (max-width: 991px) {
+/*@media screen and (max-width: 991px) {
   .ant-layout-sider.ant-layout-sider-dark {
     flex: 0 0 200px !important;
     max-width: 200px !important;
@@ -17,4 +17,4 @@
   .ant-layout-sider.ant-layout-sider-dark {
     display: none;
   }
-}
+}*/

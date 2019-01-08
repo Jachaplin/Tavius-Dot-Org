@@ -7,7 +7,7 @@ import 'animate.css/animate.min.css';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import FixedNavbar2 from './components/layout/Navbar2';
+import FixedNavbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import FooterLinks from './components/layout/Footer';
 import MusicPage from './components/layout/pages/MusicPage';
@@ -25,14 +25,25 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <FixedNavbar2 />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/subscribe" component={SubscribePage} />
-            <Route exact path="/music" component={MusicPage} />
-            <Route exact path="/blog" component={BlogPage} />
-            <Route exact path="/store" component={StorePage} />
-            <Route exact path="/contact" component={ContactPage} />
+          <div className="site">
+            <FixedNavbar />
+            <div className="site-content">
+              <Route exact path="/" component={Landing} />
+              <div
+                style={{
+                  width: '80%',
+                  display: 'block',
+                  marginRight: 'auto',
+                  marginLeft: 'auto'
+                }}
+              >
+                <Route exact path="/subscribe" component={SubscribePage} />
+                <Route exact path="/music" component={MusicPage} />
+                <Route exact path="/blog" component={BlogPage} />
+                <Route exact path="/store" component={StorePage} />
+                <Route exact path="/contact" component={ContactPage} />
+              </div>
+            </div>
             <FooterLinks />
           </div>
         </Router>

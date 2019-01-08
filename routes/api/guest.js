@@ -36,7 +36,6 @@ router.get('/merch', (req, res) => {
 					title: itemTitle,
 					link: response.link,
 					picture: itemPic,
-					thumbnail: itemThumbnail,
 					price: itemPrice._rejectionHandler0[0],
 					created: response.created
 				});

@@ -1,0 +1,22 @@
+#store-page-container {
+	margin-top: 72px;
+	margin-bottom: 35px;
+}
+
+#store-thumb {
+	/*width: 200px;*/
+	margin-bottom: -20px;
+}
+
+#thumb-container {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	height: 200px;
+}
+
+.slick-slide .slick-active {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

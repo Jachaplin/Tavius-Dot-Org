@@ -1,35 +1,35 @@
-.ant-carousel .slick-slide {
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+/*.ant-carousel .slick-slide {
   text-align: center;
   height: 100%;
   line-height: 10px;
   background-color: #f2f2f2;
 
   overflow: hidden;
-}
+}*/
 
-.ant-carousel .slick-slide h4 {
+h4 {
   color: rgba(0, 0, 0, 0.45);
+  text-align: center;
 }
 
-.slick-slide {
+/*.slick-slide {
   margin-bottom: 20px;
-}
+}*/
 
-.ant-carousel .slick-dots li button {
+/*.ant-carousel .slick-dots li button {
   background: #8c999e;
-}
+}*/
 
 .header-img-col {
   height: 187px;
 }
 
-.ant-carousel {
-  /*margin-top: 30px;*/
-  /*margin-right: auto;
-  margin-left: auto;*/
-  width: 100%;
-  height: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.slick-prev:before,
+.slick-next:before {
+  color: #333;
 }
 
 .merch-img {
@@ -54,16 +54,22 @@
 }
 
 .slider-container {
-  /*min-width: 363px;*/
+  margin-bottom: 30px;
   background-color: #f2f2f2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #apple-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -15px;
+
   margin-bottom: 10px;
   width: 100px;
   height: auto;
+}
+
+#merch-thumb a > img,
+#merch-thumb > img {
+  padding: 2px !important;
 }
