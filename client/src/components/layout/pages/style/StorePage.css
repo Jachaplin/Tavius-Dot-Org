@@ -1,22 +1,69 @@
 #store-page-container {
 	margin-top: 72px;
 	margin-bottom: 35px;
-}
-
-#store-thumb {
-	/*width: 200px;*/
-	margin-bottom: -20px;
-}
-
-#thumb-container {
 	display: block;
-	margin-right: auto;
 	margin-left: auto;
-	height: 200px;
+	margin-right: auto;
+	max-width: 1510px;
 }
 
 .slick-slide .slick-active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#item-img {
+	display: block;
+}
+
+#item-wrapper {
+	padding-bottom: 1px;
+	padding-top: 1px;
+}
+
+#desc-text {
+	font-size: 40px;
+	padding-top: 70px;
+}
+
+#desc-price {
+	font-size: 30px;
+}
+
+.buy-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	background-image: linear-gradient(to bottom, #9d9d9d 0, #00cdff 100%);
+	color: #ffffff;
+	border-radius: 0px;
+	height: 50px;
+	width: 100px;
+	border: 0px;
+	text-decoration: none;
+	background-color: none;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.buy-button:hover {
+	opacity: 0.8;
+	transition: opacity;
+	transition-property: opacity;
+	transition-duration: 0.4s;
+	transition-timing-function: ease;
+}
+
+#link-container {
+	width: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#desc-jumbotron {
+	padding-bottom: 40px;
+	margin-bottom: 20px;
+	margin-top: -10px;
 }

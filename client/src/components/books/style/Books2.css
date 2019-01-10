@@ -8,8 +8,15 @@
   margin-top: 60px;
 }
 
-#book-container a > img,
-#book-container > img {
+#books-container {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#book-thumb-container a > img,
+#book-thumb-container > img {
   margin-right: auto;
   margin-left: auto;
   width: 100%;

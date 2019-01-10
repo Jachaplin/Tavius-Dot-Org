@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Grid, Row, Col, Thumbnail, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import './style/Books2.css';
 
 import posed from 'react-pose';
@@ -28,7 +28,7 @@ const Box = posed.div({
 class Books2 extends Component {
   render() {
     return (
-      <div>
+      <div id="books-container">
         <Grid>
           <Row className="show-grid">
             <Col md={12}>
@@ -49,50 +49,41 @@ class Books2 extends Component {
               <Col xs={6} md={4}>
                 <Box>
                   <Thumbnail
-                    id="book-container"
+                    id="book-thumb-container"
                     src="/images/shaddow-work-pic.png"
                     alt="242x200"
                   >
                     <h3>Thumbnail label</h3>
                     <p>Description</p>
-                    <p>
-                      <Button bsStyle="primary">Button</Button>
-                      &nbsp;
-                      <Button bsStyle="default">Button</Button>
-                    </p>
+
+                    <button className="buy-button">Buy</button>
                   </Thumbnail>
                 </Box>
               </Col>
               <Col xs={6} md={4}>
                 <Box>
                   <Thumbnail
-                    id="book-container"
+                    id="book-thumb-container"
                     src="/images/shaddow-work-pic.png"
                     alt="242x200"
                   >
                     <h3>Thumbnail label</h3>
                     <p>Description</p>
-                    <p>
-                      <Button bsStyle="primary">Button</Button>
-                      &nbsp;
-                      <Button bsStyle="default">Button</Button>
-                    </p>
+                    <button className="buy-button">Buy</button>
                   </Thumbnail>
                 </Box>
               </Col>
               <Col xs={6} md={4}>
                 <Box>
                   <Thumbnail
-                    id="book-container"
+                    id="book-thumb-container"
                     src="/images/shaddow-work-pic.png"
                     alt="242x200"
                   >
                     <h3>Thumbnail label</h3>
                     <p>Description</p>
                     <p>
-                      <Button bsStyle="primary">Button</Button>
-                      &nbsp;
-                      <Button bsStyle="default">Button</Button>
+                      <button className="buy-button">Buy</button>
                     </p>
                   </Thumbnail>
                 </Box>
@@ -100,7 +91,6 @@ class Books2 extends Component {
             </Col>
           </Row>
         </Grid>
-        ;
       </div>
     );
   }

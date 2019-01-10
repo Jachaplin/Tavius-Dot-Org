@@ -43,7 +43,7 @@ class Landing extends Component {
                 <div
                   style={{
                     padding: '0 24px',
-                    minHeight: 280
+                    minHeight: '280px'
                   }}
                 >
                   <Merch />

@@ -5,6 +5,7 @@ import { getMerch } from '../../actions/merchActions';
 import { getPosts } from '../../actions/postsActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
+import 'antd/dist/antd.css';
 import './style/Blog.css';
 import ReactHtmlParser from 'react-html-parser';
 import ScrollAnimation from 'react-animate-on-scroll';

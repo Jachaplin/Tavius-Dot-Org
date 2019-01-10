@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { newSubscriber, getSubscribers } from '../../actions/subscActions.js';
 import { Modal } from 'antd';
+import 'antd/dist/antd.css';
 import {
 	form,
 	FormGroup,
@@ -22,7 +23,7 @@ class SubscribeModal extends Component {
 			error1: null,
 			error2: null,
 			errors: {},
-			loading: false,
+
 			visible: false
 		};
 	}
@@ -73,28 +74,21 @@ class SubscribeModal extends Component {
 
 		setTimeout(() => {
 			if (
-				(!isEmpty(this.state.errors.name) &&
-					!isEmpty(this.state.errors.email)) ||
-				this.state.loading === true
+				!isEmpty(this.state.errors.name) &&
+				!isEmpty(this.state.errors.email)
 			) {
 				this.setState({
 					visible: true,
 					error1: 'error',
 					error2: 'error'
 				});
-			} else if (
-				!isEmpty(this.state.errors.email) ||
-				this.state.loading === true
-			) {
+			} else if (!isEmpty(this.state.errors.email)) {
 				this.setState({
 					visible: true,
 					error1: null,
 					error2: 'error'
 				});
-			} else if (
-				!isEmpty(this.state.errors.name) ||
-				this.state.loading === true
-			) {
+			} else if (!isEmpty(this.state.errors.name)) {
 				this.setState({
 					visible: true,
 					error1: 'error',
@@ -125,7 +119,7 @@ class SubscribeModal extends Component {
 	};
 
 	render() {
-		const { visible, loading, errors, error1, error2 } = this.state;
+		const { visible, errors, error1, error2 } = this.state;
 
 		return (
 			<div>
@@ -141,7 +135,7 @@ class SubscribeModal extends Component {
 						<Button key="back" onClick={this.handleCancel}>
 							Cancel
 						</Button>,
-						<Button key="submit" loading={loading} onClick={this.handleOk}>
+						<Button key="submit" onClick={this.handleOk}>
 							Submit
 						</Button>
 					]}
