@@ -9,14 +9,14 @@
 }
 
 #books-container {
-  width: 80%;
+  max-width: 1600px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
-#book-thumb-container a > img,
-#book-thumb-container > img {
+#book-thumb-container {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -24,8 +24,14 @@
   padding: 10px;
 }
 
+#book-row {
+  margin-bottom: 30px;
+}
+
+p {
+  color: #00000073;
+}
+
 /*.thumbnail {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }*/
-
-

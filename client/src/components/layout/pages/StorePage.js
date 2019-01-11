@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Merch from '../../merch/Merch';
+import { Divider } from 'antd';
+import 'antd/dist/antd.css';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -145,6 +146,11 @@ class StorePage extends Component {
 							</Row>
 							<Row className="show-grid">
 								<Col md={12}>
+									<Divider style={{ marginBottom: '50px' }} />
+								</Col>
+							</Row>
+							<Row className="show-grid">
+								<Col md={12}>
 									<Slider {...settings}>{thumbnailGal}</Slider>
 								</Col>
 							</Row>
@@ -157,6 +163,11 @@ class StorePage extends Component {
 		return (
 			<div>
 				{storeContent}
+				<Row className="show-grid">
+					<Col md={12}>
+						<Divider style={{ marginBottom: '40px' }} />
+					</Col>
+				</Row>
 				<Books2 />
 			</div>
 		);

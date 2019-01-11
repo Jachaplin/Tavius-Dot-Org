@@ -55,6 +55,10 @@
 	transition-timing-function: ease;
 }
 
+.buy-button:focus {
+	outline: 0;
+}
+
 #link-container {
 	width: 100px;
 	display: block;
@@ -65,5 +69,4 @@
 #desc-jumbotron {
 	padding-bottom: 40px;
 	margin-bottom: 20px;
-	margin-top: -10px;
 }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
+import ScrollAnimation from 'react-animate-on-scroll';
 import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import './style/Books2.css';
-
+import { Divider } from 'antd';
+import 'antd/dist/antd.css';
 import posed from 'react-pose';
 
 const Box = posed.div({
@@ -41,54 +42,85 @@ class Books2 extends Component {
           </Row>
         </Grid>
         <Grid>
-          <Row>
-            <Col md={4} mdPush={8}>
-              <h1>Books</h1>
-            </Col>
-            <Col md={8} mdPull={4}>
-              <Col xs={6} md={4}>
+          <Row id="book-row">
+            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+              <Col md={8} mdPush={4}>
+                <h1>30 Day Journal to Change Your Life</h1>
+                <p>
+                  This "Change Your Life in 30 Days" journal is an opportunity
+                  to pause on a regular basis and reflect. Slowing down, and
+                  taking time to check in with oneself can be very powerful
+                  tools in obtaining goals and improving quality of life.
+                </p>
+              </Col>
+              <Col md={4} mdPull={8}>
                 <Box>
                   <Thumbnail
                     id="book-thumb-container"
-                    src="/images/shaddow-work-pic.png"
-                    alt="242x200"
+                    src="images/change-your-life.jpeg"
+                    alt="30 Day Journal to Change Your Life"
                   >
-                    <h3>Thumbnail label</h3>
-                    <p>Description</p>
+                    <h4>$10.00</h4>
 
-                    <button className="buy-button">Buy</button>
+                    <div id="link-container">
+                      <a
+                        id="buy-link"
+                        href="http://www.lulu.com/shop/tavius-dyer/30-day-journal-to-change-your-life-2019/paperback/product-23921637.html"
+                        target="blank"
+                      >
+                        <button className="buy-button">Buy</button>
+                      </a>
+                    </div>
                   </Thumbnail>
                 </Box>
               </Col>
-              <Col xs={6} md={4}>
+            </ScrollAnimation>
+          </Row>
+        </Grid>
+        <Row className="show-grid">
+          <Col md={12}>
+            <Divider style={{ marginBottom: '67px' }} />
+          </Col>
+        </Row>
+        <Grid>
+          <Row>
+            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+              <Col md={8} mdPush={4}>
+                <h1>The Fine Art of Obsolescence</h1>
+                <p>
+                  The Fine Art of Obsolescence is a collection of photographs
+                  depicting the evolution of communication technology through
+                  the cultural eye of street art. Pay phones have become relicts
+                  of technological advancements while also taking on the
+                  graffiti style street art. The juxtaposition of taking artful
+                  documentary photos of old out of order pay phones with Smart
+                  phones is quite a statement about how far we have come in so
+                  little time. These are an interesting set of found street art
+                  and documentary work as conceptual art.
+                </p>
+              </Col>
+              <Col md={4} mdPull={8}>
                 <Box>
                   <Thumbnail
                     id="book-thumb-container"
-                    src="/images/shaddow-work-pic.png"
-                    alt="242x200"
+                    src="images/fine-art-of-absolescence.jpeg"
+                    alt="The Fine Art of Obsolescence"
                   >
-                    <h3>Thumbnail label</h3>
-                    <p>Description</p>
-                    <button className="buy-button">Buy</button>
+                    <h4 style={{ marginTop: '15px' }}>$10.00</h4>
+
+                    <div id="link-container">
+                      <a
+                        id="buy-link"
+                        href="http://www.lulu.com/shop/tavius-aiton-and-monica-martin/the-fine-art-of-obsolescence/paperback/product-21950963.html"
+                        target="blank"
+                      >
+                        <button className="buy-button">Buy</button>
+                      </a>
+                    </div>
                   </Thumbnail>
                 </Box>
               </Col>
-              <Col xs={6} md={4}>
-                <Box>
-                  <Thumbnail
-                    id="book-thumb-container"
-                    src="/images/shaddow-work-pic.png"
-                    alt="242x200"
-                  >
-                    <h3>Thumbnail label</h3>
-                    <p>Description</p>
-                    <p>
-                      <button className="buy-button">Buy</button>
-                    </p>
-                  </Thumbnail>
-                </Box>
-              </Col>
-            </Col>
+            </ScrollAnimation>
           </Row>
         </Grid>
       </div>
