@@ -1,40 +1,15 @@
-#banner-container {
-  margin-top: 44px;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
-    url('/images/analogue-blur-classic-164828.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity 1s ease-in;
-}
-
-#banner-container {
-  min-height: 900px;
-}
-
-.jumbotron {
-  padding: 0px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  /*this hides the box shaddow*/
-  margin-bottom: 0px;
-}
-
 .navbar {
-  padding: 5px;
+  padding: 6px;
+  font-size: 17px;
+}
+
+.navbar-nav {
+  margin-bottom: -2px;
 }
 
 .anticon svg {
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   margin: 0 10px 0 10px;
 }
 
@@ -52,111 +27,7 @@
 }
 
 #logo {
-  height: 33px;
+  height: 43px;
   width: auto;
-  margin-top: -4px;
-}
-
-#banner {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 800px;
-  height: auto;
-}
-
-#padding {
-  height: 80px;
-}
-
-#banner-quote {
-  font-size: 60px;
-  text-align: left;
-  margin-left: 10%;
-  color: white;
-  font-weight: 750;
-}
-
-#subscribe-button.btn {
-  font-size: 25px;
-  font-weight: 400;
-  font-family: 'Helvetica Neue';
-  display: inline-block;
-  height: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
-
-  margin-top: 150px;
-  background-image: linear-gradient(to bottom, #9d9d9d 0, #00cdff 100%);
-  color: #ffffff;
-  border-radius: 0px;
-  border: 0px;
-  background-color: #00cdff;
-  /*margin-left: 30%;*/
-}
-
-#subscribe-button.btn:hover {
-  background-image: none;
-  background-color: #ff8800;
-}
-
-.ant-input {
-  margin: 10px 0 10px 0;
-}
-
-@media screen and (max-width: 991px) {
-  #banner {
-    width: 600px;
-  }
-
-  #banner-container {
-    min-height: 450px;
-  }
-
-  #padding {
-    height: 65px;
-  }
-
-  .anticon svg {
-    margin: 0;
-  }
-
-  #subscribe-button.btn {
-    margin-left: 70%;
-    margin-bottom: 40px;
-  }
-
-  #quote-col {
-    margin-bottom: -150px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #banner-container {
-    min-height: 450px;
-  }
-
-  #padding {
-    height: 65px;
-  }
-
-  .anticon svg {
-    display: none;
-  }
-  #subscribe-button.btn {
-    margin-left: 60%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #banner {
-    width: 400px;
-  }
-
-  #padding {
-    height: 110px;
-  }
-  #subscribe-button.btn {
-    margin-left: 45%;
-  }
+  margin-top: -8px;
 }

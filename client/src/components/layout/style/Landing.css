@@ -6,6 +6,12 @@
 	margin-left: auto;
 }
 
+@media screen and (max-width: 1700px) {
+	#landing-layout {
+		max-width: 1400px;
+	}
+}
+
 @media screen and (max-width: 991px) {
 }
 

@@ -28,7 +28,7 @@ class NavBoxes extends Component {
               />
             </CSSTransitionGroup>
             <Grid>
-              <Row>
+              <Row id="quote-row">
                 <Col md={9}>
                   <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
                     <div id="banner-quote">"Creative Expression</div>

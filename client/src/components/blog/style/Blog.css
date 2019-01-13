@@ -49,10 +49,6 @@
 	margin-bottom: -20px;
 }
 
-/*#read-more {
-	text-align: center;
-}*/
-
 .blog-text br {
 	display: none;
 }
@@ -72,6 +68,24 @@
 	font-size: 20px;
 }
 
-.ant-pagination.mini {
+/*.ant-pagination.mini {
 	margin-bottom: 30px;
+}*/
+
+@media screen and (max-width: 600px) {
+	#time-stamp {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#time-stamp {
+		font-size: 10px;
+	}
+	#blog-component {
+		margin-bottom: 20px;
+	}
+	#time-stamp-row {
+		height: 75px;
+	}
 }

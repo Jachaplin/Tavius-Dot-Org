@@ -4,6 +4,23 @@ body {
 	font-family: sans-serif;
 }
 
+.img-header {
+	width: 450px;
+	height: auto;
+	display: block;
+	margin: 40px auto 40px auto;
+}
+
+.header-img-col {
+	height: 300px;
+}
+
+p {
+	margin-top: 15px;
+	font-size: 16px;
+	width: 90%;
+}
+
 .site {
 	display: flex;
 	min-height: 100vh;
@@ -12,4 +29,22 @@ body {
 
 .site-content {
 	flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+	.img-header {
+		width: 350px;
+	}
+	.header-img-col {
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.img-header {
+		width: 250px;
+	}
+	.header-img-col {
+		height: 150px;
+	}
 }

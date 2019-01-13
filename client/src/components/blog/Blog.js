@@ -21,9 +21,11 @@ class Blog extends Component {
     const { posts } = this.props.posts;
     const blogContent = posts.map((post, i) => (
       <div id="blog-component" key={i}>
-        <Row className="show-grid">
+        <Row id="time-stamp-row" className="show-grid">
           <Col md={12}>
-            <Divider style={{ marginBottom: '80px' }}>{post.date}</Divider>
+            <Divider id="time-stamp" style={{ marginBottom: '80px' }}>
+              {post.date}
+            </Divider>
           </Col>
         </Row>
         <Row className="show-grid">
