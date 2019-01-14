@@ -1,11 +1,11 @@
 #amazon-icon {
-  width: 250px;
+  width: 450px;
   height: auto;
   display: block;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 80px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 #books-container {
@@ -16,20 +16,95 @@
   margin-bottom: 30px;
 }
 
-#book-thumb-container {
+#book-thumb-container.thumbnail {
   margin-right: auto;
   margin-left: auto;
-  width: 100%;
   height: auto;
   padding: 10px;
 }
 
-#book-row {
-  margin-bottom: 30px;
+#box-container {
+  max-width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-p {
+#book-row {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  max-width: 80%;
+}
+
+.description {
   color: #00000073;
+}
+
+#divider {
+  max-width: 92%;
+}
+
+@media screen and (max-width: 991px) {
+  .desc-title {
+    text-align: center;
+  }
+
+  #amazon-icon {
+    width: 350px;
+  }
+
+  .description {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #book-row {
+    max-width: 100%;
+  }
+  .description {
+    margin-top: 15px;
+  }
+  #amazon-row {
+    margin-top: -40px;
+    margin-bottom: -30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #amazon-icon {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #amazon-icon {
+    width: 250px;
+  }
+}
+
+/*iPhone 6/7/8 Plus*/
+@media screen and (max-width: 415px) {
+  .description {
+    width: 98%;
+  }
+  #amazon-row {
+    margin-top: -40px;
+    margin-bottom: -30px;
+  }
+  .desc-title {
+    font-size: 28px;
+  }
+
+  .description {
+    margin-top: 15px;
+  }
+}
+
+/*iPhone 6/7/8/X*/
+@media screen and (max-width: 375px) {
 }
 
 /*.thumbnail {

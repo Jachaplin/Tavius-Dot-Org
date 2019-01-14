@@ -21,6 +21,11 @@ p {
 	width: 90%;
 }
 
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 .site {
 	display: flex;
 	min-height: 100vh;
@@ -29,6 +34,11 @@ p {
 
 .site-content {
 	flex: 1;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 @media screen and (max-width: 600px) {

@@ -137,19 +137,22 @@ class StorePage extends Component {
 						</Row>
 						<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
 							<Row className="show-grid">
-								<Col md={5} mdPush={7}>
+								<Col id="pic-col" md={5} mdPush={7}>
 									<div className="slider-container">{itemPicture}</div>
 								</Col>
-								<Col md={7} mdPull={5}>
+								<Col id="desc-col" md={7} mdPull={5}>
 									{itemDesc}
 								</Col>
 							</Row>
 							<Row className="show-grid">
 								<Col md={12}>
-									<Divider style={{ marginBottom: '50px' }} />
+									<Divider
+										id="store-divider"
+										style={{ marginBottom: '50px' }}
+									/>
 								</Col>
 							</Row>
-							<Row className="show-grid">
+							<Row id="thumb-gal-container" className="show-grid">
 								<Col md={12}>
 									<Slider {...settings}>{thumbnailGal}</Slider>
 								</Col>

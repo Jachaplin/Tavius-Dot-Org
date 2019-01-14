@@ -29,20 +29,12 @@ class App extends Component {
             <FixedNavbar />
             <div className="site-content">
               <Route exact path="/" component={Landing} />
-              <div
-                style={{
-                  width: '80%',
-                  display: 'block',
-                  marginRight: 'auto',
-                  marginLeft: 'auto'
-                }}
-              >
-                <Route exact path="/subscribe" component={SubscribePage} />
-                <Route exact path="/music" component={MusicPage} />
-                <Route exact path="/blog" component={BlogPage} />
-                <Route exact path="/store" component={StorePage} />
-                <Route exact path="/contact" component={ContactPage} />
-              </div>
+
+              <Route exact path="/subscribe" component={SubscribePage} />
+              <Route exact path="/music" component={MusicPage} />
+              <Route exact path="/blog" component={BlogPage} />
+              <Route exact path="/store" component={StorePage} />
+              <Route exact path="/contact" component={ContactPage} />
             </div>
             <FooterLinks />
           </div>

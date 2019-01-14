@@ -5,6 +5,9 @@
 
 #blog-component {
 	margin-bottom: 60px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #blog-img {
@@ -68,9 +71,25 @@
 	font-size: 20px;
 }
 
-/*.ant-pagination.mini {
-	margin-bottom: 30px;
-}*/
+/*iPad Pro vertical*/
+@media screen and (max-width: 1024px) {
+	#blog-component {
+		max-width: 900px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#blog-icon {
+		display: none;
+	}
+}
+
+/*iPad vertical*/
+@media screen and (max-width: 768px) {
+	#blog-component {
+		max-width: 700px;
+	}
+}
 
 @media screen and (max-width: 600px) {
 	#time-stamp {
@@ -87,5 +106,9 @@
 	}
 	#time-stamp-row {
 		height: 75px;
+	}
+	#blog-info {
+		margin-top: -30px;
+		margin-bottom: -30px;
 	}
 }

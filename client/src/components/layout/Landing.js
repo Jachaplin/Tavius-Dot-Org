@@ -38,21 +38,10 @@ class Landing extends Component {
         <div>
           <Navboxes />
           <div id="landing-layout">
-            <div style={{ padding: '0 50px' }}>
-              <div style={{ padding: '24px 0', background: '#fff' }}>
-                <div
-                  style={{
-                    padding: '0 24px',
-                    minHeight: '280px'
-                  }}
-                >
-                  <Merch />
-                  <Books2 />
-                  <Music />
-                  <Blog />
-                </div>
-              </div>
-            </div>
+            <Merch />
+            <Books2 />
+            <Music />
+            <Blog />
           </div>
         </div>
       );

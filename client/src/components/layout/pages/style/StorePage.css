@@ -25,6 +25,7 @@
 #desc-text {
 	font-size: 40px;
 	padding-top: 70px;
+	color: #696565;
 }
 
 #desc-price {
@@ -71,8 +72,97 @@
 	margin-bottom: 20px;
 }
 
+/*Apple Display Monitor*/
 @media screen and (max-width: 1700px) {
 	#store-page-container {
 		max-width: 1200px;
+	}
+	#desc-text {
+		font-size: 30px;
+		padding-top: 30px;
+	}
+
+	#desc-price {
+		font-size: 20px;
+	}
+	.buy-button {
+		margin-bottom: 0px;
+	}
+}
+
+/*iPad Pro vertical*/
+@media screen and (max-width: 1024px) {
+	#store-page-container {
+		max-width: 900px;
+	}
+	#thumb-gal-container.show-grid {
+		width: 90%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#desc-col {
+		width: 40%;
+		float: left;
+	}
+	#pic-col.col-md-5.col-md-push-7 {
+		width: 60%;
+		float: right;
+	}
+	#desc-text {
+		font-size: 20px;
+		padding-top: 30px;
+	}
+
+	#desc-price {
+		font-size: 15px;
+	}
+	#desc-jumbotron {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#box-container {
+		margin-top: 50px;
+	}
+}
+
+/*iPad vertical*/
+@media screen and (max-width: 768px) {
+	#store-page-container {
+		max-width: 700px;
+	}
+}
+
+/*iPhone 6/7/8 Plus*/
+@media screen and (max-width: 415px) {
+	#desc-col {
+		width: 100%;
+		float: none;
+	}
+	#pic-col.col-md-5.col-md-push-7 {
+		width: 100%;
+		float: none;
+	}
+
+	#desc-jumbotron {
+		margin-top: -10px;
+	}
+	#store-divider {
+		display: none;
+	}
+}
+
+/*iPhone 6/7/8/X*/
+@media screen and (max-width: 375px) {
+	#desc-col {
+		width: 100%;
+		float: none;
+	}
+	#pic-col.col-md-5.col-md-push-7 {
+		width: 100%;
+		float: none;
 	}
 }

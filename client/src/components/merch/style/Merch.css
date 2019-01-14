@@ -32,6 +32,11 @@ h4 {
   color: #333;
 }
 
+.slider-container .slick-arrow.slick-next,
+.slider-container .slick-arrow.slick-prev {
+  display: none !important;
+}
+
 .merch-img {
   margin-left: auto;
   margin-right: auto;
