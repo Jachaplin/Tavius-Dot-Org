@@ -4,51 +4,115 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Divider } from 'antd';
 import 'antd/dist/antd.css';
-import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
+import { Grid, Row, Col, Thumbnail, Jumbotron } from 'react-bootstrap';
 import Slider from 'react-slick';
 import ScrollAnimation from 'react-animate-on-scroll';
 import './style/Merch.css';
 
 class Merch extends Component {
+  constructor() {
+    super();
+    this.state = {
+      targetItem: {},
+      currMerchIndex: 0
+    };
+  }
+
+  componentDidMount() {
+    if (this.props.itemListing.itemListing.length > 0) {
+      this.setState({
+        targetItem: this.props.itemListing.itemListing[0]
+      });
+    }
+  }
+
+  onClick = item => {
+    this.setState({
+      targetItem: item
+    });
+
+    setTimeout(() => {
+      this.setState({
+        currMerchIndex: this.props.itemListing.itemListing.findIndex(
+          desc => desc === this.state.targetItem
+        )
+      });
+    }, 1);
+  };
+
   render() {
     const { itemListing } = this.props.itemListing;
+    const { currMerchIndex } = this.state;
 
     const settings = {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 4000
+      slidesToShow: 6,
+      slidesToScroll: 6
     };
 
-    const slideShowItems = itemListing.slice(0, 8).map((item, j) => (
-      <div key={j} className="img-wrapper">
-        <a href={item.link} target="blank">
-          <img className="merch-img" src={item.picture} alt="shirt" />
-        </a>
-        <h4 style={{ textALign: 'center' }}>{item.title}</h4>
-        <h4 style={{ textALign: 'center' }}>{item.price}</h4>
-      </div>
-    ));
+    let itemPicture;
+
+    if (itemListing[currMerchIndex] === undefined) {
+      itemPicture = null;
+    } else {
+      itemPicture = (
+        <div id="item-wrapper" className="img-wrapper">
+          <a href={itemListing[currMerchIndex].link} target="blank">
+            <img
+              className="merch-img"
+              id="item-img"
+              src={itemListing[currMerchIndex].picture}
+              alt="shirt"
+            />
+          </a>
+        </div>
+      );
+    }
+
+    let itemDesc;
+
+    if (itemListing[currMerchIndex] === undefined) {
+      itemDesc = null;
+    } else {
+      itemDesc = (
+        <div>
+          <Jumbotron id="desc-jumbotron">
+            <h4 id="desc-text">{itemListing[currMerchIndex].title}</h4>
+            <h4 id="desc-price">{itemListing[currMerchIndex].price}</h4>
+            <div id="link-container">
+              <a
+                id="buy-link"
+                href={itemListing[currMerchIndex].link}
+                target="blank"
+              >
+                <button className="buy-button">Buy</button>
+              </a>
+            </div>
+          </Jumbotron>
+        </div>
+      );
+    }
 
     // only show 9 thumbnails
-    const thumbnailGal = itemListing.slice(0, 8).map((item, i) => (
-      <div key={i}>
-        <Col xs={6} md={3}>
-          <a href={item.link} target="blank">
-            <Thumbnail id="merch-thumb" src={item.picture} alt="242x200" />
-          </a>
-        </Col>
+    const thumbnailGal = itemListing.slice(0, 6).map((item, i) => (
+      <div id="thumb-container" key={i}>
+        <Thumbnail
+          id="store-thumb"
+          src={item.picture}
+          alt="242x200"
+          onClick={() => this.onClick(item)}
+          value={item}
+        />
       </div>
     ));
 
     return (
-      <div>
+      <div id="store-page-container">
         <Grid>
           <Row className="show-grid">
-            <Col className="header-img-col" md={12}>
+            <Col id="merch-header" className="header-img-col" md={12}>
               <img
                 className="img-header"
                 src="/images/merch-header.png"
@@ -56,28 +120,35 @@ class Merch extends Component {
               />
             </Col>
           </Row>
-          <Row className="show-grid">
-            <Col md={5} mdPush={7}>
-              <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-                <div className="slider-container">
-                  <Slider {...settings}>{slideShowItems}</Slider>
-                </div>
-              </ScrollAnimation>
-            </Col>
-            <Col md={7} mdPull={5}>
-              <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-                <img id="apple-img" src="/images/forbidden01.png" alt="" />
-              </ScrollAnimation>
-              {thumbnailGal}
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col md={12}>
-              <Link to="/store">
-                <Divider style={{ marginBottom: '80px' }}>See More</Divider>
-              </Link>
-            </Col>
-          </Row>
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+            <Row className="show-grid">
+              <Col id="pic-col" md={5} mdPush={7}>
+                <div className="slider-container">{itemPicture}</div>
+              </Col>
+              <Col id="desc-col" md={7} mdPull={5}>
+                {itemDesc}
+              </Col>
+            </Row>
+            <Row className="show-grid">
+              <Col md={12}>
+                <Divider id="store-divider" style={{ marginBottom: '50px' }} />
+              </Col>
+            </Row>
+            <Row id="thumb-gal-container" className="show-grid">
+              <Col md={12}>
+                <Slider {...settings}>{thumbnailGal}</Slider>
+              </Col>
+            </Row>
+            <Row className="show-grid">
+              <Col md={12}>
+                <Link to="/store">
+                  <Divider style={{ marginBottom: '80px', marginTop: '30px' }}>
+                    See More
+                  </Divider>
+                </Link>
+              </Col>
+            </Row>
+          </ScrollAnimation>
         </Grid>
       </div>
     );

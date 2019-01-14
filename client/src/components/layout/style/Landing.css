@@ -6,6 +6,8 @@
 	margin-left: auto;
 }
 
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+
 @media screen and (max-width: 1700px) {
 	#landing-layout {
 		max-width: 1400px;

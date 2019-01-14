@@ -71,6 +71,8 @@
 	font-size: 20px;
 }
 
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+
 /*iPad Pro vertical*/
 @media screen and (max-width: 1024px) {
 	#blog-component {

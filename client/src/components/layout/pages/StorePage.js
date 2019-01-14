@@ -94,7 +94,9 @@ class StorePage extends Component {
 						<h4 id="desc-price">{merch[currMerchIndex].price}</h4>
 						<div id="link-container">
 							<a id="buy-link" href={merch[currMerchIndex].link} target="blank">
-								<button className="buy-button">Buy</button>
+								<button id="buy-shirt-button" className="buy-button">
+									Buy
+								</button>
 							</a>
 						</div>
 					</Jumbotron>

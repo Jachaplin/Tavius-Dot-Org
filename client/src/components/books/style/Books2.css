@@ -46,6 +46,8 @@
   max-width: 92%;
 }
 
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+
 @media screen and (max-width: 991px) {
   .desc-title {
     text-align: center;

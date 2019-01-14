@@ -72,6 +72,8 @@
 	margin-bottom: 20px;
 }
 
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+
 /*Apple Display Monitor*/
 @media screen and (max-width: 1700px) {
 	#store-page-container {
@@ -152,6 +154,20 @@
 	}
 	#store-divider {
 		display: none;
+	}
+	#buy-shirt-button {
+		margin-top: 10px;
+		margin-bottom: -25px;
+		height: 40px;
+		width: 80px;
+	}
+	#desc-text {
+		font-size: 18px;
+		padding-top: 10px;
+	}
+
+	#desc-price {
+		font-size: 14px;
 	}
 }
 

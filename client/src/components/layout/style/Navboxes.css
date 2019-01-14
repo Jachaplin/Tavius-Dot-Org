@@ -186,18 +186,7 @@ a {
   margin-right: -30px;
 }
 
-/*@media screen and (max-width: 1025px) {
-  #padding {
-    height: 100px;
-  }
-  #banner-container {
-    min-height: 450px;
-  }
-  #quote-row {
-    margin-top: 250px;
-    margin-bottom: 400px;
-  }
-}*/
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
 
 @media screen and (max-width: 991px) {
   .box {
@@ -211,10 +200,9 @@ a {
 
   .img-button {
     margin-top: 5px;
+    width: 200px;
   }
-  #store-box:hover {
-    /*background-position: fixed;*/
-  }
+
   .col-md-4.box.grow {
     transition: none;
   }
@@ -227,16 +215,12 @@ a {
     margin-bottom: 70px;
   }
 
-  /*  #banner-container {
-    min-height: 850px;
-  }*/
-
   #padding {
     height: 65px;
   }
 
   .anticon svg {
-    margin: 0;
+    margin: 3px;
   }
 
   #subscribe-button.btn {
@@ -256,6 +240,7 @@ a {
   }
 }
 
+/*iPad Vertical*/
 @media screen and (max-width: 768px) {
   .col-md-4.box.grow {
     display: none;
@@ -268,11 +253,9 @@ a {
     height: 150px;
   }
 
-  .anticon svg {
-    display: none;
-  }
   #subscribe-button.btn {
     margin-left: 60%;
+    margin-bottom: 55px;
   }
 }
 
@@ -298,7 +281,7 @@ a {
     min-height: 700px;
   }
   #banner {
-    width: 300px;
+    width: 335px;
   }
   #padding {
     height: 80px;
@@ -314,7 +297,7 @@ a {
     min-height: 780px;
   }
   #banner {
-    width: 355px;
+    width: 315px;
   }
   #padding {
     height: 90px;
@@ -324,6 +307,23 @@ a {
   }
   #subscribe-button.btn {
     margin-top: 210px;
+    font-size: 18px;
+    height: 60px;
+
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #banner-container {
+    min-height: 480px;
+  }
+  #padding {
+    height: 30px;
+  }
+  #subscribe-button.btn {
+    margin-top: 80px;
     font-size: 18px;
     height: 60px;
 
