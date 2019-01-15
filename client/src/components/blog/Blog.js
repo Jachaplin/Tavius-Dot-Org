@@ -5,6 +5,7 @@ import { getMerch } from '../../actions/merchActions';
 import { getPosts } from '../../actions/postsActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
+import Spinner from '../layout/Spinner';
 import 'antd/dist/antd.css';
 import './style/Blog.css';
 import ReactHtmlParser from 'react-html-parser';
@@ -19,6 +20,8 @@ class Blog extends Component {
   }
   render() {
     const { posts } = this.props.posts;
+    let blogPage;
+
     const blogContent = posts.map((post, i) => (
       <div id="blog-component" key={i}>
         <Row id="time-stamp-row" className="show-grid">
@@ -101,25 +104,35 @@ class Blog extends Component {
       </div>
     ));
 
-    return (
-      <div id="blog-container">
-        <Grid>
-          <Row className="show-grid">
-            <Col id="img-blog-header" className="header-img-col" md={12}>
-              <img
-                className="img-header"
-                src="/images/blog-header.png"
-                alt="blog"
-              />
-            </Col>
-          </Row>
+    if (posts.length === 0) {
+      blogPage = (
+        <div className="spinner-position-center">
+          <Spinner />
+        </div>
+      );
+    } else {
+      blogPage = (
+        <div id="blog-container">
+          <Grid>
+            <Row className="show-grid">
+              <Col id="img-blog-header" className="header-img-col" md={12}>
+                <img
+                  className="img-header"
+                  src="/images/blog-header.png"
+                  alt="blog"
+                />
+              </Col>
+            </Row>
 
-          <div />
+            <div />
 
-          {blogContent}
-        </Grid>
-      </div>
-    );
+            {blogContent}
+          </Grid>
+        </div>
+      );
+    }
+
+    return <div>{blogPage}</div>;
   }
 }
 

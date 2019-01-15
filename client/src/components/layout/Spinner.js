@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { css } from 'react-emotion';
 // First way to import
 import { RingLoader } from 'react-spinners';
-
+// margin: 375px auto;
 const override = css`
 	display: block;
-	margin: 375px auto;
+
 	border-color: black;
 `;
 

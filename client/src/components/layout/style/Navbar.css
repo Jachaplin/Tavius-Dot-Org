@@ -1,24 +1,35 @@
 .navbar.navbar-inverse.navbar-fixed-top {
-  padding: 5px 22px 5px 22px;
+  /*padding: 5px 22px 5px 22px;*/
+  padding-left: 22px;
+  padding-right: 22px;
+  /*  height: 62px;*/
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+  max-height: 500px;
 }
 
 /*ul.nav.navbar-nav {
   margin-top: 5px !important;
 }*/
 
-/*.navbar {
-  padding: 6px;
-  font-size: 17px;
+.navbar {
+  padding: 7px;
+  font-size: 16px;
 }
 
 .navbar-nav {
-  margin-bottom: -2px;
-}*/
+  margin-bottom: -3px;
+}
 
 .anticon svg {
-  height: 22px;
   width: 22px;
-  margin: 0 10px 0 10px;
+  height: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /*  margin: 0 10px 0 10px;
+  display: block;*/
 }
 
 .button:hover {
@@ -33,4 +44,11 @@
   height: 43px;
   width: auto;
   margin-top: -8px;
+}
+
+@media screen and (max-width: 880px) {
+  .anticon svg {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
 }

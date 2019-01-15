@@ -122,6 +122,15 @@ class Merch extends Component {
           </Row>
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
             <Row className="show-grid">
+              <Col md={12}>
+                <Divider style={{ marginBottom: '40px', marginTop: '-40px' }}>
+                  <img id="apple-img" src="/images/forbidden01.png" alt="" />
+                </Divider>
+              </Col>
+            </Row>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+            <Row className="show-grid">
               <Col id="pic-col" md={5} mdPush={7}>
                 <div className="slider-container">{itemPicture}</div>
               </Col>

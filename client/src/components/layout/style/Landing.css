@@ -6,27 +6,60 @@
 	margin-left: auto;
 }
 
-/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+.spinner-container-black {
+	background-color: #222;
+	padding: 30px;
+	min-height: 1440px;
+}
 
-@media screen and (max-width: 1700px) {
+.spinner-position-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+@media screen and (max-width: 2880px) {
+	.spinner-container-black {
+		min-height: 1800px;
+	}
+}
+
+@media screen and (max-width: 1680px) {
 	#landing-layout {
 		max-width: 1400px;
+	}
+	.spinner-container-black {
+		min-height: 1400px;
 	}
 }
 
 @media screen and (max-width: 991px) {
+	.spinner-container-black {
+		min-height: 1024px;
+	}
 }
 
 @media screen and (max-width: 767px) {
+	.spinner-container-black {
+		min-height: 1024px;
+	}
 }
 
 /*iPhone 6/7/8 Plus*/
 @media screen and (max-width: 415px) {
+	.spinner-container-black {
+		min-height: 1024px;
+	}
 }
 
 /*iPhone 6/7/8/X*/
 @media screen and (max-width: 375px) {
 	#landing-layout {
 		max-width: 370px;
+	}
+	.spinner-container-black {
+		min-height: 1024px;
 	}
 }

@@ -25,7 +25,7 @@
 }
 
 #banner-container {
-  min-height: 900px;
+  min-height: 1024px;
 }
 
 .jumbotron {
@@ -187,6 +187,17 @@ a {
 }
 
 /*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+@media screen and (max-width: 1366px) {
+  #banner-container {
+    min-height: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #banner-container {
+    min-height: 1044px;
+  }
+}
 
 @media screen and (max-width: 991px) {
   .box {
@@ -219,9 +230,9 @@ a {
     height: 65px;
   }
 
-  .anticon svg {
+  /*  .anticon svg {
     margin: 3px;
-  }
+  }*/
 
   #subscribe-button.btn {
     margin-left: 70%;

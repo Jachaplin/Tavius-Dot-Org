@@ -13,8 +13,7 @@ import FooterLinks from './components/layout/Footer';
 import MusicPage from './components/layout/pages/MusicPage';
 import BlogPage from './components/layout/pages/BlogPage';
 import StorePage from './components/layout/pages/StorePage';
-import SubscribePage from './components/layout/pages/SubscribePage';
-import ContactPage from './components/layout/pages/ContactPage';
+import EventsPage from './components/layout/pages/EventsPage';
 
 class App extends Component {
   // constructor(props) {
@@ -30,11 +29,10 @@ class App extends Component {
             <div className="site-content">
               <Route exact path="/" component={Landing} />
 
-              <Route exact path="/subscribe" component={SubscribePage} />
               <Route exact path="/music" component={MusicPage} />
               <Route exact path="/blog" component={BlogPage} />
               <Route exact path="/store" component={StorePage} />
-              <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/events" component={EventsPage} />
             </div>
             <FooterLinks />
           </div>

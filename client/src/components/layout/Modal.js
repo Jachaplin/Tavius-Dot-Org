@@ -135,7 +135,7 @@ class SubscribeModal extends Component {
 						<Button key="back" onClick={this.handleCancel}>
 							Cancel
 						</Button>,
-						<Button key="submit" onClick={this.handleOk}>
+						<Button id="submit-button" key="submit" onClick={this.handleOk}>
 							Submit
 						</Button>
 					]}

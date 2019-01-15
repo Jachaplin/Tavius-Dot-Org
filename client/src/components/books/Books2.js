@@ -70,7 +70,9 @@ class Books2 extends Component {
                       src="images/shaddow-work-pic.png"
                       alt="The Fine Art of Obsolescence"
                     >
-                      <h4 style={{ marginTop: '15px' }}>$10.00</h4>
+                      <h4 id="desc-price" style={{ marginTop: '15px' }}>
+                        $10.00
+                      </h4>
 
                       <div id="link-container">
                         <a
@@ -115,7 +117,7 @@ class Books2 extends Component {
                       src="images/change-your-life.jpeg"
                       alt="30 Day Journal to Change Your Life"
                     >
-                      <h4>$10.00</h4>
+                      <h4 id="desc-price">$10.00</h4>
 
                       <div id="link-container">
                         <a
@@ -163,7 +165,9 @@ class Books2 extends Component {
                       src="images/fine-art-of-absolescence.jpeg"
                       alt="The Fine Art of Obsolescence"
                     >
-                      <h4 style={{ marginTop: '15px' }}>$10.00</h4>
+                      <h4 id="desc-price" style={{ marginTop: '15px' }}>
+                        $10.00
+                      </h4>
 
                       <div id="link-container">
                         <a

@@ -120,7 +120,7 @@ class StorePage extends Component {
 
 		if (merch.length === 0 || tumblr.length === 0) {
 			storeContent = (
-				<div style={{ padding: '30px' }}>
+				<div className="spinner-position-center">
 					<Spinner />
 				</div>
 			);
@@ -161,21 +161,17 @@ class StorePage extends Component {
 							</Row>
 						</ScrollAnimation>
 					</Grid>
+					<Row className="show-grid">
+						<Col md={12}>
+							<Divider style={{ marginBottom: '70px', marginTop: '60px' }} />
+						</Col>
+					</Row>
+					<Books2 />
 				</div>
 			);
 		}
 
-		return (
-			<div>
-				{storeContent}
-				<Row className="show-grid">
-					<Col md={12}>
-						<Divider style={{ marginBottom: '40px' }} />
-					</Col>
-				</Row>
-				<Books2 />
-			</div>
-		);
+		return <div>{storeContent}</div>;
 	}
 }
 

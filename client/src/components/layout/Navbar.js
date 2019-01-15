@@ -39,7 +39,7 @@ class FixedNavbar extends Component {
               <LinkContainer to="/store">
                 <NavItem eventKey={3}>Store</NavItem>
               </LinkContainer>
-              <LinkContainer to="/contact">
+              <LinkContainer to="/events">
                 <NavItem eventKey={4} href="/#">
                   Events
                 </NavItem>

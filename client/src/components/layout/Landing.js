@@ -24,13 +24,17 @@ class Landing extends Component {
     }
   }
 
+  // backgroundColor: '#222',
+
   render() {
     const { itemListing, posts } = this.props;
     let centerContent;
     if (posts.posts.length === 0 || itemListing.itemListing === 0) {
       centerContent = (
-        <div style={{ backgroundColor: '#222', padding: '30px' }}>
-          <Spinner />
+        <div className="spinner-container-black">
+          <div className="spinner-position-center">
+            <Spinner />
+          </div>
         </div>
       );
     } else {
