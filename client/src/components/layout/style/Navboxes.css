@@ -187,6 +187,31 @@ a {
 }
 
 /*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
+
+/*Apple Display 27inch*/
+@media screen and (min-width: 2360px) {
+  #banner-container {
+    min-height: 1400px;
+  }
+  #padding {
+    height: 135px;
+  }
+  #banner {
+    width: 1000px;
+    margin-bottom: 100px;
+  }
+  #banner-quote {
+    font-size: 75px;
+  }
+  .col-md-4.box.grow {
+    height: 335px;
+  }
+  #box-button.btn {
+    height: 60px;
+    padding: 20px 20px;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   #banner-container {
     min-height: 1024px;

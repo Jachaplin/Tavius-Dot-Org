@@ -6,6 +6,7 @@ import { getPosts } from '../../actions/postsActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Divider } from 'antd';
 import Spinner from '../layout/Spinner';
+import ScrollUpButton from 'react-scroll-up-button';
 import 'antd/dist/antd.css';
 import './style/Blog.css';
 import ReactHtmlParser from 'react-html-parser';
@@ -132,7 +133,12 @@ class Blog extends Component {
       );
     }
 
-    return <div>{blogPage}</div>;
+    return (
+      <div>
+        <ScrollUpButton />
+        {blogPage}
+      </div>
+    );
   }
 }
 

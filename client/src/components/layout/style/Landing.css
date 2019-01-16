@@ -19,6 +19,10 @@
 	transform: translate(-50%, -50%);
 }
 
+.ScrollUpButton__Container.ScrollUpButton__Toggled:focus {
+	outline: 0;
+}
+
 /*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
 @media screen and (max-width: 2880px) {
 	.spinner-container-black {

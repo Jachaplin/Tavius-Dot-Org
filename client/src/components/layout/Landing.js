@@ -6,7 +6,7 @@ import { getMerch } from '../../actions/merchActions';
 import { getPosts } from '../../actions/postsActions';
 import { getSubscribers } from '../../actions/subscActions';
 import Spinner from './Spinner';
-// import { Layout } from 'antd';
+import ScrollUpButton from 'react-scroll-up-button';
 import Navboxes from './Navboxes';
 import Merch from '../merch/Merch';
 import Books2 from '../books/Books2';
@@ -40,6 +40,7 @@ class Landing extends Component {
     } else {
       centerContent = (
         <div>
+          <ScrollUpButton />
           <Navboxes />
           <div id="landing-layout">
             <Merch />
