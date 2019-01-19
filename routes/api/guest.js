@@ -4,7 +4,11 @@ const request = require('request');
 const feed = require('rss-to-json');
 const htmlToJson = require('html-to-json');
 const tumblr = require('tumblr.js');
-const tumblrApi = require('../../config/keys_dev').tumblrApi;
+const { key, secret, token, tokensecret } = require('../../config/keys');
+// const tumblrKey = require('../../config/keys').key;
+// const tumblrSecret = require('../../config/keys').secret;
+// const tumblrToken = require('../../config/keys').token;
+// const tumblrTokenSecret = require('../../config/keys').tokensecret;
 const moment = require('moment');
 
 // Zazzle API route GET request
@@ -51,10 +55,10 @@ router.get('/posts', (req, res) => {
 	const tumblrPosts = [];
 
 	const client = tumblr.createClient({
-		consumer_key: tumblrApi.key,
-		consumer_secret: tumblrApi.secret,
-		token: tumblrApi.token,
-		token_secret: tumblrApi.tokensecret
+		consumer_key: key,
+		consumer_secret: secret,
+		token: token,
+		token_secret: tokensecret
 	});
 
 	client.blogPosts('taviusdotorg.tumblr.com', (err, data) => {
