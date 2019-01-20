@@ -317,12 +317,12 @@ a {
 
 /*iPhone 6/7/8 Plus*/
 @media screen and (max-width: 415px) {
-  #no-slide-animation {
+  /*  #no-slide-animation {
     display: block;
   }
   #with-slide-animation {
     display: none;
-  }
+  }*/
   #banner-container {
     min-height: 700px;
   }
