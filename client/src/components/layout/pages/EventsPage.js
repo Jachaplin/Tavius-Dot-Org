@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { newSubscriber, getSubscribers } from '../../../actions/subscActions';
+import { getMerch } from '../../../actions/merchActions';
+import { getPosts } from '../../../actions/postsActions';
 import isEmpty from '../../../validation/is-empty';
 import { Modal } from 'antd';
 import 'antd/dist/antd.css';
@@ -36,6 +38,10 @@ class EventsPage extends Component {
 
 	componentDidMount() {
 		window.scrollTo(0, 0);
+		if (this.props.itemListing.itemListing.length === 0) {
+			this.props.getMerch();
+			this.props.getPosts();
+		}
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -235,6 +241,10 @@ class EventsPage extends Component {
 }
 
 EventsPage.propTypes = {
+	itemListing: PropTypes.object.isRequired,
+	posts: PropTypes.object.isRequired,
+	getMerch: PropTypes.func.isRequired,
+	getPosts: PropTypes.func.isRequired,
 	newSubscriber: PropTypes.func.isRequired,
 	getSubscribers: PropTypes.func.isRequired,
 	errors: PropTypes.object.isRequired,
@@ -242,11 +252,13 @@ EventsPage.propTypes = {
 };
 
 const mapStateToProps = state => ({
+	itemListing: state.itemListing,
+	posts: state.posts,
 	errors: state.errors,
 	subscriber: state.subscriber
 });
 
 export default connect(
 	mapStateToProps,
-	{ newSubscriber, getSubscribers }
+	{ newSubscriber, getSubscribers, getMerch, getPosts }
 )(withRouter(EventsPage));
