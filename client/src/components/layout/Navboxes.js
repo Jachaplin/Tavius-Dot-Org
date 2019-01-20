@@ -11,7 +11,7 @@ class NavBoxes extends Component {
   render() {
     return (
       <div>
-        <Jumbotron style={{ display: 'none' }}>
+        <Jumbotron id="with-slide-animation">
           <div id="banner-container">
             <div id="padding" />
             <CSSTransitionGroup
@@ -54,7 +54,7 @@ class NavBoxes extends Component {
           </div>
         </Jumbotron>
 
-        <Jumbotron>
+        <Jumbotron id="no-slide-animation">
           <div id="banner-container">
             <div id="padding" />
             <CSSTransitionGroup
@@ -69,7 +69,6 @@ class NavBoxes extends Component {
                 src="images/tavius-logo-smaller-blue.png"
                 alt="tavius.org banner"
               />
-
               <Grid>
                 <Row id="quote-row">
                   <Col md={9}>
@@ -160,3 +159,4 @@ class NavBoxes extends Component {
 }
 
 export default NavBoxes;
+

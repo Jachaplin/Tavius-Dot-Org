@@ -135,7 +135,7 @@ class Books2 extends Component {
             </ScrollAnimation>
           </Row>
         </Grid>
-        <Row id="divider" className="show-grid">
+        <Row className="show-grid">
           <Col md={12}>
             <Divider style={{ marginBottom: '67px' }} />
           </Col>
