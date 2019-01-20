@@ -48,8 +48,8 @@ class Merch extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 6,
-      slidesToScroll: 6
+      slidesToShow: 5,
+      slidesToScroll: 5
     };
 
     let itemPicture;
@@ -96,7 +96,7 @@ class Merch extends Component {
     }
 
     // only show 9 thumbnails
-    const thumbnailGal = itemListing.slice(0, 6).map((item, i) => (
+    const thumbnailGal = itemListing.slice(0, 5).map((item, i) => (
       <div id="thumb-container" key={i}>
         <Thumbnail
           id="store-thumb"

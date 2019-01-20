@@ -59,8 +59,8 @@ class StorePage extends Component {
 			dots: true,
 			infinite: true,
 			speed: 500,
-			slidesToShow: 6,
-			slidesToScroll: 6
+			slidesToShow: 5,
+			slidesToScroll: 5
 		};
 
 		let itemPicture;
