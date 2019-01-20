@@ -1,3 +1,7 @@
+#navbox-container {
+  overflow: hidden;
+}
+
 #banner {
   display: block;
   margin-right: auto;

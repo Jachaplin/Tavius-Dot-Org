@@ -10,7 +10,7 @@ import './style/Navbar.css';
 class NavBoxes extends Component {
   render() {
     return (
-      <div>
+      <div id="navbox-container">
         <Jumbotron id="with-slide-animation">
           <div id="banner-container">
             <div id="padding" />
