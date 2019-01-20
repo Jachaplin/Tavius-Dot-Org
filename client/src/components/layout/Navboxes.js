@@ -4,7 +4,6 @@ import { Grid, Row, Col, Jumbotron, Button } from 'react-bootstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { CSSTransitionGroup } from 'react-transition-group';
 import SubscribeModal from './Modal';
-import Spinner from '../layout/Spinner';
 import './style/Navboxes.css';
 import './style/Navbar.css';
 
@@ -169,7 +168,6 @@ class NavBoxes extends Component {
             </Row>
           </Grid>
         </ScrollAnimation>
-        {!this.state.loaded && <Spinner />}
       </div>
     );
   }
