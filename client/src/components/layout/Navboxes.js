@@ -8,7 +8,21 @@ import './style/Navboxes.css';
 import './style/Navbar.css';
 
 class NavBoxes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { imageStatus: 'loading' };
+  }
+
+  handleImageLoaded = () => {
+    this.setState({ imageStatus: 'loaded' });
+  };
+
+  handleImageErrored = () => {
+    this.setState({ imageStatus: 'failed to load' });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div id="navbox-container">
         <Jumbotron id="with-slide-animation">
@@ -25,6 +39,8 @@ class NavBoxes extends Component {
                 id="banner"
                 src="images/tavius-logo-smaller-blue.png"
                 alt="tavius.org banner"
+                onLoad={this.handleImageLoaded}
+                onError={this.handleImageErrored}
               />
             </CSSTransitionGroup>
             <Grid>
@@ -159,4 +175,3 @@ class NavBoxes extends Component {
 }
 
 export default NavBoxes;
-
