@@ -40,12 +40,18 @@
 }
 
 @media screen and (max-width: 991px) {
+	#landing-layout {
+		max-width: 981px;
+	}
 	.spinner-container-black {
 		min-height: 1024px;
 	}
 }
 
 @media screen and (max-width: 767px) {
+	#landing-layout {
+		max-width: 757px;
+	}
 	.spinner-container-black {
 		min-height: 1024px;
 	}
@@ -53,6 +59,9 @@
 
 /*iPhone 6/7/8 Plus*/
 @media screen and (max-width: 415px) {
+	#landing-layout {
+		max-width: 405;
+	}
 	.spinner-container-black {
 		min-height: 1024px;
 	}
@@ -61,7 +70,7 @@
 /*iPhone 6/7/8/X*/
 @media screen and (max-width: 375px) {
 	#landing-layout {
-		max-width: 370px;
+		max-width: 365px;
 	}
 	.spinner-container-black {
 		min-height: 1024px;

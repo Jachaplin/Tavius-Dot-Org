@@ -294,12 +294,12 @@ a {
   }
 
   #padding {
-    height: 150px;
+    height: 50px;
   }
 
   #subscribe-button.btn {
     margin-left: 60%;
-    margin-bottom: 55px;
+    margin-bottom: 85px;
   }
 }
 
@@ -328,16 +328,20 @@ a {
     display: none;
   }
   #banner-container {
-    min-height: 700px;
+    min-height: 650px;
   }
   #banner {
     width: 335px;
+    margin-bottom: 30px;
   }
   #padding {
-    height: 80px;
+    height: 60px;
   }
   #banner-quote {
     font-size: 25px;
+  }
+  #subscribe-button.btn {
+    margin-top: 80px;
   }
 }
 

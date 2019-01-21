@@ -111,20 +111,29 @@ figure {
 
 @media screen and (max-width: 991px) {
   .react-parallax-bgimage {
-    width: 400px !important;
-    height: auto !important;
+    /*    width: 400px !important;
+    height: auto !important;*/
     display: none;
   }
   .figure-bg {
     margin-left: 15px;
     width: calc(30% + 22.188rem);
+    display: none;
   }
   figure {
-    height: 0px;
+    /*height: 0px;*/
     display: none;
   }
 
   .react-parallax-content {
     height: 0px;
+    display: none;
+  }
+}
+
+/*iPhone 6/7/8/X*/
+@media screen and (max-width: 375px) {
+  #music-container {
+    /*max-width: 300px;*/
   }
 }
