@@ -14,7 +14,7 @@ import MusicPage from './components/layout/pages/MusicPage';
 import BlogPage from './components/layout/pages/BlogPage';
 import StorePage from './components/layout/pages/StorePage';
 import EventsPage from './components/layout/pages/EventsPage';
-import landingImage from './components/layout/style/analogue-blur-classic-resized.jpg';
+// import landingImage from './components/layout/style/analogue-blur-classic-resized.jpg';
 
 class App extends Component {
   // constructor(props) {
@@ -36,9 +36,7 @@ class App extends Component {
               <Route exact path="/events" component={EventsPage} />
             </div>
             <FooterLinks />
-            <div id="preload">
-              <img src={landingImage} alt="record-player" />
-            </div>
+
           </div>
         </Router>
       </Provider>

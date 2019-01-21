@@ -9,9 +9,9 @@ body {
 	overflow-x: hidden;
 }
 
-div#preload {
+/*div#preload {
 	display: none;
-}
+}*/
 
 .img-header {
 	width: 450px;

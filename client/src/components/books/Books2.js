@@ -67,7 +67,7 @@ class Books2 extends Component {
                   <Box>
                     <Thumbnail
                       id="book-thumb-container"
-                      src="images/shaddow-work-pic.png"
+                      src="images/shaddow-work-pic-resized.jpg"
                       alt="The Fine Art of Obsolescence"
                     >
                       <h4 id="desc-price" style={{ marginTop: '15px' }}>

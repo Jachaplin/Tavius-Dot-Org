@@ -13,7 +13,7 @@
 #banner-container {
   margin-top: 44px;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
-    url('../style/analogue-blur-classic-resized.jpg');
+    url('/images/analogue-blur-classic-resized.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
