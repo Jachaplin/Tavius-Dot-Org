@@ -15,24 +15,8 @@ import Blog from '../blog/Blog';
 import './style/Landing.css';
 
 class Landing extends Component {
-  constructor() {
-    super()
-    this.state = {
-      loading: false
-    }
-  }
-
-  componentWillMount() {
-    this.setState({ loading: true })
-  }
-
   componentDidMount() {
     window.scrollTo(0, 0);
-    
-    setTimeout(() => {
-      this.setState({ loading: false })
-    }, 1000)
-    
     if (this.props.itemListing.itemListing.length === 0) {
       this.props.getMerch();
       this.props.getPosts();
@@ -40,10 +24,12 @@ class Landing extends Component {
     }
   }
 
+  // backgroundColor: '#222',
+
   render() {
     const { itemListing, posts } = this.props;
     let centerContent;
-    if (posts.posts.length === 0 || itemListing.itemListing === 0 || this.state.loading) {
+    if (posts.posts.length === 0 || itemListing.itemListing === 0) {
       centerContent = (
         <div className="spinner-container-black">
           <div className="spinner-position-center">

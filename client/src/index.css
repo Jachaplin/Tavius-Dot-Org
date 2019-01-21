@@ -13,6 +13,11 @@ div#preload {
 	display: none;
 }
 
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content:url(./components/layout/style/analogue-blur-classic-resized.jpg);
+}
+
 .img-header {
 	width: 450px;
 	height: auto;
