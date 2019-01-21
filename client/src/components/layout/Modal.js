@@ -104,7 +104,7 @@ class SubscribeModal extends Component {
 				});
 				this.props.getSubscribers();
 			}
-		}, 175);
+		}, 250);
 	};
 
 	handleCancel = () => {
