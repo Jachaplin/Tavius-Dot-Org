@@ -40,13 +40,13 @@
   margin-bottom: 0px;
 }
 
-/*#no-slide-animation {
-  display: none;
-}*/
-
-#with-slide-animation {
+#no-slide-animation {
   display: none;
 }
+
+/*#with-slide-animation {
+  display: none;
+}*/
 
 #padding {
   height: 80px;

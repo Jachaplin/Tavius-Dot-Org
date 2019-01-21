@@ -32,22 +32,20 @@ class NavBoxes extends Component {
                 <Col md={9}>
                   <ScrollAnimation animateIn="slideInLeft" animateOnce={true}>
                     <div id="banner-quote">"Creative Expression</div>
-                  </ScrollAnimation>
-                  <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
                     <div id="banner-quote">Is Self Exploration."</div>
-                  </ScrollAnimation>
-                  <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
                     <div id="banner-quote">- Tavius</div>
                   </ScrollAnimation>
                 </Col>
                 <Col md={3}>
-                  <ScrollAnimation
-                    className="delay-1s"
-                    animateIn="bounceInRight"
-                    animateOnce={true}
+                  <CSSTransitionGroup
+                    transitionName="example"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1000}
+                    transitionEnter={false}
+                    transitionLeave={false}
                   >
                     <SubscribeModal />
-                  </ScrollAnimation>
+                  </CSSTransitionGroup>
                 </Col>
               </Row>
             </Grid>
@@ -159,4 +157,3 @@ class NavBoxes extends Component {
 }
 
 export default NavBoxes;
-
