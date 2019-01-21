@@ -1,5 +1,5 @@
 #navbox-container {
-  overflow: hidden;
+  /*overflow-x: hidden;*/
 }
 
 #banner {
@@ -40,7 +40,11 @@
   margin-bottom: 0px;
 }
 
-#no-slide-animation {
+/*#no-slide-animation {
+  display: none;
+}*/
+
+#with-slide-animation {
   display: none;
 }
 
@@ -321,12 +325,12 @@ a {
 
 /*iPhone 6/7/8 Plus*/
 @media screen and (max-width: 415px) {
-  #no-slide-animation {
+  /*  #no-slide-animation {
     display: block;
   }
   #with-slide-animation {
     display: none;
-  }
+  }*/
   #banner-container {
     min-height: 650px;
   }

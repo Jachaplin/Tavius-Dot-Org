@@ -120,7 +120,7 @@ class EventsPage extends Component {
 				});
 				this.props.getSubscribers();
 			}
-		}, 150);
+		}, 175);
 	};
 
 	handleCancel = () => {

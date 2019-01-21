@@ -43,10 +43,18 @@ class Landing extends Component {
           <ScrollUpButton />
           <Navboxes />
           <div id="landing-layout">
-            <Merch />
-            <Books2 />
-            <Music />
-            <Blog />
+            <div id="landing-merch">
+              <Merch id="landing-merch" />
+            </div>
+            <div id="landing-books">
+              <Books2 />
+            </div>
+            <div id="landing-music">
+              <Music />
+            </div>
+            <div id="landing-blog">
+              <Blog />
+            </div>
           </div>
         </div>
       );

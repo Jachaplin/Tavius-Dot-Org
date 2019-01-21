@@ -6,6 +6,18 @@
 	margin-left: auto;
 }
 
+#landing-books {
+	margin-top: -50px;
+}
+
+#landing-music {
+	margin-top: -50px;
+}
+
+#landing-blog {
+	margin-top: -80px;
+}
+
 .spinner-container-black {
 	background-color: #222;
 	padding: 30px;
