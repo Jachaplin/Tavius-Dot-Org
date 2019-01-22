@@ -58,7 +58,59 @@
   padding: 2px !important;
 }
 
+#mobile-merch-display {
+  display: none;
+}
+
+#desc-jumbotron-mobile {
+  display: none;
+}
+
 /*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
 
 @media screen and (max-width: 991px) {
+}
+
+/*iPhone 6/7/8 Plus*/
+@media screen and (max-width: 415px) {
+  #desktop-merch-display {
+    display: none;
+  }
+  #mobile-merch-display {
+  display: block;
+  }
+  #desc-jumbotron {
+    display: none;
+  }
+  div#desc-jumbotron-mobile {
+  display: block;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  height: 110px;
+  }
+  #desc-text-mobile {
+    font-size: 14px;
+  }
+  #desc-price-mobile {
+    font-size: 12px;
+  }
+  #buy-button-mobile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  
+  background-image: linear-gradient(to bottom, #9d9d9d 0, #00cdff 100%);
+  color: #ffffff;
+  border-radius: 0px;
+  height: 25px;
+  width: 50px;
+  border: 0px;
+  text-decoration: none;
+  background-color: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #link-container-mobile {
+    margin-bottom: 10px;
+  }
 }

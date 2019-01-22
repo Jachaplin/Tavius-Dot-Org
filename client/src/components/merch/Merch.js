@@ -78,6 +78,7 @@ class Merch extends Component {
     } else {
       itemDesc = (
         <div>
+          
           <Jumbotron id="desc-jumbotron">
             <h4 id="desc-text">{itemListing[currMerchIndex].title}</h4>
             <h4 id="desc-price">{itemListing[currMerchIndex].price}</h4>
@@ -91,11 +92,14 @@ class Merch extends Component {
               </a>
             </div>
           </Jumbotron>
+
+         
+
         </div>
       );
     }
 
-    // only show 9 thumbnails
+    // only show 5 thumbnails for Laptop
     const thumbnailGal = itemListing.slice(0, 5).map((item, i) => (
       <div id="thumb-container" key={i}>
         <Thumbnail
@@ -105,6 +109,35 @@ class Merch extends Component {
           onClick={() => this.onClick(item)}
           value={item}
         />
+      </div>
+    ));
+
+    // only show 6 thumbnails for mobile
+    const thumbnailGalMobile = itemListing.slice(0, 6).map((item, i) => (
+      <div id="thumb-container" key={i}>
+      <Col xs={6} md={3}>
+        <Thumbnail
+          id="store-thumb"
+          src={item.picture}
+          alt="242x200"
+          onClick={() => this.onClick(item)}
+          value={item}
+        />
+                 <Jumbotron id="desc-jumbotron-mobile">
+            <h4 id="desc-text-mobile">{item.title}</h4>
+            <h4 id="desc-price-mobile">{item.price}</h4>
+            <div id="link-container-mobile">
+              <a
+                id="buy-link-mobile"
+                href={item.link}
+                target="blank"
+              >
+                <button id="buy-button-mobile">Buy</button>
+              </a>
+            </div>
+          </Jumbotron>
+        </Col>
+        
       </div>
     ));
 
@@ -130,6 +163,8 @@ class Merch extends Component {
             </Row>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+          
+          <div id="desktop-merch-display">
             <Row className="show-grid">
               <Col id="pic-col" md={5} mdPush={7}>
                 <div className="slider-container">{itemPicture}</div>
@@ -144,10 +179,20 @@ class Merch extends Component {
               </Col>
             </Row>
             <Row id="thumb-gal-container" className="show-grid">
-              <Col md={12}>
+              <Col id="merch-thumb-laptop" md={12}>
                 <Slider {...settings}>{thumbnailGal}</Slider>
               </Col>
             </Row>
+          </div>
+
+          <div id="mobile-merch-display">
+            <Row className="show-grid">
+              <Col md={12}>
+                {thumbnailGalMobile}
+              </Col>
+            </Row>
+          </div>
+            
             <Row className="show-grid">
               <Col md={12}>
                 <Link to="/store">
