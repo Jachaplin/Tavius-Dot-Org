@@ -9,6 +9,7 @@ import { getPosts } from '../../../actions/postsActions';
 import Slider from 'react-slick';
 import { Grid, Row, Col, Thumbnail, Jumbotron } from 'react-bootstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollUpButton from 'react-scroll-up-button';
 import Spinner from '../../layout/Spinner';
 import Books2 from '../../books/Books2';
 import Goose from '../../goose/Goose'
@@ -158,6 +159,7 @@ class StorePage extends Component {
 		} else {
 			storeContent = (
 				<div id="store-page-container">
+					<ScrollUpButton />
 					<Grid>
 						<Row className="show-grid">
 							<Col className="header-img-col" md={12}>
