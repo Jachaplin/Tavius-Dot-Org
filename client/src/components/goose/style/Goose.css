@@ -1,0 +1,33 @@
+#goose-container {
+	width: 93%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#goose-text {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
+
+#goose-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 715px) {
+	#goose-container {
+		width: 100%;
+	}
+	#goose-img {
+		width: 250px;
+	}
+	#goose-text {
+		width: 93%;
+	}
+}

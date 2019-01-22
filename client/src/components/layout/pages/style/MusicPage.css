@@ -7,10 +7,33 @@
 	max-width: 1600px;
 }
 
+#goose-music-page {
+	margin-top: -60px;
+	margin-bottom: 50px;
+}
+
+#music-divider {
+	width: 93%;
+	margin-top: -50px;
+	margin-bottom: 110px;
+}
+
 /*!!!!!!!!!! MEDIA QUERIES !!!!!!!!!!!*/
 
 @media screen and (max-width: 1700px) {
 	#music-page-container {
 		max-width: 1200px;
 	}
+}
+
+@media screen and (max-width: 991px) {
+	#goose-music-page {
+	margin-top: 0px;
+	margin-bottom: 50px;
+	}
+	#music-divider {
+	width: 93%;
+	margin-top: 60px;
+	margin-bottom: -20px;
+}
 }

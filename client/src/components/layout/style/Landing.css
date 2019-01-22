@@ -10,12 +10,20 @@
 	margin-top: -50px;
 }
 
+#landing-divider {
+	width: 93%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 #landing-music {
 	margin-top: -100px;
+	margin-bottom: -40px;
 }
 
 #landing-blog {
-	margin-top: -90px;
+	margin-top: -70px;
 }
 
 .spinner-container-black {
@@ -58,6 +66,10 @@
 	.spinner-container-black {
 		min-height: 1024px;
 	}
+	#landing-goose {
+	margin-top: 90px;
+	margin-bottom: 50px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -66,6 +78,10 @@
 	}
 	.spinner-container-black {
 		min-height: 1024px;
+	}
+	#landing-goose {
+	margin-top: 60px;
+	margin-bottom: 50px;
 	}
 }
 
@@ -76,6 +92,10 @@
 	}
 	.spinner-container-black {
 		min-height: 1024px;
+	}
+	#landing-goose {
+	margin-top: 80px;
+	margin-bottom: 50px;
 	}
 }
 

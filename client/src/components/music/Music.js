@@ -46,6 +46,7 @@ class Music extends Component {
                     height="450"
                     sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
                     src="https://embed.music.apple.com/us/album/dark-night-of-the-digital-soul/1361877834?app=music"
+                    alt="Oops, something went wrong. Try refreshing the page."
                   />
                 </div>
 

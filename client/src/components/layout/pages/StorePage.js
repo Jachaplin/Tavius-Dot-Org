@@ -11,6 +11,7 @@ import { Grid, Row, Col, Thumbnail, Jumbotron } from 'react-bootstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import Spinner from '../../layout/Spinner';
 import Books2 from '../../books/Books2';
+import Goose from '../../goose/Goose'
 import './style/StorePage.css';
 
 class StorePage extends Component {
@@ -212,6 +213,7 @@ class StorePage extends Component {
 						</Col>
 					</Row>
 					<Books2 />
+					<Goose />
 				</div>
 			);
 		}

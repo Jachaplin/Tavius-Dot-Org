@@ -7,10 +7,13 @@ import { getPosts } from '../../actions/postsActions';
 import { getSubscribers } from '../../actions/subscActions';
 import Spinner from './Spinner';
 import ScrollUpButton from 'react-scroll-up-button';
+import { Divider } from 'antd';
+import 'antd/dist/antd.css';
 import Navboxes from './Navboxes';
 import Merch from '../merch/Merch';
 import Books2 from '../books/Books2';
 import Music from '../music/Music';
+import Goose from '../goose/Goose';
 import Blog from '../blog/Blog';
 import './style/Landing.css';
 
@@ -51,6 +54,13 @@ class Landing extends Component {
             </div>
             <div id="landing-music">
               <Music />
+            </div>
+            <div id="landing-goose">
+              <Goose />
+            </div>
+            <div id="landing-divider">
+              
+            <Divider style={{ marginBottom: '70px', marginTop: '60px' }} />
             </div>
             <div id="landing-blog">
               <Blog />
