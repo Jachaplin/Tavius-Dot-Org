@@ -116,6 +116,36 @@ class StorePage extends Component {
 			</div>
 		));
 
+		// only show 6 thumbnails for mobile
+    const thumbnailGalMobile = merch.slice(0, 28).map((item, i) => (
+      <div id="thumb-container" key={i}>
+        <Col xs={6} md={3}>
+          
+          <Thumbnail
+            id="store-thumb-mobile"
+            src={item.picture}
+            alt="242x200"
+            onClick={() => this.onClick(item)}
+            value={item}
+          >
+            <h4 id="desc-text-mobile">{item.title}</h4>
+            <h4 id="desc-price-mobile">{item.price}</h4>
+            <div id="link-container-mobile">
+              <a
+                id="buy-link-mobile"
+                href={item.link}
+                target="blank"
+              >
+                <button id="buy-button-mobile">Buy</button>
+              </a>
+            </div>
+            </Thumbnail>
+          
+        </Col>
+        
+      </div>
+    ));
+
 		let storeContent;
 
 		if (merch.length === 0 || tumblr.length === 0) {
@@ -138,6 +168,8 @@ class StorePage extends Component {
 							</Col>
 						</Row>
 						<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+						<div id="desktop-merch-display">
+							
 							<Row className="show-grid">
 								<Col id="pic-col" md={5} mdPush={7}>
 									<div className="slider-container">{itemPicture}</div>
@@ -154,11 +186,24 @@ class StorePage extends Component {
 									/>
 								</Col>
 							</Row>
-							<Row id="thumb-gal-container" className="show-grid">
+							<Row className="show-grid">
 								<Col md={12}>
+								<div id="thumb-gal-container">
+									
 									<Slider {...settings}>{thumbnailGal}</Slider>
+								</div>
 								</Col>
 							</Row>
+						</div>
+
+							<div id="mobile-merch-display">
+		            <Row className="show-grid">
+		              <Col md={12}>
+		                {thumbnailGalMobile}
+		              </Col>
+		            </Row>
+		          </div>
+						
 						</ScrollAnimation>
 					</Grid>
 					<Row className="show-grid">

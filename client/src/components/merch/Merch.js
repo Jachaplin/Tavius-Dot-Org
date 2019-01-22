@@ -115,15 +115,15 @@ class Merch extends Component {
     // only show 6 thumbnails for mobile
     const thumbnailGalMobile = itemListing.slice(0, 6).map((item, i) => (
       <div id="thumb-container" key={i}>
-      <Col xs={6} md={3}>
-        <Thumbnail
-          id="store-thumb"
-          src={item.picture}
-          alt="242x200"
-          onClick={() => this.onClick(item)}
-          value={item}
-        />
-                 <Jumbotron id="desc-jumbotron-mobile">
+        <Col xs={6} md={3}>
+          
+          <Thumbnail
+            id="store-thumb-mobile"
+            src={item.picture}
+            alt="242x200"
+            onClick={() => this.onClick(item)}
+            value={item}
+          >
             <h4 id="desc-text-mobile">{item.title}</h4>
             <h4 id="desc-price-mobile">{item.price}</h4>
             <div id="link-container-mobile">
@@ -135,7 +135,8 @@ class Merch extends Component {
                 <button id="buy-button-mobile">Buy</button>
               </a>
             </div>
-          </Jumbotron>
+            </Thumbnail>
+          
         </Col>
         
       </div>
