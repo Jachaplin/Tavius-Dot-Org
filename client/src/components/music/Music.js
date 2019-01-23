@@ -67,7 +67,8 @@ class Music extends Component {
                     <div id="grow">
                       <div id="button-container">
                         <a
-                          target="blank"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           href="https://itunes.apple.com/us/album/dark-night-of-the-digital-soul/1361877834?app=itunes"
                         >
                           <img

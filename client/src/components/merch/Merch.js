@@ -59,7 +59,7 @@ class Merch extends Component {
     } else {
       itemPicture = (
         <div id="item-wrapper" className="img-wrapper">
-          <a href={itemListing[currMerchIndex].link} target="blank">
+          <a href={itemListing[currMerchIndex].link} target="_blank" rel="noopener noreferrer">
             <img
               className="merch-img"
               id="item-img"
@@ -86,7 +86,8 @@ class Merch extends Component {
               <a
                 id="buy-link"
                 href={itemListing[currMerchIndex].link}
-                target="blank"
+                target="_blank"
+                 rel="noopener noreferrer"
               >
                 <button className="buy-button">Buy</button>
               </a>
@@ -130,7 +131,8 @@ class Merch extends Component {
               <a
                 id="buy-link-mobile"
                 href={item.link}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <button id="buy-button-mobile">Buy</button>
               </a>

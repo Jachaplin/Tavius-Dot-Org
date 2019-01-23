@@ -72,7 +72,7 @@ class StorePage extends Component {
 		} else {
 			itemPicture = (
 				<div id="item-wrapper" className="img-wrapper">
-					<a href={merch[currMerchIndex].link} target="blank">
+					<a href={merch[currMerchIndex].link} target="_blank" rel="noopener noreferrer">
 						<img
 							className="merch-img"
 							id="item-img"
@@ -95,7 +95,7 @@ class StorePage extends Component {
 						<h4 id="desc-text">{merch[currMerchIndex].title}</h4>
 						<h4 id="desc-price">{merch[currMerchIndex].price}</h4>
 						<div id="link-container">
-							<a id="buy-link" href={merch[currMerchIndex].link} target="blank">
+							<a id="buy-link" href={merch[currMerchIndex].link} target="_blank"  rel="noopener noreferrer">
 								<button id="buy-shirt-button" className="buy-button">
 									Buy
 								</button>
@@ -136,7 +136,8 @@ class StorePage extends Component {
               <a
                 id="buy-link-mobile"
                 href={item.link}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <button id="buy-button-mobile">Buy</button>
               </a>

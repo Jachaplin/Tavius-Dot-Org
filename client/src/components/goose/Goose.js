@@ -8,7 +8,7 @@ class Goose extends Component {
 			<div id="goose-container">
 				<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
 					<img id="goose-img" src="/images/live-like-goose-resized.jpg" alt=""/>
-					<p id="goose-text">A portion of the proceeds from any orders on this site will go towards grief and trauma recovery research and resources through the <a target="blank" href="http://livelikegoose.org/">Live Like Goose Nonprofit</a></p>
+					<p id="goose-text">A portion of the proceeds from any orders on this site will go towards grief and trauma recovery research and resources through the <a target="_blank" rel="noopener noreferrer" href="http://livelikegoose.org/">Live Like Goose Nonprofit</a></p>
 				</ScrollAnimation>
 			</div>
 		);
