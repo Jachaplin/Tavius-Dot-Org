@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getMerch } from '../../actions/merchActions';
+import { getForbidden } from '../../actions/merchActions';
 import { getPosts } from '../../actions/postsActions';
-import { getSubscribers } from '../../actions/subscActions';
 import Spinner from './Spinner';
 import ScrollUpButton from 'react-scroll-up-button';
 import { Divider } from 'antd';
@@ -20,19 +19,16 @@ import './style/Landing.css';
 class Landing extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
-    if (this.props.itemListing.itemListing.length === 0) {
-      this.props.getMerch();
+    if (this.props.forbiddenListing.forbiddenListing.length === 0) {
       this.props.getPosts();
-      this.props.getSubscribers();
+      this.props.getForbidden();
     }
   }
 
-  // backgroundColor: '#222',
-
   render() {
-    const { itemListing, posts } = this.props;
+    const { posts, forbiddenListing } = this.props;
     let centerContent;
-    if (posts.posts.length === 0 || itemListing.itemListing === 0) {
+    if (posts.posts.length === 0 || forbiddenListing.forbiddenListing === 0) {
       centerContent = (
         <div className="spinner-container-black">
           <div className="spinner-position-center">
@@ -59,7 +55,6 @@ class Landing extends Component {
               <Goose />
             </div>
             <div id="landing-divider">
-              
             <Divider style={{ marginBottom: '70px', marginTop: '60px' }} />
             </div>
             <div id="landing-blog">
@@ -76,17 +71,17 @@ class Landing extends Component {
 
 Landing.propTypes = {
   posts: PropTypes.object.isRequired,
-  getMerch: PropTypes.func.isRequired,
   getPosts: PropTypes.func.isRequired,
-  getSubscribers: PropTypes.func.isRequired
+  getForbidden: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  itemListing: state.itemListing,
+  forbiddenListing: state.forbiddenListing,
   posts: state.posts
 });
 
 export default connect(
   mapStateToProps,
-  { getMerch, getPosts, getSubscribers }
+  { getForbidden, getPosts }
 )(withRouter(Landing));
+              

@@ -11,9 +11,48 @@ const { key, secret, token, tokensecret } = require('../../config/keys');
 // const tumblrTokenSecret = require('../../config/keys').tokensecret;
 const moment = require('moment');
 
-// Zazzle API route GET request
+// Zazzle API route GET request for Store Page Collection
 router.get('/merch', (req, res) => {
-	feed.load('http://feed.zazzle.com/oneofftees/rss', (err, rss) => {
+	feed.load('http://feed.zazzle.com/collections/119641478399187427/rss', (err, rss) => {
+		if (err) {
+			res.json(err);
+		} else {
+			const items = [];
+			rss.items.map(response => {
+				// set price to the description which is now a body of HTML
+				let price = response.description;
+				// Parse through the HTML for the class containing the price, then covert the class to json
+				let itemPrice = htmlToJson.parse(price, [
+					'.ZazzleCollectionItemCellProduct-price',
+					function($item) {
+						return $item.text();
+					}
+				]);
+
+				let itemThumbnail = response.media.thumbnail[0].url[0];
+				// change the thumbnail pic to a larger pic not included in the responseponse
+				let itemPic = itemThumbnail.replace('_152', '_500');
+				// place comma's inside the titles where they should be
+				let titleCommaFix = response.title;
+				let itemTitle = titleCommaFix.replace('&#39;', "'");
+
+				items.push({
+					title: itemTitle,
+					link: response.link,
+					picture: itemPic,
+					price: itemPrice._rejectionHandler0[0],
+					created: response.created
+				});
+				return rss.items;
+			});
+			res.json(items);
+		}
+	});
+});
+
+// Zazzle API route GET request for Store Page Collection
+router.get('/forbidden', (req, res) => {
+	feed.load('http://feed.zazzle.com/collections/119848766295940263/rss', (err, rss) => {
 		if (err) {
 			res.json(err);
 		} else {

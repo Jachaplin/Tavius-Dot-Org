@@ -19,9 +19,9 @@ class Merch extends Component {
   }
 
   componentDidMount() {
-    if (this.props.itemListing.itemListing.length > 0) {
+    if (this.props.forbiddenListing.forbiddenListing.length > 0) {
       this.setState({
-        targetItem: this.props.itemListing.itemListing[0]
+        targetItem: this.props.forbiddenListing.forbiddenListing[0]
       });
     }
   }
@@ -33,7 +33,7 @@ class Merch extends Component {
 
     setTimeout(() => {
       this.setState({
-        currMerchIndex: this.props.itemListing.itemListing.findIndex(
+        currMerchIndex: this.props.forbiddenListing.forbiddenListing.findIndex(
           desc => desc === this.state.targetItem
         )
       });
@@ -41,7 +41,7 @@ class Merch extends Component {
   };
 
   render() {
-    const { itemListing } = this.props.itemListing;
+    const { forbiddenListing } = this.props.forbiddenListing;
     const { currMerchIndex } = this.state;
 
     const settings = {
@@ -54,16 +54,16 @@ class Merch extends Component {
 
     let itemPicture;
 
-    if (itemListing[currMerchIndex] === undefined) {
+    if (forbiddenListing[currMerchIndex] === undefined) {
       itemPicture = null;
     } else {
       itemPicture = (
         <div id="item-wrapper" className="img-wrapper">
-          <a href={itemListing[currMerchIndex].link} target="_blank" rel="noopener noreferrer">
+          <a href={forbiddenListing[currMerchIndex].link} target="_blank" rel="noopener noreferrer">
             <img
               className="merch-img"
               id="item-img"
-              src={itemListing[currMerchIndex].picture}
+              src={forbiddenListing[currMerchIndex].picture}
               alt="shirt"
             />
           </a>
@@ -73,19 +73,19 @@ class Merch extends Component {
 
     let itemDesc;
 
-    if (itemListing[currMerchIndex] === undefined) {
+    if (forbiddenListing[currMerchIndex] === undefined) {
       itemDesc = null;
     } else {
       itemDesc = (
         <div>
           
           <Jumbotron id="desc-jumbotron">
-            <h4 id="desc-text">{itemListing[currMerchIndex].title}</h4>
-            <h4 id="desc-price">{itemListing[currMerchIndex].price}</h4>
+            <h4 id="desc-text">{forbiddenListing[currMerchIndex].title}</h4>
+            <h4 id="desc-price">{forbiddenListing[currMerchIndex].price}</h4>
             <div id="link-container">
               <a
                 id="buy-link"
-                href={itemListing[currMerchIndex].link}
+                href={forbiddenListing[currMerchIndex].link}
                 target="_blank"
                  rel="noopener noreferrer"
               >
@@ -101,7 +101,7 @@ class Merch extends Component {
     }
 
     // only show 5 thumbnails for Laptop
-    const thumbnailGal = itemListing.slice(0, 5).map((item, i) => (
+    const thumbnailGal = forbiddenListing.slice(0, 5).map((item, i) => (
       <div id="thumb-container" key={i}>
         <Thumbnail
           id="store-thumb"
@@ -114,7 +114,7 @@ class Merch extends Component {
     ));
 
     // only show 6 thumbnails for mobile
-    const thumbnailGalMobile = itemListing.slice(0, 6).map((item, i) => (
+    const thumbnailGalMobile = forbiddenListing.slice(0, 6).map((item, i) => (
       <div id="thumb-container" key={i}>
         <Col xs={6} md={3}>
           
@@ -213,11 +213,11 @@ class Merch extends Component {
 }
 
 Merch.propTypes = {
-  itemListing: PropTypes.object.isRequired
+  forbiddenListing: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  itemListing: state.itemListing
+  forbiddenListing: state.forbiddenListing
 });
 
 export default connect(mapStateToProps)(Merch);

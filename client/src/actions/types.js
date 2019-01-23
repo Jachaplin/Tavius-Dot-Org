@@ -9,3 +9,6 @@ export const GET_POSTS = 'GET_POSTS';
 export const POST_LOADING = 'POST_LOADING';
 export const GET_MERCH = 'GET_MERCH';
 export const MERCH_LOADING = 'MERCH_LOADING';
+export const GET_FORBIDDEN = 'GET_FORBIDDEN';
+export const FORBIDDEN_LOADING = 'FORBIDDEN_LOADING';
+

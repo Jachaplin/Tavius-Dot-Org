@@ -8,5 +8,6 @@ export default combineReducers({
 	errors: errorReducer,
 	subscriber: subscReducer,
 	itemListing: merchReducer,
+	forbiddenListing: merchReducer,
 	posts: postsReducer
 });
